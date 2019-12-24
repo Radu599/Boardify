@@ -1,0 +1,137 @@
+2019-12-24 16:48:14.274  INFO 88 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-12-24 16:48:16.497  INFO 88 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2019-12-24 16:48:16.498  WARN 88 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/gateway-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-12-24 16:48:16.498  INFO 88 --- [main] boardify.gateway.GatewayApplication      : No active profile set, falling back to default profiles: default
+2019-12-24 16:48:18.389  WARN 88 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-12-24 16:48:18.404  WARN 88 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-12-24 16:48:18.576  INFO 88 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5e7f39a7-80c0-3762-89bd-c50d58ff1921
+2019-12-24 16:48:19.363  INFO 88 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$66fda1f1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-24 16:48:19.562  INFO 88 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-24 16:48:19.578  INFO 88 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-24 16:48:19.578  INFO 88 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-24 16:48:19.718  INFO 88 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-24 16:48:19.718  INFO 88 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3204 ms
+2019-12-24 16:48:19.781  WARN 88 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-12-24 16:48:19.781  INFO 88 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-12-24 16:48:19.828  INFO 88 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@11295cb1
+2019-12-24 16:48:22.020  INFO 88 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4e05b06d-f5eb-40e4-939f-0ea085364b1b
+
+2019-12-24 16:48:22.694  INFO 88 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7744195, org.springframework.security.web.context.SecurityContextPersistenceFilter@3bf26810, org.springframework.security.web.header.HeaderWriterFilter@8f09a02, org.springframework.web.filter.CorsFilter@77f529a6, boardify.commonsecurity.filters.microserviceFilters.JwtTokenAuthenticationFilter@3cb49121, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@30a791a6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5fd4e67f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d47b021, org.springframework.security.web.session.SessionManagementFilter@2dd08ff1, org.springframework.security.web.access.ExceptionTranslationFilter@6f785a27, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5614ae05]
+2019-12-24 16:48:22.953  WARN 88 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-12-24 16:48:22.953  INFO 88 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-12-24 16:48:23.254  INFO 88 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-24 16:48:24.863  WARN 88 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2019-12-24 16:48:24.913  WARN 88 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2019-12-24 16:48:25.406  INFO 88 --- [main] o.s.c.n.zuul.ZuulFilterInitializer       : Starting filter initializer
+2019-12-24 16:48:25.422  INFO 88 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-24 16:48:25.619  INFO 88 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-12-24 16:48:25.747  INFO 88 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-12-24 16:48:25.839  INFO 88 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-12-24 16:48:25.839  INFO 88 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-12-24 16:48:25.983  INFO 88 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-12-24 16:48:25.983  INFO 88 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-12-24 16:48:26.215  INFO 88 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-24 16:48:26.675  INFO 88 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-12-24 16:48:26.675  INFO 88 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-12-24 16:48:26.675  INFO 88 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-12-24 16:48:26.675  INFO 88 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-12-24 16:48:26.675  INFO 88 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-12-24 16:48:26.675  INFO 88 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-12-24 16:48:26.675  INFO 88 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-12-24 16:48:27.531  INFO 88 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-12-24 16:48:27.537  INFO 88 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-12-24 16:48:27.537  INFO 88 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-12-24 16:48:27.537  INFO 88 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577198907537 with initial instances count: 0
+2019-12-24 16:48:27.537  INFO 88 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
+2019-12-24 16:48:27.537  INFO 88 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1577198907537, current=UP, previous=STARTING]
+2019-12-24 16:48:27.537  INFO 88 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/192.168.2.112:gateway-service:8080: registering service...
+2019-12-24 16:48:27.643  INFO 88 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-24 16:48:27.643  INFO 88 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2019-12-24 16:48:27.738  INFO 88 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/192.168.2.112:gateway-service:8080 - registration status: 204
+2019-12-24 16:48:28.539  INFO 88 --- [main] boardify.gateway.GatewayApplication      : Started GatewayApplication in 16.976 seconds (JVM running for 18.549)
+2019-12-24 16:48:57.548  INFO 88 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-12-24 16:48:57.548  INFO 88 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-12-24 16:48:57.548  INFO 88 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-12-24 16:48:57.548  INFO 88 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-12-24 16:48:57.548  INFO 88 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-12-24 16:48:57.548  INFO 88 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2019-12-24 16:48:57.548  INFO 88 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-12-24 16:48:57.578  INFO 88 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-12-24 18:48:47.083  INFO 11404 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-12-24 18:48:49.267  INFO 11404 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2019-12-24 18:48:49.268  WARN 11404 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/gateway-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-12-24 18:48:49.270  INFO 11404 --- [main] boardify.gateway.GatewayApplication      : No active profile set, falling back to default profiles: default
+2019-12-24 18:48:50.125  WARN 11404 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-12-24 18:48:50.125  WARN 11404 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2019-12-24 18:48:50.268  INFO 11404 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5e7f39a7-80c0-3762-89bd-c50d58ff1921
+2019-12-24 18:48:50.512  INFO 11404 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$ebca2c5e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-24 18:48:50.711  INFO 11404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-24 18:48:50.727  INFO 11404 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-24 18:48:50.727  INFO 11404 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-24 18:48:50.880  INFO 11404 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-24 18:48:50.883  INFO 11404 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1597 ms
+2019-12-24 18:48:50.951  WARN 11404 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-12-24 18:48:50.951  INFO 11404 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-12-24 18:48:50.967  INFO 11404 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@76e00bdb
+2019-12-24 18:48:52.305  INFO 11404 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2c1e3a1a-400b-41e0-9c7e-edeb23176b87
+
+2019-12-24 18:48:52.376  INFO 11404 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19213a74, org.springframework.security.web.context.SecurityContextPersistenceFilter@5db04bd2, org.springframework.security.web.header.HeaderWriterFilter@4cded2cd, org.springframework.web.filter.CorsFilter@30a791a6, boardify.commonsecurity.filters.microserviceFilters.JwtTokenAuthenticationFilter@534fc1f7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31c5304f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3883031d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@719bb60d, org.springframework.security.web.session.SessionManagementFilter@3a9c92b5, org.springframework.security.web.access.ExceptionTranslationFilter@565a6af, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@796fe2b5]
+2019-12-24 18:48:52.392  WARN 11404 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-12-24 18:48:52.392  INFO 11404 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-12-24 18:48:52.531  INFO 11404 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-24 18:48:53.559  WARN 11404 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2019-12-24 18:48:53.590  WARN 11404 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2019-12-24 18:48:53.735  INFO 11404 --- [main] o.s.c.n.zuul.ZuulFilterInitializer       : Starting filter initializer
+2019-12-24 18:48:53.751  INFO 11404 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-24 18:48:53.824  INFO 11404 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-12-24 18:48:53.856  INFO 11404 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-12-24 18:48:53.888  INFO 11404 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-12-24 18:48:53.888  INFO 11404 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-12-24 18:48:54.005  INFO 11404 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-12-24 18:48:54.005  INFO 11404 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-12-24 18:48:54.164  INFO 11404 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-24 18:48:54.420  INFO 11404 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-12-24 18:48:54.420  INFO 11404 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-12-24 18:48:54.420  INFO 11404 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-12-24 18:48:54.420  INFO 11404 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-12-24 18:48:54.420  INFO 11404 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-12-24 18:48:54.420  INFO 11404 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-12-24 18:48:54.420  INFO 11404 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-12-24 18:48:54.601  INFO 11404 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-12-24 18:48:54.601  INFO 11404 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-12-24 18:48:54.601  INFO 11404 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-12-24 18:48:54.601  INFO 11404 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577206134601 with initial instances count: 0
+2019-12-24 18:48:54.601  INFO 11404 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
+2019-12-24 18:48:54.601  INFO 11404 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1577206134601, current=UP, previous=STARTING]
+2019-12-24 18:48:54.601  INFO 11404 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/192.168.2.112:gateway-service:8080: registering service...
+2019-12-24 18:48:54.682  INFO 11404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-24 18:48:54.682  INFO 11404 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2019-12-24 18:48:54.731  INFO 11404 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/192.168.2.112:gateway-service:8080 - registration status: 204
+2019-12-24 18:48:55.534  INFO 11404 --- [main] boardify.gateway.GatewayApplication      : Started GatewayApplication in 10.939 seconds (JVM running for 12.47)
+2019-12-24 18:48:55.960  INFO 11404 --- [RMI TCP Connection(3)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-12-24 18:48:56.463  INFO 11404 --- [RMI TCP Connection(5)-192.168.2.112] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-24 18:48:56.464  INFO 11404 --- [RMI TCP Connection(5)-192.168.2.112] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-24 18:48:56.473  INFO 11404 --- [RMI TCP Connection(5)-192.168.2.112] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2019-12-24 18:48:57.987  INFO 11404 --- [RMI TCP Connection(3)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2019-12-24 18:48:57.988  WARN 11404 --- [RMI TCP Connection(3)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/gateway-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-12-24 18:49:24.617  INFO 11404 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-12-24 18:49:24.617  INFO 11404 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-12-24 18:49:24.619  INFO 11404 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-12-24 18:49:24.619  INFO 11404 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-12-24 18:49:24.619  INFO 11404 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-12-24 18:49:24.619  INFO 11404 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2019-12-24 18:49:24.619  INFO 11404 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-12-24 18:49:24.636  INFO 11404 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-12-24 18:53:54.434  INFO 11404 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-24 18:58:54.436  INFO 11404 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-24 19:03:54.437  INFO 11404 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-24 19:08:54.439  INFO 11404 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-24 19:13:54.441  INFO 11404 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-24 19:18:54.442  INFO 11404 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-24 19:23:54.445  INFO 11404 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-24 19:28:54.446  INFO 11404 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-24 19:33:54.461  INFO 11404 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
