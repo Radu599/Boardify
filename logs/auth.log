@@ -363,3 +363,50 @@
 2019-12-25 16:11:56.503  INFO 21424 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
 2019-12-25 16:11:57.309  INFO 21424 --- [main] boardify.auth.AuthApplication            : Started AuthApplication in 14.399 seconds (JVM running for 15.83)
 2019-12-25 16:16:56.323  INFO 21424 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-25 16:21:56.325  INFO 21424 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-25 16:26:56.326  INFO 21424 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-25 16:31:56.329  INFO 21424 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-25 16:36:56.498  INFO 21424 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-25 16:41:56.607  INFO 21424 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-25 16:46:56.609  INFO 21424 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-25 16:51:56.651  INFO 21424 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-25 16:56:56.653  INFO 21424 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-25 16:58:36.564  INFO 21424 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-25 16:58:36.565  INFO 21424 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-25 16:58:36.577  INFO 21424 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2019-12-25 16:58:36.628  WARN 21424 --- [http-nio-8082-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2019-12-25 17:01:08.063  INFO 21424 --- [http-nio-8082-exec-8] boardify.auth.controller.Controller      : +++++++++LOGGING login+++++++++
+2019-12-25 17:01:08.065  INFO 21424 --- [http-nio-8082-exec-8] boardify.auth.controller.Controller      : Username: a@a.com
+2019-12-25 17:01:08.065  INFO 21424 --- [http-nio-8082-exec-8] boardify.auth.controller.Controller      : Password: a
+2019-12-25 17:01:08.065  INFO 21424 --- [http-nio-8082-exec-8] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING login+++++++++++++++++++++++++++++++
+2019-12-25 17:01:08.066  INFO 21424 --- [http-nio-8082-exec-8] boardify.auth.service.impl.ServiceImpl   : username: a@a.com
+2019-12-25 17:01:08.066  INFO 21424 --- [http-nio-8082-exec-8] boardify.auth.service.impl.ServiceImpl   : password: a
+2019-12-25 17:01:08.067  INFO 21424 --- [http-nio-8082-exec-8] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
+2019-12-25 17:01:08.067  INFO 21424 --- [http-nio-8082-exec-8] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++LOGGING findUser+++++++++
+2019-12-25 17:01:08.068  INFO 21424 --- [http-nio-8082-exec-8] b.a.dao.impl.jpaRepository.UserDaoJpa    : username: a@a.com
+2019-12-25 17:01:08.085  INFO 21424 --- [http-nio-8082-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2019-12-25 17:01:08.086  WARN 21424 --- [http-nio-8082-exec-8] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-12-25 17:01:08.091  INFO 21424 --- [http-nio-8082-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2019-12-25 17:01:08.143  INFO 21424 --- [http-nio-8082-exec-8] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++SUCCESSFUL LOGGING findUser+++++++++
+2019-12-25 17:01:08.143  INFO 21424 --- [http-nio-8082-exec-8] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
+2019-12-25 17:01:08.338  INFO 21424 --- [http-nio-8082-exec-8] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING login+++++++++++++++++++++++++++++++
+2019-12-25 17:01:08.338  INFO 21424 --- [http-nio-8082-exec-8] boardify.auth.controller.Controller      : +++++++++SUCCESSFUL LOGGING login+++++++++
+2019-12-25 17:01:29.303  INFO 21424 --- [http-nio-8082-exec-9] boardify.auth.controller.Controller      : +++++++++LOGGING login+++++++++
+2019-12-25 17:01:29.303  INFO 21424 --- [http-nio-8082-exec-9] boardify.auth.controller.Controller      : Username: a@a.com
+2019-12-25 17:01:29.303  INFO 21424 --- [http-nio-8082-exec-9] boardify.auth.controller.Controller      : Password: a
+2019-12-25 17:01:29.303  INFO 21424 --- [http-nio-8082-exec-9] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING login+++++++++++++++++++++++++++++++
+2019-12-25 17:01:29.303  INFO 21424 --- [http-nio-8082-exec-9] boardify.auth.service.impl.ServiceImpl   : username: a@a.com
+2019-12-25 17:01:29.303  INFO 21424 --- [http-nio-8082-exec-9] boardify.auth.service.impl.ServiceImpl   : password: a
+2019-12-25 17:01:29.303  INFO 21424 --- [http-nio-8082-exec-9] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
+2019-12-25 17:01:29.303  INFO 21424 --- [http-nio-8082-exec-9] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++LOGGING findUser+++++++++
+2019-12-25 17:01:29.303  INFO 21424 --- [http-nio-8082-exec-9] b.a.dao.impl.jpaRepository.UserDaoJpa    : username: a@a.com
+2019-12-25 17:01:29.308  INFO 21424 --- [http-nio-8082-exec-9] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++SUCCESSFUL LOGGING findUser+++++++++
+2019-12-25 17:01:29.308  INFO 21424 --- [http-nio-8082-exec-9] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
+2019-12-25 17:01:29.308  INFO 21424 --- [http-nio-8082-exec-9] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING login+++++++++++++++++++++++++++++++
+2019-12-25 17:01:29.309  INFO 21424 --- [http-nio-8082-exec-9] boardify.auth.controller.Controller      : +++++++++SUCCESSFUL LOGGING login+++++++++
+2019-12-25 17:01:56.654  INFO 21424 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-25 17:06:56.656  INFO 21424 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-25 17:11:56.657  INFO 21424 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-25 17:16:56.724  INFO 21424 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-25 17:21:56.725  INFO 21424 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-25 17:26:56.778  INFO 21424 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
