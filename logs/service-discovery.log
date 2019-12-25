@@ -1,909 +1,101 @@
-2019-12-24 16:47:54.118  INFO 9212 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-24 16:47:56.693  INFO 9212 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-24 16:47:56.709  WARN 9212 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/eureka-service-discovery/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-24 16:47:56.709  INFO 9212 --- [main] b.s.ServiceDiscoveryApplication          : No active profile set, falling back to default profiles: default
-2019-12-24 16:47:59.898  WARN 9212 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2019-12-24 16:48:00.551  INFO 9212 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5e625c6e-cd79-329c-bd1d-7a00f1ca5083
-2019-12-24 16:48:00.926  INFO 9212 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$3f4a8059] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-24 16:48:01.722  INFO 9212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
-2019-12-24 16:48:01.753  INFO 9212 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-24 16:48:01.753  INFO 9212 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-24 16:48:02.143  INFO 9212 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-24 16:48:02.143  INFO 9212 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5372 ms
-2019-12-24 16:48:02.441  WARN 9212 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-24 16:48:02.441  INFO 9212 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-24 16:48:02.488  INFO 9212 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@38929da
-2019-12-24 16:48:04.880  INFO 9212 --- [main] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
-2019-12-24 16:48:05.014  INFO 9212 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-24 16:48:05.014  INFO 9212 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-24 16:48:05.541  INFO 9212 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-24 16:48:05.541  INFO 9212 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-24 16:48:06.521  WARN 9212 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-24 16:48:06.521  INFO 9212 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-24 16:48:07.624  INFO 9212 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-24 16:48:11.688  WARN 9212 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-24 16:48:11.707  WARN 9212 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-24 16:48:11.916  INFO 9212 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-12-24 16:48:12.108  INFO 9212 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-12-24 16:48:12.108  INFO 9212 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
-2019-12-24 16:48:12.247  INFO 9212 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577198892165 with initial instances count: 0
-2019-12-24 16:48:12.428  INFO 9212 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
-2019-12-24 16:48:12.428  INFO 9212 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
-2019-12-24 16:48:13.089  INFO 9212 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-24 16:48:13.089  INFO 9212 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-24 16:48:13.089  INFO 9212 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-24 16:48:13.089  INFO 9212 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-24 16:48:13.349  INFO 9212 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
-2019-12-24 16:48:13.349  INFO 9212 --- [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
-2019-12-24 16:48:13.349  INFO 9212 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
-2019-12-24 16:48:13.381  INFO 9212 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-12-24 16:48:13.506  INFO 9212 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVICE-DISCOVERY with eureka with status UP
-2019-12-24 16:48:13.506  INFO 9212 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
-2019-12-24 16:48:13.506  INFO 9212 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka data center value eureka.datacenter is not set, defaulting to default
-2019-12-24 16:48:13.506  INFO 9212 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka environment value eureka.environment is not set, defaulting to test
-2019-12-24 16:48:13.554  INFO 9212 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
-2019-12-24 16:48:13.554  INFO 9212 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
-2019-12-24 16:48:13.554  INFO 9212 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
-2019-12-24 16:48:13.554  INFO 9212 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
-2019-12-24 16:48:13.554  INFO 9212 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
-2019-12-24 16:48:13.554  INFO 9212 --- [Thread-11] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
-2019-12-24 16:48:13.750  INFO 9212 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8761 (http) with context path ''
-2019-12-24 16:48:13.750  INFO 9212 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
-2019-12-24 16:48:14.642  INFO 9212 --- [main] b.s.ServiceDiscoveryApplication          : Started ServiceDiscoveryApplication in 27.134 seconds (JVM running for 32.115)
-2019-12-24 16:48:27.101  INFO 9212 --- [http-nio-8761-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-24 16:48:27.101  INFO 9212 --- [http-nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-24 16:48:27.133  INFO 9212 --- [http-nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 32 ms
-2019-12-24 16:48:27.721  INFO 9212 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.2.112:gateway-service:8080 with status UP (replication=false)
-2019-12-24 16:48:28.366  INFO 9212 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.2.112:gateway-service:8080 with status UP (replication=true)
-2019-12-24 16:48:33.557  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 16:48:53.567  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 16:49:13.581  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 13ms
-2019-12-24 16:49:33.583  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-12-24 16:49:53.597  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 13ms
-2019-12-24 16:50:13.605  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 16:50:33.616  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
-2019-12-24 16:50:53.617  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 16:51:13.617  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 16:51:33.618  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 16:51:53.618  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 16:52:13.619  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 16:52:33.620  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 16:52:53.621  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 16:53:13.621  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 16:53:33.621  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 16:53:53.621  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 16:54:13.629  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 16:54:33.631  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 16:54:53.646  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 15ms
-2019-12-24 16:55:13.655  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 16:55:33.668  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 13ms
-2019-12-24 16:55:53.674  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
-2019-12-24 16:56:13.689  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 16:56:33.696  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 16:56:53.712  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 16ms
-2019-12-24 16:57:13.720  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 16:57:33.720  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 16:57:53.721  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 16:58:13.721  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 16:58:33.721  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 16:58:53.721  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 16:59:13.721  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 16:59:33.721  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 16:59:53.723  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 17:00:13.723  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:00:33.723  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:00:53.723  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:01:13.723  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:01:33.737  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 17:01:53.737  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:02:13.738  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:02:33.738  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:02:53.738  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:03:13.364  INFO 9212 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 3
-2019-12-24 17:03:13.744  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 17:03:33.748  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-12-24 17:03:53.763  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 15ms
-2019-12-24 17:04:13.771  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 17:04:33.775  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-12-24 17:04:53.776  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:05:13.776  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:05:33.777  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 17:05:53.777  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:06:13.777  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:06:33.777  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:06:53.778  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:07:13.778  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:07:33.779  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 17:07:53.779  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:08:13.780  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:08:33.780  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:08:53.780  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:09:13.781  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:09:33.785  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-12-24 17:09:53.786  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 17:10:13.786  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:10:33.787  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:10:53.788  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:11:13.789  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 17:11:33.789  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:11:53.789  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:12:13.790  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:12:33.812  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 22ms
-2019-12-24 17:12:53.817  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 17:13:13.820  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-12-24 17:13:33.820  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:13:53.827  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 17:14:13.850  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 23ms
-2019-12-24 17:14:33.851  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 17:14:53.858  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 17:15:13.873  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 17:15:33.890  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 16ms
-2019-12-24 17:15:53.893  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-12-24 17:16:13.897  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-12-24 17:16:33.914  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 16ms
-2019-12-24 17:16:53.923  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 17:17:13.935  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
-2019-12-24 17:17:33.942  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
-2019-12-24 17:17:53.942  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:18:13.383  INFO 9212 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 3
-2019-12-24 17:18:13.958  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 15ms
-2019-12-24 17:18:33.962  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-12-24 17:18:53.975  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
-2019-12-24 17:19:13.982  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 17:19:33.997  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 17:19:53.999  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-12-24 17:20:14.010  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
-2019-12-24 17:20:34.019  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 17:20:54.036  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 16ms
-2019-12-24 17:21:14.045  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 17:21:34.048  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-12-24 17:21:54.057  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 17:22:14.059  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 17:22:34.066  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 17:22:54.072  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
-2019-12-24 17:23:14.084  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
-2019-12-24 17:23:34.091  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
-2019-12-24 17:23:54.097  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
-2019-12-24 17:24:14.117  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 20ms
-2019-12-24 17:24:34.128  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
-2019-12-24 17:24:54.136  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 17:25:14.143  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 17:25:34.145  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 17:25:54.151  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 17:26:14.160  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 17:26:34.174  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 13ms
-2019-12-24 17:26:54.179  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-12-24 17:27:16.407  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 17:27:36.412  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-12-24 17:27:56.420  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 17:28:16.434  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 17:28:36.444  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 17:28:56.444  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:29:16.452  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 17:29:36.465  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
-2019-12-24 17:29:56.480  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 15ms
-2019-12-24 17:30:16.481  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:30:36.488  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
-2019-12-24 17:30:56.488  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:31:16.488  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:31:36.489  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:31:56.490  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:32:16.495  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 17:32:36.496  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:32:56.496  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:33:15.603  INFO 9212 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 3
-2019-12-24 17:33:16.496  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:33:36.496  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:33:56.497  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:34:16.497  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:34:36.497  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:34:56.497  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:35:16.497  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:35:36.498  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:35:56.498  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:36:16.498  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:36:36.499  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:36:56.504  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 17:37:16.520  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 15ms
-2019-12-24 17:37:36.534  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 17:37:56.541  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
-2019-12-24 17:38:16.547  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 17:38:36.548  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 17:38:56.563  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 17:39:16.570  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
-2019-12-24 17:39:36.579  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 17:39:56.594  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 15ms
-2019-12-24 17:40:16.598  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-12-24 17:40:36.613  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 15ms
-2019-12-24 17:40:56.623  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 17:41:16.638  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 17:41:36.645  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 17:41:56.649  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-12-24 17:42:16.655  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 17:42:36.657  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-12-24 17:42:56.669  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
-2019-12-24 17:43:16.678  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 17:43:36.685  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
-2019-12-24 17:43:56.685  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:44:16.696  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
-2019-12-24 17:44:36.706  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
-2019-12-24 17:44:56.718  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
-2019-12-24 17:45:16.732  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 13ms
-2019-12-24 17:45:36.743  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
-2019-12-24 17:45:56.756  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 13ms
-2019-12-24 17:46:16.769  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
-2019-12-24 17:46:36.781  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
-2019-12-24 17:46:56.784  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-12-24 17:47:16.796  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
-2019-12-24 17:47:36.807  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
-2019-12-24 17:47:56.818  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
-2019-12-24 17:48:15.605  INFO 9212 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 3
-2019-12-24 17:48:16.829  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
-2019-12-24 17:48:36.844  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 17:48:56.853  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 17:49:16.865  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
-2019-12-24 17:49:36.871  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 17:49:56.884  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 13ms
-2019-12-24 17:50:16.899  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 15ms
-2019-12-24 17:50:36.903  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-12-24 17:50:56.913  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 17:51:16.935  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 22ms
-2019-12-24 17:51:36.946  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
-2019-12-24 17:51:56.948  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 17:52:16.948  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:52:36.959  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
-2019-12-24 17:52:56.962  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-12-24 17:53:16.966  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-12-24 17:53:36.974  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 17:53:56.978  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-12-24 17:54:16.990  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
-2019-12-24 17:54:36.996  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 17:54:56.997  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:55:16.997  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:55:36.997  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:55:56.998  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:56:16.998  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:56:36.999  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:56:57.000  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 17:57:17.000  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:57:37.001  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:57:57.002  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:58:17.003  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:58:37.004  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 17:58:57.004  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:59:17.005  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:59:37.005  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 17:59:57.006  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:00:17.007  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 18:00:37.019  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
-2019-12-24 18:00:57.025  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
-2019-12-24 18:01:17.040  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 18:01:37.044  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-12-24 18:01:57.051  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 18:02:17.060  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 18:02:37.066  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 18:02:57.082  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 16ms
-2019-12-24 18:03:15.605  INFO 9212 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 3
-2019-12-24 18:03:17.083  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:03:37.083  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:03:57.097  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 13ms
-2019-12-24 18:04:17.106  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 18:04:37.117  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
-2019-12-24 18:04:57.125  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 18:05:17.154  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 29ms
-2019-12-24 18:05:37.162  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 18:05:57.171  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 18:06:17.172  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:06:37.172  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:06:57.173  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:07:17.173  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:07:37.175  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 18:07:57.175  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:08:17.176  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:08:37.176  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:08:57.176  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:09:17.176  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:09:37.196  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 20ms
-2019-12-24 18:09:57.208  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
-2019-12-24 18:10:17.233  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 24ms
-2019-12-24 18:10:37.240  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 18:10:57.245  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 18:11:17.253  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 18:11:37.253  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:11:57.262  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 18:12:17.266  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-12-24 18:12:37.282  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 15ms
-2019-12-24 18:12:57.286  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-12-24 18:13:17.287  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 18:13:37.294  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
-2019-12-24 18:13:57.309  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 18:14:17.321  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
-2019-12-24 18:14:37.322  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:14:57.328  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
-2019-12-24 18:15:17.328  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:15:37.329  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:15:57.329  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:16:17.330  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:16:37.343  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
-2019-12-24 18:16:57.352  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 18:17:17.363  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
-2019-12-24 18:17:37.366  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-12-24 18:17:57.378  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
-2019-12-24 18:18:15.616  INFO 9212 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 3
-2019-12-24 18:18:17.385  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 18:18:37.397  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
-2019-12-24 18:18:57.409  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
-2019-12-24 18:19:17.415  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
-2019-12-24 18:19:37.428  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 13ms
-2019-12-24 18:19:57.429  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:20:17.439  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 18:20:37.446  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 18:20:57.459  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 13ms
-2019-12-24 18:21:17.464  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-12-24 18:21:37.473  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 18:21:57.488  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 18:22:17.498  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 18:22:37.500  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-12-24 18:22:57.500  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:23:17.500  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:23:37.512  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
-2019-12-24 18:23:57.519  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
-2019-12-24 18:24:17.528  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 18:24:37.532  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-12-24 18:24:57.532  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:25:17.532  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:25:37.533  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:25:57.533  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:26:17.534  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:26:37.535  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:26:57.536  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:27:17.536  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:27:37.536  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:27:57.536  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:28:17.537  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:28:37.537  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:28:57.537  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:29:17.537  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:29:37.537  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:29:57.538  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:30:17.539  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:30:37.539  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:30:57.540  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:31:17.541  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:31:37.551  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
-2019-12-24 18:31:57.562  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
-2019-12-24 18:32:17.586  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 24ms
-2019-12-24 18:32:37.594  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 18:32:57.602  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 18:33:15.628  INFO 9212 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 3
-2019-12-24 18:33:17.611  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 18:33:37.625  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 18:33:57.626  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:34:17.626  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:34:37.627  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:34:57.628  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:35:17.628  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:35:37.628  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:35:57.629  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:36:17.630  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:36:37.630  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:36:57.631  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:37:17.631  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:37:37.632  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:37:57.633  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:38:17.633  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:38:37.633  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:38:57.633  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:39:17.634  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:39:37.634  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:39:57.634  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:40:17.635  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:40:37.635  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:40:57.635  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:41:17.636  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:41:37.636  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:41:57.636  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:42:17.637  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:42:33.624  INFO 14028 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-24 18:42:35.743  INFO 14028 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-24 18:42:35.744  WARN 14028 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/eureka-service-discovery/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-24 18:42:35.746  INFO 14028 --- [main] b.s.ServiceDiscoveryApplication          : No active profile set, falling back to default profiles: default
-2019-12-24 18:42:36.618  WARN 14028 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2019-12-24 18:42:36.857  INFO 14028 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5e625c6e-cd79-329c-bd1d-7a00f1ca5083
-2019-12-24 18:42:37.055  INFO 14028 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$637fb298] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-24 18:42:37.280  INFO 14028 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
-2019-12-24 18:42:37.289  INFO 14028 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-24 18:42:37.290  INFO 14028 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-24 18:42:37.434  INFO 14028 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-24 18:42:37.434  INFO 14028 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1671 ms
-2019-12-24 18:42:37.492  WARN 14028 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-24 18:42:37.508  INFO 14028 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-24 18:42:37.508  INFO 14028 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@4809c771
-2019-12-24 18:42:37.638  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 18:42:38.431  INFO 14028 --- [main] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
-2019-12-24 18:42:38.504  INFO 14028 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-24 18:42:38.504  INFO 14028 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-24 18:42:38.600  INFO 14028 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-24 18:42:38.600  INFO 14028 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-24 18:42:38.984  WARN 14028 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-24 18:42:38.984  INFO 14028 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-24 18:42:39.155  INFO 14028 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-24 18:42:40.970  WARN 14028 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-24 18:42:40.989  WARN 14028 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-24 18:42:41.035  INFO 14028 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-12-24 18:42:41.067  INFO 14028 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-12-24 18:42:41.067  INFO 14028 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
-2019-12-24 18:42:41.069  INFO 14028 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577205761069 with initial instances count: 0
-2019-12-24 18:42:41.101  INFO 14028 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
-2019-12-24 18:42:41.101  INFO 14028 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
-2019-12-24 18:42:41.336  INFO 14028 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-24 18:42:41.336  INFO 14028 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-24 18:42:41.336  INFO 14028 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-24 18:42:41.336  INFO 14028 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-24 18:42:41.416  INFO 14028 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
-2019-12-24 18:42:41.416  INFO 14028 --- [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
-2019-12-24 18:42:41.416  INFO 14028 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
-2019-12-24 18:42:41.431  INFO 14028 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-12-24 18:42:41.494  INFO 14028 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVICE-DISCOVERY with eureka with status UP
-2019-12-24 18:42:41.494  INFO 14028 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
-2019-12-24 18:42:41.508  INFO 14028 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka data center value eureka.datacenter is not set, defaulting to default
-2019-12-24 18:42:41.508  INFO 14028 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka environment value eureka.environment is not set, defaulting to test
-2019-12-24 18:42:41.511  INFO 14028 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
-2019-12-24 18:42:41.511  INFO 14028 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
-2019-12-24 18:42:41.511  INFO 14028 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
-2019-12-24 18:42:41.511  INFO 14028 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
-2019-12-24 18:42:41.521  INFO 14028 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
-2019-12-24 18:42:41.527  INFO 14028 --- [Thread-11] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
-2019-12-24 18:42:41.527  INFO 14028 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2019-12-24 18:42:41.543  WARN 14028 --- [main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
- java.base@11/jdk.internal.misc.Unsafe.park(Native Method)
- java.base@11/java.util.concurrent.locks.LockSupport.park(LockSupport.java:194)
- java.base@11/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2081)
- java.base@11/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:433)
- java.base@11/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1054)
- java.base@11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1114)
- java.base@11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
- java.base@11/java.lang.Thread.run(Thread.java:834)
-2019-12-24 18:42:41.550  INFO 14028 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2019-12-24 18:42:41.552  INFO 14028 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVICE-DISCOVERY with eureka with status DOWN
-2019-12-24 18:42:41.554  INFO 14028 --- [main] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
-2019-12-24 18:42:41.556  INFO 14028 --- [main] c.n.eureka.DefaultEurekaServerContext    : Shut down
-2019-12-24 18:42:41.578  INFO 14028 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-24 18:42:41.581  INFO 14028 --- [main] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2019-12-24 18:42:41.581  INFO 14028 --- [main] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2019-12-24 18:42:41.584 ERROR 14028 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8761 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8761 or configure this application to listen on another port.
-
-2019-12-24 18:42:57.641  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-12-24 18:43:17.641  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:43:37.642  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:43:57.642  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:44:17.642  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:44:37.647  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 18:44:56.074  INFO 5720 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-24 18:44:57.653  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 18:44:58.267  INFO 5720 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-24 18:44:58.268  WARN 5720 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/eureka-service-discovery/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-24 18:44:58.270  INFO 5720 --- [main] b.s.ServiceDiscoveryApplication          : No active profile set, falling back to default profiles: default
-2019-12-24 18:44:59.172  WARN 5720 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2019-12-24 18:44:59.311  INFO 5720 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5e625c6e-cd79-329c-bd1d-7a00f1ca5083
-2019-12-24 18:44:59.445  INFO 5720 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$637fb298] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-24 18:44:59.616  INFO 5720 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
-2019-12-24 18:44:59.632  INFO 5720 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-24 18:44:59.632  INFO 5720 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-24 18:44:59.788  INFO 5720 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-24 18:44:59.788  INFO 5720 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1514 ms
-2019-12-24 18:44:59.889  WARN 5720 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-24 18:44:59.889  INFO 5720 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-24 18:44:59.898  INFO 5720 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@4809c771
-2019-12-24 18:45:00.955  INFO 5720 --- [main] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
-2019-12-24 18:45:01.003  INFO 5720 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-24 18:45:01.003  INFO 5720 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-24 18:45:01.137  INFO 5720 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-24 18:45:01.137  INFO 5720 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-24 18:45:01.454  WARN 5720 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-24 18:45:01.454  INFO 5720 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-24 18:45:01.683  INFO 5720 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-24 18:45:03.353  WARN 5720 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-24 18:45:03.373  WARN 5720 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-24 18:45:03.418  INFO 5720 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-12-24 18:45:03.443  INFO 5720 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-12-24 18:45:03.443  INFO 5720 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
-2019-12-24 18:45:03.443  INFO 5720 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577205903443 with initial instances count: 0
-2019-12-24 18:45:03.484  INFO 5720 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
-2019-12-24 18:45:03.487  INFO 5720 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
-2019-12-24 18:45:03.597  INFO 5720 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-24 18:45:03.598  INFO 5720 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-24 18:45:03.598  INFO 5720 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-24 18:45:03.599  INFO 5720 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-24 18:45:03.697  INFO 5720 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
-2019-12-24 18:45:03.705  INFO 5720 --- [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
-2019-12-24 18:45:03.706  INFO 5720 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
-2019-12-24 18:45:03.711  INFO 5720 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-12-24 18:45:03.786  INFO 5720 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVICE-DISCOVERY with eureka with status UP
-2019-12-24 18:45:03.786  INFO 5720 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
-2019-12-24 18:45:03.786  INFO 5720 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka data center value eureka.datacenter is not set, defaulting to default
-2019-12-24 18:45:03.786  INFO 5720 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka environment value eureka.environment is not set, defaulting to test
-2019-12-24 18:45:03.802  INFO 5720 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
-2019-12-24 18:45:03.802  INFO 5720 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
-2019-12-24 18:45:03.802  INFO 5720 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
-2019-12-24 18:45:03.802  INFO 5720 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
-2019-12-24 18:45:03.802  INFO 5720 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
-2019-12-24 18:45:03.802  INFO 5720 --- [Thread-11] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
-2019-12-24 18:45:03.820  INFO 5720 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2019-12-24 18:45:03.820  WARN 5720 --- [main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
- java.base@11/jdk.internal.misc.Unsafe.park(Native Method)
- java.base@11/java.util.concurrent.locks.LockSupport.park(LockSupport.java:194)
- java.base@11/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2081)
- java.base@11/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:433)
- java.base@11/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1054)
- java.base@11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1114)
- java.base@11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
- java.base@11/java.lang.Thread.run(Thread.java:834)
-2019-12-24 18:45:03.836  INFO 5720 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2019-12-24 18:45:03.836  INFO 5720 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVICE-DISCOVERY with eureka with status DOWN
-2019-12-24 18:45:03.836  INFO 5720 --- [main] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
-2019-12-24 18:45:03.844  INFO 5720 --- [main] c.n.eureka.DefaultEurekaServerContext    : Shut down
-2019-12-24 18:45:03.847  INFO 5720 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-24 18:45:03.847  INFO 5720 --- [main] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2019-12-24 18:45:03.847  INFO 5720 --- [main] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2019-12-24 18:45:03.864 ERROR 5720 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8761 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8761 or configure this application to listen on another port.
-
-2019-12-24 18:45:17.653  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:45:37.657  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-12-24 18:45:57.665  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 18:46:17.665  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:46:37.666  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:46:57.677  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
-2019-12-24 18:47:17.677  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:47:37.686  INFO 9212 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 18:47:48.447  INFO 12324 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-24 18:47:50.564  INFO 12324 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-24 18:47:50.565  WARN 12324 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/eureka-service-discovery/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-24 18:47:50.568  INFO 12324 --- [main] b.s.ServiceDiscoveryApplication          : No active profile set, falling back to default profiles: default
-2019-12-24 18:47:51.860  WARN 12324 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2019-12-24 18:47:52.017  INFO 12324 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5e625c6e-cd79-329c-bd1d-7a00f1ca5083
-2019-12-24 18:47:52.160  INFO 12324 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$637fb298] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-24 18:47:52.351  INFO 12324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
-2019-12-24 18:47:52.360  INFO 12324 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-24 18:47:52.360  INFO 12324 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-24 18:47:52.518  INFO 12324 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-24 18:47:52.523  INFO 12324 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1932 ms
-2019-12-24 18:47:52.582  WARN 12324 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-24 18:47:52.582  INFO 12324 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-24 18:47:52.582  INFO 12324 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@4809c771
-2019-12-24 18:47:53.540  INFO 12324 --- [main] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
-2019-12-24 18:47:53.599  INFO 12324 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-24 18:47:53.600  INFO 12324 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-24 18:47:53.700  INFO 12324 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-24 18:47:53.700  INFO 12324 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-24 18:47:53.975  WARN 12324 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-24 18:47:53.975  INFO 12324 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-24 18:47:54.134  INFO 12324 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-24 18:47:55.801  WARN 12324 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-24 18:47:55.855  WARN 12324 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-24 18:47:55.898  INFO 12324 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-12-24 18:47:55.921  INFO 12324 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-12-24 18:47:55.921  INFO 12324 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
-2019-12-24 18:47:55.926  INFO 12324 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577206075926 with initial instances count: 0
-2019-12-24 18:47:55.959  INFO 12324 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
-2019-12-24 18:47:55.961  INFO 12324 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
-2019-12-24 18:47:56.069  INFO 12324 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-24 18:47:56.070  INFO 12324 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-24 18:47:56.070  INFO 12324 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-24 18:47:56.071  INFO 12324 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-24 18:47:56.170  INFO 12324 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
-2019-12-24 18:47:56.179  INFO 12324 --- [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
-2019-12-24 18:47:56.180  INFO 12324 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
-2019-12-24 18:47:56.195  INFO 12324 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-12-24 18:47:56.263  INFO 12324 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVICE-DISCOVERY with eureka with status UP
-2019-12-24 18:47:56.266  INFO 12324 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
-2019-12-24 18:47:56.269  INFO 12324 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka data center value eureka.datacenter is not set, defaulting to default
-2019-12-24 18:47:56.270  INFO 12324 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka environment value eureka.environment is not set, defaulting to test
-2019-12-24 18:47:56.282  INFO 12324 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
-2019-12-24 18:47:56.282  INFO 12324 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
-2019-12-24 18:47:56.283  INFO 12324 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
-2019-12-24 18:47:56.283  INFO 12324 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
-2019-12-24 18:47:56.283  INFO 12324 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
-2019-12-24 18:47:56.294  INFO 12324 --- [Thread-11] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
-2019-12-24 18:47:56.311  INFO 12324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8761 (http) with context path ''
-2019-12-24 18:47:56.312  INFO 12324 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
-2019-12-24 18:47:57.184  INFO 12324 --- [main] b.s.ServiceDiscoveryApplication          : Started ServiceDiscoveryApplication in 11.001 seconds (JVM running for 12.341)
-2019-12-24 18:47:57.274  INFO 12324 --- [RMI TCP Connection(1)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-24 18:47:57.778  INFO 12324 --- [RMI TCP Connection(3)-192.168.2.112] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-24 18:47:57.778  INFO 12324 --- [RMI TCP Connection(3)-192.168.2.112] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-24 18:47:57.794  INFO 12324 --- [RMI TCP Connection(3)-192.168.2.112] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
-2019-12-24 18:47:59.310  INFO 12324 --- [RMI TCP Connection(1)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-24 18:47:59.310  WARN 12324 --- [RMI TCP Connection(1)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/eureka-service-discovery/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-24 18:48:16.286  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:48:36.287  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:48:54.716  INFO 12324 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.2.112:gateway-service:8080 with status UP (replication=false)
-2019-12-24 18:48:55.310  INFO 12324 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.2.112:gateway-service:8080 with status UP (replication=true)
-2019-12-24 18:48:56.288  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:49:16.288  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:49:36.288  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:49:47.073  INFO 12324 --- [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance AUTH-SERVICE/192.168.2.112:auth-service:8082 with status UP (replication=false)
-2019-12-24 18:49:47.587  INFO 12324 --- [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance AUTH-SERVICE/192.168.2.112:auth-service:8082 with status UP (replication=true)
-2019-12-24 18:49:56.289  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:50:16.290  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 18:50:36.290  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:50:56.290  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:51:16.291  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 18:51:36.291  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:51:56.292  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:52:16.292  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:52:36.293  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:52:56.294  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:53:16.295  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 18:53:36.296  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:53:56.296  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:54:16.297  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:54:36.298  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 18:54:56.299  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:55:16.299  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:55:36.299  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:55:56.299  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:56:16.299  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:56:36.299  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:56:56.299  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:57:16.300  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:57:36.300  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:57:56.300  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:58:16.300  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:58:36.301  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:58:56.301  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:59:16.302  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:59:36.302  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 18:59:56.302  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:00:16.304  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 19:00:36.304  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:00:56.304  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:01:16.304  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:01:36.304  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:01:56.304  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:02:16.304  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:02:36.304  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:02:56.180  INFO 12324 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 5
-2019-12-24 19:02:56.304  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:03:16.305  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:03:36.305  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:03:56.305  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:04:16.305  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:04:36.306  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 19:04:56.307  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:05:16.307  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:05:36.309  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:05:56.309  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:06:16.310  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:06:36.311  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:06:56.311  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:07:16.312  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:07:36.313  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 19:07:56.313  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:08:16.314  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:08:36.315  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:08:56.316  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:09:14.049  INFO 12324 --- [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance AUTH-SERVICE/192.168.2.112:auth-service:8082 with status UP (replication=false)
-2019-12-24 19:09:14.555  INFO 12324 --- [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance AUTH-SERVICE/192.168.2.112:auth-service:8082 with status UP (replication=true)
-2019-12-24 19:09:16.316  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:09:36.316  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:09:56.316  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:10:16.316  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:10:36.316  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:10:56.317  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:11:16.318  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:11:36.318  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:11:56.318  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:12:16.319  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:12:36.319  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:12:56.320  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:13:16.320  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:13:36.321  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 19:13:56.321  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:14:16.321  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:14:36.322  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:14:56.322  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:15:16.323  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:15:36.323  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:15:56.324  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:16:16.325  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:16:36.325  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:16:56.325  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:17:16.326  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:17:36.327  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:17:56.181  INFO 12324 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 5
-2019-12-24 19:17:56.327  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:18:16.327  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:18:36.328  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:18:56.328  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:19:16.329  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:19:36.329  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:19:56.329  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:20:16.330  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:20:36.331  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:20:56.331  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:21:16.341  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 19:21:36.351  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
-2019-12-24 19:21:56.351  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:22:16.351  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:22:36.366  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 19:22:56.371  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 19:23:16.385  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 19:23:36.398  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
-2019-12-24 19:23:56.399  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 19:24:16.403  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-12-24 19:24:36.409  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 19:24:56.416  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 19:25:16.420  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-12-24 19:25:36.434  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 13ms
-2019-12-24 19:25:56.447  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
-2019-12-24 19:26:16.447  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:26:36.456  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 19:26:56.464  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 19:27:16.464  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:27:36.480  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 16ms
-2019-12-24 19:27:56.489  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 19:28:16.502  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 13ms
-2019-12-24 19:28:36.503  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:28:56.506  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-12-24 19:29:16.507  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:29:36.512  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-12-24 19:29:56.512  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:30:16.523  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
-2019-12-24 19:30:36.524  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 19:30:56.539  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 15ms
-2019-12-24 19:31:16.542  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-12-24 19:31:36.556  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 13ms
-2019-12-24 19:31:56.562  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
-2019-12-24 19:32:16.566  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-12-24 19:32:36.576  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
-2019-12-24 19:32:56.182  INFO 12324 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 5
-2019-12-24 19:32:56.591  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 19:33:16.600  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
-2019-12-24 19:33:36.604  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-12-24 19:33:56.608  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-12-24 19:34:16.615  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
-2019-12-24 19:34:36.616  INFO 12324 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:35:44.034  INFO 15532 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-24 19:35:46.165  INFO 15532 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-24 19:35:46.165  WARN 15532 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/eureka-service-discovery/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-24 19:35:46.165  INFO 15532 --- [main] b.s.ServiceDiscoveryApplication          : No active profile set, falling back to default profiles: default
-2019-12-24 19:35:46.877  WARN 15532 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2019-12-24 19:35:47.016  INFO 15532 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5e625c6e-cd79-329c-bd1d-7a00f1ca5083
-2019-12-24 19:35:47.141  INFO 15532 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$282a8554] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-24 19:35:47.301  INFO 15532 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
-2019-12-24 19:35:47.317  INFO 15532 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-24 19:35:47.317  INFO 15532 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-24 19:35:47.469  INFO 15532 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-24 19:35:47.469  INFO 15532 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1288 ms
-2019-12-24 19:35:47.547  WARN 15532 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-24 19:35:47.547  INFO 15532 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-24 19:35:47.547  INFO 15532 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@350567f1
-2019-12-24 19:35:48.425  INFO 15532 --- [main] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
-2019-12-24 19:35:48.483  INFO 15532 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-24 19:35:48.483  INFO 15532 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-24 19:35:48.577  INFO 15532 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-24 19:35:48.577  INFO 15532 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-24 19:35:48.859  WARN 15532 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-24 19:35:48.859  INFO 15532 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-24 19:35:49.011  INFO 15532 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-24 19:35:50.648  WARN 15532 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-24 19:35:50.663  WARN 15532 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-24 19:35:50.710  INFO 15532 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-12-24 19:35:50.742  INFO 15532 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-12-24 19:35:50.742  INFO 15532 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
-2019-12-24 19:35:50.757  INFO 15532 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577208950742 with initial instances count: 0
-2019-12-24 19:35:50.789  INFO 15532 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
-2019-12-24 19:35:50.789  INFO 15532 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
-2019-12-24 19:35:50.889  INFO 15532 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-24 19:35:50.905  INFO 15532 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-24 19:35:50.905  INFO 15532 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-24 19:35:50.905  INFO 15532 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-24 19:35:51.037  INFO 15532 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
-2019-12-24 19:35:51.037  INFO 15532 --- [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
-2019-12-24 19:35:51.037  INFO 15532 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
-2019-12-24 19:35:51.069  INFO 15532 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-12-24 19:35:51.151  INFO 15532 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVICE-DISCOVERY with eureka with status UP
-2019-12-24 19:35:51.157  INFO 15532 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
-2019-12-24 19:35:51.160  INFO 15532 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka data center value eureka.datacenter is not set, defaulting to default
-2019-12-24 19:35:51.161  INFO 15532 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka environment value eureka.environment is not set, defaulting to test
-2019-12-24 19:35:51.165  INFO 15532 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
-2019-12-24 19:35:51.165  INFO 15532 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
-2019-12-24 19:35:51.165  INFO 15532 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
-2019-12-24 19:35:51.165  INFO 15532 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
-2019-12-24 19:35:51.165  INFO 15532 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
-2019-12-24 19:35:51.185  INFO 15532 --- [Thread-11] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
-2019-12-24 19:35:51.199  INFO 15532 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8761 (http) with context path ''
-2019-12-24 19:35:51.199  INFO 15532 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
-2019-12-24 19:35:52.154  INFO 15532 --- [main] b.s.ServiceDiscoveryApplication          : Started ServiceDiscoveryApplication in 10.434 seconds (JVM running for 11.864)
-2019-12-24 19:35:52.260  INFO 15532 --- [RMI TCP Connection(3)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-24 19:35:52.867  INFO 15532 --- [RMI TCP Connection(5)-192.168.2.112] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-24 19:35:52.867  INFO 15532 --- [RMI TCP Connection(5)-192.168.2.112] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-24 19:35:52.871  INFO 15532 --- [RMI TCP Connection(5)-192.168.2.112] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2019-12-24 19:35:54.342  INFO 15532 --- [RMI TCP Connection(3)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-24 19:35:54.342  WARN 15532 --- [RMI TCP Connection(3)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/eureka-service-discovery/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-24 19:36:11.175  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:36:31.189  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 19:36:51.199  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 19:37:11.205  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-12-24 19:37:31.206  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:37:51.206  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:38:11.207  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 19:38:31.220  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
-2019-12-24 19:38:51.234  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 19:39:11.235  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:39:31.247  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
-2019-12-24 19:39:51.257  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
-2019-12-24 19:40:11.258  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:40:31.272  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
-2019-12-24 19:40:51.282  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
-2019-12-24 19:41:11.292  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
-2019-12-24 19:41:31.293  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:41:51.294  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:42:11.294  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:42:31.294  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:42:51.295  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:43:11.296  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:43:31.297  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:43:51.298  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:44:11.298  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:44:31.298  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:44:51.298  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:45:11.298  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:45:31.299  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:45:51.299  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:46:11.299  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:46:31.300  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:46:51.300  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:47:11.301  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:47:31.302  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:47:51.302  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:48:11.303  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:48:31.303  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:48:51.303  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:49:11.304  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:49:31.303  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:49:51.304  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:50:11.304  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:50:31.305  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:50:51.038  INFO 15532 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 1
-2019-12-24 19:50:51.306  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 19:51:11.306  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:51:31.307  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:51:51.307  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:52:11.308  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 19:52:31.309  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-12-24 19:52:51.309  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:53:11.310  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:53:31.310  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:53:51.310  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:54:11.310  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:54:31.310  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-12-24 19:54:51.311  INFO 15532 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:27:25.724  INFO 12292 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-12-25 10:27:28.129  INFO 12292 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2019-12-25 10:27:28.144  WARN 12292 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/eureka-service-discovery/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-12-25 10:27:28.144  INFO 12292 --- [main] b.s.ServiceDiscoveryApplication          : No active profile set, falling back to default profiles: default
+2019-12-25 10:27:31.571  WARN 12292 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-12-25 10:27:32.057  INFO 12292 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5e625c6e-cd79-329c-bd1d-7a00f1ca5083
+2019-12-25 10:27:32.391  INFO 12292 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$24a88de1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-25 10:27:33.289  INFO 12292 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
+2019-12-25 10:27:33.327  INFO 12292 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-25 10:27:33.328  INFO 12292 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-25 10:27:33.595  INFO 12292 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-25 10:27:33.595  INFO 12292 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5173 ms
+2019-12-25 10:27:33.829  WARN 12292 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-12-25 10:27:33.830  INFO 12292 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-12-25 10:27:33.871  INFO 12292 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@53b7bf01
+2019-12-25 10:27:35.609  INFO 12292 --- [main] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
+2019-12-25 10:27:35.713  INFO 12292 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-12-25 10:27:35.714  INFO 12292 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-12-25 10:27:36.297  INFO 12292 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-12-25 10:27:36.297  INFO 12292 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-12-25 10:27:37.056  WARN 12292 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-12-25 10:27:37.056  INFO 12292 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-12-25 10:27:37.523  INFO 12292 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-25 10:27:39.801  WARN 12292 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2019-12-25 10:27:39.818  WARN 12292 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2019-12-25 10:27:40.053  INFO 12292 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-12-25 10:27:40.539  INFO 12292 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-12-25 10:27:40.539  INFO 12292 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2019-12-25 10:27:40.639  INFO 12292 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577262460577 with initial instances count: 0
+2019-12-25 10:27:40.779  INFO 12292 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+2019-12-25 10:27:40.781  INFO 12292 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
+2019-12-25 10:27:41.454  INFO 12292 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-12-25 10:27:41.454  INFO 12292 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-12-25 10:27:41.454  INFO 12292 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-12-25 10:27:41.454  INFO 12292 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-12-25 10:27:41.639  INFO 12292 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
+2019-12-25 10:27:41.655  INFO 12292 --- [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+2019-12-25 10:27:41.655  INFO 12292 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
+2019-12-25 10:27:41.708  INFO 12292 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-25 10:27:41.825  INFO 12292 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVICE-DISCOVERY with eureka with status UP
+2019-12-25 10:27:41.827  INFO 12292 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
+2019-12-25 10:27:41.829  INFO 12292 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka data center value eureka.datacenter is not set, defaulting to default
+2019-12-25 10:27:41.830  INFO 12292 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka environment value eureka.environment is not set, defaulting to test
+2019-12-25 10:27:41.849  INFO 12292 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2019-12-25 10:27:41.849  INFO 12292 --- [Thread-11] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2019-12-25 10:27:41.850  INFO 12292 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+2019-12-25 10:27:41.850  INFO 12292 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+2019-12-25 10:27:41.851  INFO 12292 --- [Thread-11] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+2019-12-25 10:27:41.859  INFO 12292 --- [Thread-11] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2019-12-25 10:27:41.924  INFO 12292 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8761 (http) with context path ''
+2019-12-25 10:27:41.939  INFO 12292 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+2019-12-25 10:27:42.723  INFO 12292 --- [main] b.s.ServiceDiscoveryApplication          : Started ServiceDiscoveryApplication in 23.731 seconds (JVM running for 27.914)
+2019-12-25 10:27:43.018  INFO 12292 --- [RMI TCP Connection(1)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-12-25 10:27:43.562  INFO 12292 --- [RMI TCP Connection(3)-192.168.2.112] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-25 10:27:43.562  INFO 12292 --- [RMI TCP Connection(3)-192.168.2.112] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-25 10:27:43.572  INFO 12292 --- [RMI TCP Connection(3)-192.168.2.112] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2019-12-25 10:27:45.071  INFO 12292 --- [RMI TCP Connection(1)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2019-12-25 10:27:45.071  WARN 12292 --- [RMI TCP Connection(1)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/eureka-service-discovery/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-12-25 10:28:01.853  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:28:21.853  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:28:41.853  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:29:01.854  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2019-12-25 10:29:21.855  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:29:41.856  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:30:01.856  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:30:21.856  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:30:40.023  INFO 12292 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.2.112:gateway-service:8080 with status UP (replication=false)
+2019-12-25 10:30:40.594  INFO 12292 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/192.168.2.112:gateway-service:8080 with status UP (replication=true)
+2019-12-25 10:30:41.856  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:31:01.857  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:31:21.857  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:31:24.792  INFO 12292 --- [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance AUTH-SERVICE/192.168.2.112:auth-service:8082 with status UP (replication=false)
+2019-12-25 10:31:25.301  INFO 12292 --- [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance AUTH-SERVICE/192.168.2.112:auth-service:8082 with status UP (replication=true)
+2019-12-25 10:31:41.857  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:32:01.858  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:32:21.859  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:32:41.859  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:33:01.859  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:33:21.860  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:33:41.860  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:34:01.861  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:34:21.861  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:34:41.861  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:35:01.862  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:35:21.862  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:35:41.862  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:36:01.873  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
+2019-12-25 10:36:21.873  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:36:41.874  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:37:01.885  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
+2019-12-25 10:37:21.886  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:37:41.897  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
+2019-12-25 10:38:01.901  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2019-12-25 10:38:21.901  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:38:41.916  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 15ms
+2019-12-25 10:39:01.917  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2019-12-25 10:39:21.918  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2019-12-25 10:39:41.932  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 13ms
+2019-12-25 10:40:01.933  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2019-12-25 10:40:21.948  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
+2019-12-25 10:40:41.963  INFO 12292 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 15ms
