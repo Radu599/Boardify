@@ -1,4 +1,4 @@
-package boardify.model;
+package boardify.game.model;
 
 import lombok.*;
 
@@ -18,5 +18,4 @@ public class Game {
     private int suggestedAge;
     private int averagePlayingTime;
     private String description;
-    // TODO: more details
 }

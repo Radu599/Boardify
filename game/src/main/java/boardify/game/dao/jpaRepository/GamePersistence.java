@@ -1,4 +1,4 @@
-package boardify.dao.jpaRepository;
+package boardify.game.dao.jpaRepository;
 
 import lombok.*;
 

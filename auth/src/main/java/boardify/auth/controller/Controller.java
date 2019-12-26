@@ -52,6 +52,13 @@ public class Controller {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @ApiOperation(value = "test")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "SUCCESS", response = AuthenticationResponse.class),
+            @ApiResponse(code = 400, message = "INVALID_CREDENTIALS", response = AuthExceptionType.class),
+            @ApiResponse(code = 404, message = "INVALID_CREDENTIALS", response = AuthExceptionType.class)
+    })
+
     private void loggingUserDto(UserDto userDto){
 
         logger.info("Username: {}", userDto.getUsername());

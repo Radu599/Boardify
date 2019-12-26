@@ -1,6 +1,6 @@
-package boardify.service;
+package boardify.game.service;
 
-import boardify.model.Game;
+import boardify.game.model.Game;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package boardify.dao;
+package boardify.game.dao;
 
-import boardify.model.Game;
+import boardify.game.model.Game;
 
 import java.util.List;
 
