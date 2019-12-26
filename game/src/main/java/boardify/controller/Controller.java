@@ -1,6 +1,7 @@
 package boardify.controller;
 
 
+import boardify.model.Game;
 import boardify.service.Service;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -33,5 +34,16 @@ public class Controller {
     @Autowired
     private Service service;
 
+    @ApiOperation(value = "Find all games")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "SUCCESS", response = List.class),
+    })
+    @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Game>> findAllGames() {
 
+        logger.info("+++++++++LOGGING findAllGames+++++++++");
+        List<Game> entities = service.findAllGames();
+        logger.info("+++++++++SUCCESSFUL LOGGING findAllGames+++++++++");
+        return new ResponseEntity<>(entities, HttpStatus.OK);
+    }
 }
