@@ -753,3 +753,25 @@ Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
 2019-12-28 13:44:58.664  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2019-12-28 13:49:58.666  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2019-12-28 13:54:58.669  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 13:59:58.673  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 14:04:58.676  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 14:09:22.327  INFO 25064 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-28 14:09:22.328  INFO 25064 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-28 14:09:22.383  INFO 25064 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 54 ms
+2019-12-28 14:09:22.629  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.controller.Controller      : +++++++++LOGGING login+++++++++
+2019-12-28 14:09:22.634  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.controller.Controller      : Username: a@a.com
+2019-12-28 14:09:22.635  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.controller.Controller      : Password: a
+2019-12-28 14:09:22.635  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING login+++++++++++++++++++++++++++++++
+2019-12-28 14:09:22.635  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : username: a@a.com
+2019-12-28 14:09:22.635  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : password: a
+2019-12-28 14:09:22.637  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
+2019-12-28 14:09:22.637  INFO 25064 --- [http-nio-8082-exec-1] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++LOGGING findUser+++++++++
+2019-12-28 14:09:22.637  INFO 25064 --- [http-nio-8082-exec-1] b.a.dao.impl.jpaRepository.UserDaoJpa    : username: a@a.com
+2019-12-28 14:09:22.670  INFO 25064 --- [http-nio-8082-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2019-12-28 14:09:22.671  WARN 25064 --- [http-nio-8082-exec-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-12-28 14:09:22.680  INFO 25064 --- [http-nio-8082-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2019-12-28 14:09:22.782  INFO 25064 --- [http-nio-8082-exec-1] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++SUCCESSFUL LOGGING findUser+++++++++
+2019-12-28 14:09:22.783  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
+2019-12-28 14:09:23.202  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING login+++++++++++++++++++++++++++++++
+2019-12-28 14:09:23.202  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.controller.Controller      : +++++++++SUCCESSFUL LOGGING login+++++++++
+2019-12-28 14:09:58.683  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
