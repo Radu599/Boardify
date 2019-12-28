@@ -1,313 +1,49 @@
-2019-12-26 00:03:46.420  INFO 10684 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 10:58:16.744  INFO 10684 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 11:03:16.746  INFO 10684 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 11:08:16.751  INFO 10684 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 11:13:16.767  INFO 10684 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 11:18:16.768  INFO 10684 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 11:23:16.770  INFO 10684 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 11:26:48.897  INFO 14564 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-26 11:26:51.008  INFO 14564 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-26 11:26:51.009  WARN 14564 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/gateway-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-26 11:26:51.010  INFO 14564 --- [main] boardify.gateway.GatewayApplication      : No active profile set, falling back to default profiles: default
-2019-12-26 11:26:51.894  WARN 14564 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2019-12-26 11:26:51.905  WARN 14564 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
-2019-12-26 11:26:52.034  INFO 14564 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5e7f39a7-80c0-3762-89bd-c50d58ff1921
-2019-12-26 11:26:52.268  INFO 14564 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$b1af470a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-26 11:26:52.486  INFO 14564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-12-26 11:26:52.495  INFO 14564 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-26 11:26:52.495  INFO 14564 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-26 11:26:52.660  INFO 14564 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-26 11:26:52.660  INFO 14564 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1633 ms
-2019-12-26 11:26:52.750  WARN 14564 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-26 11:26:52.750  INFO 14564 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-26 11:26:52.757  INFO 14564 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@356fa0d1
-2019-12-26 11:26:53.965  INFO 14564 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: ef0139f1-f809-480a-93e8-e1c730a51f71
-
-2019-12-26 11:26:54.034  INFO 14564 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@443dae2, org.springframework.security.web.context.SecurityContextPersistenceFilter@565a6af, org.springframework.security.web.header.HeaderWriterFilter@490d9c41, org.springframework.web.filter.CorsFilter@8f09a02, boardify.commonsecurity.filters.microserviceFilters.JwtTokenAuthenticationFilter@762cdf46, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4cded2cd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7b2dd35d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5454be, org.springframework.security.web.session.SessionManagementFilter@3c5e4aac, org.springframework.security.web.access.ExceptionTranslationFilter@4067634b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3cc6f036]
-2019-12-26 11:26:54.052  WARN 14564 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-26 11:26:54.052  INFO 14564 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-26 11:26:54.188  INFO 14564 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-26 11:26:55.127  WARN 14564 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-26 11:26:55.145  WARN 14564 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-26 11:26:55.324  INFO 14564 --- [main] o.s.c.n.zuul.ZuulFilterInitializer       : Starting filter initializer
-2019-12-26 11:26:55.335  INFO 14564 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-12-26 11:26:55.414  INFO 14564 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-12-26 11:26:55.443  INFO 14564 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-12-26 11:26:55.482  INFO 14564 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-26 11:26:55.482  INFO 14564 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-26 11:26:55.600  INFO 14564 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-26 11:26:55.600  INFO 14564 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-26 11:26:55.758  INFO 14564 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 11:26:56.001  INFO 14564 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-12-26 11:26:56.002  INFO 14564 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-12-26 11:26:56.002  INFO 14564 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-12-26 11:26:56.002  INFO 14564 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-12-26 11:26:56.002  INFO 14564 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-12-26 11:26:56.002  INFO 14564 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2019-12-26 11:26:56.002  INFO 14564 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-12-26 11:26:56.144  INFO 14564 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-12-26 11:26:56.146  INFO 14564 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2019-12-26 11:26:56.148  INFO 14564 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2019-12-26 11:26:56.152  INFO 14564 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577352416151 with initial instances count: 0
-2019-12-26 11:26:56.155  INFO 14564 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
-2019-12-26 11:26:56.156  INFO 14564 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1577352416156, current=UP, previous=STARTING]
-2019-12-26 11:26:56.158  INFO 14564 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/192.168.2.112:gateway-service:8080: registering service...
-2019-12-26 11:26:56.222  INFO 14564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-26 11:26:56.223  INFO 14564 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
-2019-12-26 11:26:56.231  INFO 14564 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/192.168.2.112:gateway-service:8080 - registration status: 204
-2019-12-26 11:26:56.926  INFO 14564 --- [main] boardify.gateway.GatewayApplication      : Started GatewayApplication in 10.911 seconds (JVM running for 12.375)
-2019-12-26 11:26:57.884  INFO 14564 --- [RMI TCP Connection(2)-192.168.2.112] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-26 11:26:57.885  INFO 14564 --- [RMI TCP Connection(2)-192.168.2.112] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-26 11:26:57.893  INFO 14564 --- [RMI TCP Connection(3)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-26 11:26:57.897  INFO 14564 --- [RMI TCP Connection(2)-192.168.2.112] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
-2019-12-26 11:26:59.909  INFO 14564 --- [RMI TCP Connection(3)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-26 11:26:59.909  WARN 14564 --- [RMI TCP Connection(3)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/gateway-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-26 11:27:26.148  INFO 14564 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-12-26 11:27:26.149  INFO 14564 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-12-26 11:27:26.149  INFO 14564 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-12-26 11:27:26.149  INFO 14564 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-12-26 11:27:26.149  INFO 14564 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-12-26 11:27:26.149  INFO 14564 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2019-12-26 11:27:26.149  INFO 14564 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-12-26 11:27:26.170  INFO 14564 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-12-26 11:29:54.607  INFO 8384 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-26 11:29:56.846  INFO 8384 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-26 11:29:56.848  WARN 8384 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/gateway-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-26 11:29:56.852  INFO 8384 --- [main] boardify.gateway.GatewayApplication      : No active profile set, falling back to default profiles: default
-2019-12-26 11:29:58.128  WARN 8384 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2019-12-26 11:29:58.142  WARN 8384 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
-2019-12-26 11:29:58.340  INFO 8384 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5e7f39a7-80c0-3762-89bd-c50d58ff1921
-2019-12-26 11:29:58.617  INFO 8384 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$2e91ca0f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-26 11:29:58.903  INFO 8384 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-12-26 11:29:58.913  INFO 8384 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-26 11:29:58.914  INFO 8384 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-26 11:29:59.071  INFO 8384 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-26 11:29:59.072  INFO 8384 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2189 ms
-2019-12-26 11:29:59.165  WARN 8384 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-26 11:29:59.166  INFO 8384 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-26 11:29:59.173  INFO 8384 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@e5c5e6
-2019-12-26 11:30:00.616  INFO 8384 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: 6c3056d5-fff9-43a8-b26b-3ca79f18f362
-
-2019-12-26 11:30:00.687  INFO 8384 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@49639118, org.springframework.security.web.context.SecurityContextPersistenceFilter@1cee3e05, org.springframework.security.web.header.HeaderWriterFilter@5db04bd2, org.springframework.web.filter.CorsFilter@45451333, boardify.commonsecurity.filters.microserviceFilters.JwtTokenAuthenticationFilter@af3295f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b2dd35d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4ec37a42, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6942ee48, org.springframework.security.web.session.SessionManagementFilter@31c5304f, org.springframework.security.web.access.ExceptionTranslationFilter@3a9c92b5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1203d787]
-2019-12-26 11:30:00.706  WARN 8384 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-26 11:30:00.706  INFO 8384 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-26 11:30:00.874  INFO 8384 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-26 11:30:02.071  WARN 8384 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-26 11:30:02.094  WARN 8384 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-26 11:30:02.282  INFO 8384 --- [main] o.s.c.n.zuul.ZuulFilterInitializer       : Starting filter initializer
-2019-12-26 11:30:02.294  INFO 8384 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-12-26 11:30:02.374  INFO 8384 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-12-26 11:30:02.407  INFO 8384 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-12-26 11:30:02.452  INFO 8384 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-26 11:30:02.453  INFO 8384 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-26 11:30:02.591  INFO 8384 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-26 11:30:02.591  INFO 8384 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-26 11:30:02.769  INFO 8384 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 11:30:03.037  INFO 8384 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-12-26 11:30:03.038  INFO 8384 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-12-26 11:30:03.038  INFO 8384 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-12-26 11:30:03.038  INFO 8384 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-12-26 11:30:03.038  INFO 8384 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-12-26 11:30:03.038  INFO 8384 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2019-12-26 11:30:03.038  INFO 8384 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-12-26 11:30:03.225  INFO 8384 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-12-26 11:30:03.228  INFO 8384 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2019-12-26 11:30:03.231  INFO 8384 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2019-12-26 11:30:03.235  INFO 8384 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577352603234 with initial instances count: 0
-2019-12-26 11:30:03.239  INFO 8384 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
-2019-12-26 11:30:03.239  INFO 8384 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1577352603239, current=UP, previous=STARTING]
-2019-12-26 11:30:03.242  INFO 8384 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/192.168.2.112:gateway-service:8080: registering service...
-2019-12-26 11:30:03.323  INFO 8384 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-26 11:30:03.324  INFO 8384 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
-2019-12-26 11:30:03.325  INFO 8384 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/192.168.2.112:gateway-service:8080 - registration status: 204
-2019-12-26 11:30:04.124  INFO 8384 --- [main] boardify.gateway.GatewayApplication      : Started GatewayApplication in 13.018 seconds (JVM running for 14.391)
-2019-12-26 11:30:04.853  INFO 8384 --- [RMI TCP Connection(5)-192.168.2.112] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-26 11:30:04.853  INFO 8384 --- [RMI TCP Connection(5)-192.168.2.112] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-26 11:30:04.861  INFO 8384 --- [RMI TCP Connection(4)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-26 11:30:04.867  INFO 8384 --- [RMI TCP Connection(5)-192.168.2.112] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
-2019-12-26 11:30:06.888  INFO 8384 --- [RMI TCP Connection(4)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-26 11:30:06.888  WARN 8384 --- [RMI TCP Connection(4)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/gateway-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-26 11:30:33.229  INFO 8384 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-12-26 11:30:33.230  INFO 8384 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-12-26 11:30:33.230  INFO 8384 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-12-26 11:30:33.230  INFO 8384 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-12-26 11:30:33.230  INFO 8384 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-12-26 11:30:33.230  INFO 8384 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2019-12-26 11:30:33.231  INFO 8384 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-12-26 11:30:33.251  INFO 8384 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-12-26 11:35:03.040  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 11:40:03.043  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 11:45:03.045  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 11:50:03.047  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 11:55:03.048  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 12:00:03.049  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 12:05:03.050  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 12:10:03.053  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 12:15:03.054  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 12:20:03.055  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 12:25:03.058  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 12:30:03.059  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 12:35:03.062  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 12:40:03.063  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 12:45:03.066  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 12:50:03.067  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 12:55:03.069  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 13:00:03.070  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 13:05:03.072  INFO 8384 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 13:21:42.515  INFO 12348 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-26 13:21:44.648  INFO 12348 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-26 13:21:44.649  WARN 12348 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/gateway-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-26 13:21:44.653  INFO 12348 --- [main] boardify.gateway.GatewayApplication      : No active profile set, falling back to default profiles: default
-2019-12-26 13:21:46.320  WARN 12348 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2019-12-26 13:21:46.347  WARN 12348 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
-2019-12-26 13:21:46.620  INFO 12348 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5e7f39a7-80c0-3762-89bd-c50d58ff1921
-2019-12-26 13:21:47.083  INFO 12348 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1baa8043] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-26 13:21:47.515  INFO 12348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-12-26 13:21:47.531  INFO 12348 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-26 13:21:47.532  INFO 12348 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-26 13:21:47.803  INFO 12348 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-26 13:21:47.804  INFO 12348 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3116 ms
-2019-12-26 13:21:47.934  WARN 12348 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-26 13:21:47.935  INFO 12348 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-26 13:21:47.945  INFO 12348 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@7ee2423
-2019-12-26 13:21:50.395  INFO 12348 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: ef24a225-43dd-4dda-802d-bcedbe5e3796
-
-2019-12-26 13:21:50.551  INFO 12348 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@30a791a6, org.springframework.security.web.context.SecurityContextPersistenceFilter@6f921e32, org.springframework.security.web.header.HeaderWriterFilter@12e40e98, org.springframework.web.filter.CorsFilter@719bb60d, boardify.commonsecurity.filters.microserviceFilters.JwtTokenAuthenticationFilter@7d5a0b14, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@43df1377, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5d6d424d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5981f2c6, org.springframework.security.web.session.SessionManagementFilter@67c2b55d, org.springframework.security.web.access.ExceptionTranslationFilter@21bf308, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5a6af2c4]
-2019-12-26 13:21:50.590  WARN 12348 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-26 13:21:50.590  INFO 12348 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-26 13:21:50.950  INFO 12348 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-26 13:21:53.545  WARN 12348 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-26 13:21:53.575  WARN 12348 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-26 13:21:53.911  INFO 12348 --- [main] o.s.c.n.zuul.ZuulFilterInitializer       : Starting filter initializer
-2019-12-26 13:21:53.928  INFO 12348 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-12-26 13:21:54.035  INFO 12348 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-12-26 13:21:54.083  INFO 12348 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-12-26 13:21:54.170  INFO 12348 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-26 13:21:54.172  INFO 12348 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-26 13:21:54.356  INFO 12348 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-26 13:21:54.356  INFO 12348 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-26 13:21:54.661  INFO 12348 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 13:21:55.036  INFO 12348 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-12-26 13:21:55.037  INFO 12348 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-12-26 13:21:55.037  INFO 12348 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-12-26 13:21:55.038  INFO 12348 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-12-26 13:21:55.038  INFO 12348 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-12-26 13:21:55.038  INFO 12348 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2019-12-26 13:21:55.038  INFO 12348 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-12-26 13:21:55.269  INFO 12348 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-12-26 13:21:55.272  INFO 12348 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2019-12-26 13:21:55.277  INFO 12348 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2019-12-26 13:21:55.283  INFO 12348 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577359315282 with initial instances count: 0
-2019-12-26 13:21:55.289  INFO 12348 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
-2019-12-26 13:21:55.290  INFO 12348 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1577359315290, current=UP, previous=STARTING]
-2019-12-26 13:21:55.295  INFO 12348 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/192.168.2.112:gateway-service:8080: registering service...
-2019-12-26 13:21:55.409  INFO 12348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-26 13:21:55.409  INFO 12348 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/192.168.2.112:gateway-service:8080 - registration status: 204
-2019-12-26 13:21:55.410  INFO 12348 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
-2019-12-26 13:21:56.507  INFO 12348 --- [main] boardify.gateway.GatewayApplication      : Started GatewayApplication in 17.342 seconds (JVM running for 19.091)
-2019-12-26 13:21:57.574  INFO 12348 --- [RMI TCP Connection(4)-192.168.2.112] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-26 13:21:57.574  INFO 12348 --- [RMI TCP Connection(4)-192.168.2.112] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-26 13:21:57.586  INFO 12348 --- [RMI TCP Connection(5)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-26 13:21:57.592  INFO 12348 --- [RMI TCP Connection(4)-192.168.2.112] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
-2019-12-26 13:21:59.606  INFO 12348 --- [RMI TCP Connection(5)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-26 13:21:59.607  WARN 12348 --- [RMI TCP Connection(5)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/gateway-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-26 13:22:25.276  INFO 12348 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-12-26 13:22:25.277  INFO 12348 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-12-26 13:22:25.278  INFO 12348 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-12-26 13:22:25.278  INFO 12348 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-12-26 13:22:25.279  INFO 12348 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-12-26 13:22:25.279  INFO 12348 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2019-12-26 13:22:25.279  INFO 12348 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-12-26 13:22:25.318  INFO 12348 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-12-26 13:26:55.043  INFO 12348 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 13:31:55.046  INFO 12348 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 13:36:55.048  INFO 12348 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 13:41:55.049  INFO 12348 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 13:46:55.051  INFO 12348 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 13:51:55.054  INFO 12348 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 13:56:55.057  INFO 12348 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 14:01:55.058  INFO 12348 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 14:06:55.060  INFO 12348 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 14:31:00.435  INFO 2260 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-26 14:31:03.017  INFO 2260 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-26 14:31:03.018  WARN 2260 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/gateway-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-26 14:31:03.021  INFO 2260 --- [main] boardify.gateway.GatewayApplication      : No active profile set, falling back to default profiles: default
-2019-12-26 14:31:05.930  WARN 2260 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
-2019-12-26 14:31:05.969  WARN 2260 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
-2019-12-26 14:31:06.362  INFO 2260 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5e7f39a7-80c0-3762-89bd-c50d58ff1921
-2019-12-26 14:31:07.077  INFO 2260 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$b1af470a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-26 14:31:07.902  INFO 2260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-12-26 14:31:07.926  INFO 2260 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-26 14:31:07.926  INFO 2260 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-26 14:31:08.632  INFO 2260 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-26 14:31:08.633  INFO 2260 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5576 ms
-2019-12-26 14:31:09.063  WARN 2260 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-26 14:31:09.064  INFO 2260 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-26 14:31:09.095  INFO 2260 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@79295932
-2019-12-26 14:31:11.898  INFO 2260 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
-
-Using generated security password: ec018310-8f67-4b4d-89ad-e39362d275ab
-
-2019-12-26 14:31:12.058  INFO 2260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37dec463, org.springframework.security.web.context.SecurityContextPersistenceFilter@3a9c92b5, org.springframework.security.web.header.HeaderWriterFilter@565a6af, org.springframework.web.filter.CorsFilter@3bf26810, boardify.commonsecurity.filters.microserviceFilters.JwtTokenAuthenticationFilter@19e2db7c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5db04bd2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4d8522ff, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@19213a74, org.springframework.security.web.session.SessionManagementFilter@4cded2cd, org.springframework.security.web.access.ExceptionTranslationFilter@3c5e4aac, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@44618fe6]
-2019-12-26 14:31:12.106  WARN 2260 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-26 14:31:12.106  INFO 2260 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-26 14:31:12.487  INFO 2260 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-26 14:31:14.087  WARN 2260 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-26 14:31:14.115  WARN 2260 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-26 14:31:14.441  INFO 2260 --- [main] o.s.c.n.zuul.ZuulFilterInitializer       : Starting filter initializer
-2019-12-26 14:31:14.457  INFO 2260 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-12-26 14:31:14.591  INFO 2260 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-12-26 14:31:14.638  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-12-26 14:31:14.708  INFO 2260 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-26 14:31:14.709  INFO 2260 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-26 14:31:14.908  INFO 2260 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-26 14:31:14.908  INFO 2260 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-26 14:31:15.204  INFO 2260 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 14:31:15.596  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-12-26 14:31:15.596  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-12-26 14:31:15.596  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-12-26 14:31:15.597  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-12-26 14:31:15.597  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-12-26 14:31:15.597  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2019-12-26 14:31:15.597  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-12-26 14:31:15.928  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-12-26 14:31:15.931  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2019-12-26 14:31:15.934  INFO 2260 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2019-12-26 14:31:15.939  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577363475938 with initial instances count: 0
-2019-12-26 14:31:15.944  INFO 2260 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
-2019-12-26 14:31:15.945  INFO 2260 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1577363475945, current=UP, previous=STARTING]
-2019-12-26 14:31:15.949  INFO 2260 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/192.168.2.112:gateway-service:8080: registering service...
-2019-12-26 14:31:16.048  INFO 2260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-26 14:31:16.049  INFO 2260 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
-2019-12-26 14:31:16.056  INFO 2260 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/192.168.2.112:gateway-service:8080 - registration status: 204
-2019-12-26 14:31:17.113  INFO 2260 --- [main] boardify.gateway.GatewayApplication      : Started GatewayApplication in 21.454 seconds (JVM running for 23.333)
-2019-12-26 14:31:17.677  INFO 2260 --- [RMI TCP Connection(3)-192.168.2.112] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-26 14:31:17.678  INFO 2260 --- [RMI TCP Connection(3)-192.168.2.112] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-26 14:31:17.690  INFO 2260 --- [RMI TCP Connection(5)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-26 14:31:17.695  INFO 2260 --- [RMI TCP Connection(3)-192.168.2.112] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
-2019-12-26 14:31:19.704  INFO 2260 --- [RMI TCP Connection(5)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-26 14:31:19.705  WARN 2260 --- [RMI TCP Connection(5)-192.168.2.112] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/gateway-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-26 14:31:45.932  INFO 2260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-12-26 14:31:45.933  INFO 2260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-12-26 14:31:45.933  INFO 2260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-12-26 14:31:45.933  INFO 2260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-12-26 14:31:45.934  INFO 2260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-12-26 14:31:45.934  INFO 2260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2019-12-26 14:31:45.934  INFO 2260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-12-26 14:31:45.964  INFO 2260 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-12-26 14:36:15.599  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 14:41:15.602  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 14:46:15.603  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 14:51:15.605  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 14:56:15.607  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 15:01:15.610  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 15:06:15.612  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 15:11:15.615  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 15:16:15.616  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-26 15:21:15.617  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 00:02:59.148  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 09:55:27.624  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 10:00:27.625  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 10:05:27.627  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 10:10:27.629  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 10:15:27.632  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 10:20:27.633  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 10:25:27.635  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 10:30:27.636  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 10:35:27.638  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 10:40:27.639  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 10:45:27.641  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 10:50:27.644  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 10:55:27.646  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 11:00:27.647  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 11:05:27.648  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 11:10:27.650  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 11:15:27.652  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 11:20:27.653  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 11:25:27.655  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 11:30:27.656  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 11:35:27.657  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 11:40:27.659  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 11:45:27.662  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 11:50:27.664  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 11:55:27.665  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 12:00:27.666  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 12:05:27.668  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 12:10:27.669  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 12:15:27.672  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 12:20:27.675  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 12:25:27.677  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 12:30:27.679  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 12:35:27.680  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 12:40:27.683  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 12:45:27.685  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 12:50:27.686  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 12:55:27.689  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 13:00:27.690  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 13:05:27.692  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 13:10:27.694  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 13:15:27.695  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 13:20:27.697  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 13:25:27.698  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 13:30:27.700  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 13:35:27.702  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 13:40:27.704  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 13:45:27.706  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-28 13:50:27.707  INFO 2260 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
