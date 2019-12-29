@@ -1,777 +1,113 @@
-2019-12-28 00:03:12.320  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 09:54:35.455  WARN 12316 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=9h47m58s489ms5µs500ns).
-2019-12-28 09:55:40.810  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 10:00:40.811  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 10:05:40.813  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 10:10:40.816  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 10:15:40.818  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 10:16:31.883  INFO 12316 --- [http-nio-8082-exec-7] boardify.auth.controller.Controller      : +++++++++LOGGING login+++++++++
-2019-12-28 10:16:31.885  INFO 12316 --- [http-nio-8082-exec-7] boardify.auth.controller.Controller      : Username: a@a.com
-2019-12-28 10:16:31.886  INFO 12316 --- [http-nio-8082-exec-7] boardify.auth.controller.Controller      : Password: a
-2019-12-28 10:16:31.886  INFO 12316 --- [http-nio-8082-exec-7] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING login+++++++++++++++++++++++++++++++
-2019-12-28 10:16:31.886  INFO 12316 --- [http-nio-8082-exec-7] boardify.auth.service.impl.ServiceImpl   : username: a@a.com
-2019-12-28 10:16:31.887  INFO 12316 --- [http-nio-8082-exec-7] boardify.auth.service.impl.ServiceImpl   : password: a
-2019-12-28 10:16:31.888  INFO 12316 --- [http-nio-8082-exec-7] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
-2019-12-28 10:16:31.888  INFO 12316 --- [http-nio-8082-exec-7] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++LOGGING findUser+++++++++
-2019-12-28 10:16:31.888  INFO 12316 --- [http-nio-8082-exec-7] b.a.dao.impl.jpaRepository.UserDaoJpa    : username: a@a.com
-2019-12-28 10:16:32.009  INFO 12316 --- [http-nio-8082-exec-7] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++SUCCESSFUL LOGGING findUser+++++++++
-2019-12-28 10:16:32.009  INFO 12316 --- [http-nio-8082-exec-7] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
-2019-12-28 10:16:32.015  INFO 12316 --- [http-nio-8082-exec-7] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING login+++++++++++++++++++++++++++++++
-2019-12-28 10:16:32.015  INFO 12316 --- [http-nio-8082-exec-7] boardify.auth.controller.Controller      : +++++++++SUCCESSFUL LOGGING login+++++++++
-2019-12-28 10:20:40.820  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 10:25:40.821  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 10:30:40.824  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 10:35:40.825  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 10:40:40.827  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 10:45:40.829  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 10:50:40.831  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 10:55:40.833  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 11:00:40.835  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 11:05:40.836  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 11:10:40.838  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 11:15:40.839  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 11:20:40.841  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 11:25:40.842  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 11:30:40.843  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 11:35:40.845  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 11:40:40.847  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 11:45:40.848  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 11:50:40.849  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 11:55:40.851  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 12:00:40.853  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 12:05:40.855  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 12:10:40.857  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 12:12:22.226  INFO 14920 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-28 12:12:24.392  INFO 14920 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-28 12:12:24.393  WARN 14920 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/auth-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-28 12:12:24.395  INFO 14920 --- [main] boardify.auth.AuthApplication            : No active profile set, falling back to default profiles: default
-2019-12-28 12:12:25.291  INFO 14920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-28 12:12:25.379  INFO 14920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76ms. Found 1 repository interfaces.
-2019-12-28 12:12:25.947  INFO 14920 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f636d101-b6ac-3007-b92f-d8bb90372010
-2019-12-28 12:12:26.105  INFO 14920 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-28 12:12:26.192  INFO 14920 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1f13bb6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-28 12:12:26.525  INFO 14920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-12-28 12:12:26.539  INFO 14920 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-28 12:12:26.540  INFO 14920 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-28 12:12:26.753  INFO 14920 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-28 12:12:26.754  INFO 14920 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2339 ms
-2019-12-28 12:12:26.957  INFO 14920 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-28 12:12:27.108  INFO 14920 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-28 12:12:27.853  INFO 14920 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 12:12:27.872  INFO 14920 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 12:12:27.875  INFO 14920 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM boardify_user_development.DATABASECHANGELOGLOCK WHERE ID=1
-2019-12-28 12:12:27.957  INFO 14920 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
-2019-12-28 12:12:29.646  INFO 14920 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM boardify_user_development.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
-2019-12-28 12:12:29.663  INFO 14920 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOG
-2019-12-28 12:12:29.664  INFO 14920 --- [main] l.c.StandardChangeLogHistoryService      : Reading from boardify_user_development.DATABASECHANGELOG
-2019-12-28 12:12:29.665  INFO 14920 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM boardify_user_development.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
-2019-12-28 12:12:29.733  INFO 14920 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
-2019-12-28 12:12:29.739 ERROR 14920 --- [main] o.s.b.web.embedded.tomcat.TomcatStarter  : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'authJwtFilter': Unsatisfied dependency expressed through field 'service'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'serviceImpl': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDaoJpa' defined in file [C:\Licenta\Boardify\auth\target\classes\boardify\auth\dao\impl\jpaRepository\UserDaoJpa.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userJpaRepository': Cannot create inner bean '(inner bean)#7ea3839e' of type [org.springframework.orm.jpa.SharedEntityManagerCreator] while setting bean property 'entityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#7ea3839e': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
-     1 change sets check sum
-          classpath:db/changelog/db.changelog-master.yaml::1::Antinie Radu was: 8:99577a9aa327e2f6affe7245dab967eb but is now: 8:fca686983d37cdab79a45d6fcd345360
-
-2019-12-28 12:12:29.765  INFO 14920 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2019-12-28 12:12:29.768  WARN 14920 --- [main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
- java.base@11/jdk.internal.misc.Unsafe.park(Native Method)
- java.base@11/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:234)
- java.base@11/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2123)
- java.base@11/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
- java.base@11/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
- java.base@11/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1054)
- java.base@11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1114)
- java.base@11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
- java.base@11/java.lang.Thread.run(Thread.java:834)
-2019-12-28 12:12:29.770  WARN 14920 --- [main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 connection adder] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
- java.base@11/jdk.internal.misc.Unsafe.park(Native Method)
- java.base@11/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:234)
- java.base@11/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2123)
- java.base@11/java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:458)
- java.base@11/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1053)
- java.base@11/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1114)
- java.base@11/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
- java.base@11/java.lang.Thread.run(Thread.java:834)
-2019-12-28 12:12:29.772  WARN 14920 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
-2019-12-28 12:12:29.786  INFO 14920 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2019-12-28 12:12:29.810 ERROR 14920 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:156) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:544) ~[spring-context-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at boardify.auth.AuthApplication.main(AuthApplication.java:19) ~[classes/:na]
-Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:88) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:438) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:191) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:153) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	... 8 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authJwtFilter': Unsatisfied dependency expressed through field 'service'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'serviceImpl': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDaoJpa' defined in file [C:\Licenta\Boardify\auth\target\classes\boardify\auth\dao\impl\jpaRepository\UserDaoJpa.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userJpaRepository': Cannot create inner bean '(inner bean)#7ea3839e' of type [org.springframework.orm.jpa.SharedEntityManagerCreator] while setting bean property 'entityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#7ea3839e': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
-     1 change sets check sum
-          classpath:db/changelog/db.changelog-master.yaml::1::Antinie Radu was: 8:99577a9aa327e2f6affe7245dab967eb but is now: 8:fca686983d37cdab79a45d6fcd345360
-
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:397) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1429) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:253) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:227) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5135) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
-	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
-	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
-	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:459) ~[tomcat-embed-core-9.0.27.jar:9.0.27]
-	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:107) ~[spring-boot-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	... 13 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'serviceImpl': Unsatisfied dependency expressed through field 'userDao'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDaoJpa' defined in file [C:\Licenta\Boardify\auth\target\classes\boardify\auth\dao\impl\jpaRepository\UserDaoJpa.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userJpaRepository': Cannot create inner bean '(inner bean)#7ea3839e' of type [org.springframework.orm.jpa.SharedEntityManagerCreator] while setting bean property 'entityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#7ea3839e': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
-     1 change sets check sum
-          classpath:db/changelog/db.changelog-master.yaml::1::Antinie Radu was: 8:99577a9aa327e2f6affe7245dab967eb but is now: 8:fca686983d37cdab79a45d6fcd345360
-
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:397) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1429) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:636) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	... 54 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDaoJpa' defined in file [C:\Licenta\Boardify\auth\target\classes\boardify\auth\dao\impl\jpaRepository\UserDaoJpa.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userJpaRepository': Cannot create inner bean '(inner bean)#7ea3839e' of type [org.springframework.orm.jpa.SharedEntityManagerCreator] while setting bean property 'entityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#7ea3839e': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
-     1 change sets check sum
-          classpath:db/changelog/db.changelog-master.yaml::1::Antinie Radu was: 8:99577a9aa327e2f6affe7245dab967eb but is now: 8:fca686983d37cdab79a45d6fcd345360
-
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:787) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:226) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1358) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:636) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	... 67 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userJpaRepository': Cannot create inner bean '(inner bean)#7ea3839e' of type [org.springframework.orm.jpa.SharedEntityManagerCreator] while setting bean property 'entityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#7ea3839e': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
-     1 change sets check sum
-          classpath:db/changelog/db.changelog-master.yaml::1::Antinie Radu was: 8:99577a9aa327e2f6affe7245dab967eb but is now: 8:fca686983d37cdab79a45d6fcd345360
-
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:389) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:134) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1706) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1451) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:874) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:778) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	... 80 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#7ea3839e': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
-     1 change sets check sum
-          classpath:db/changelog/db.changelog-master.yaml::1::Antinie Radu was: 8:99577a9aa327e2f6affe7245dab967eb but is now: 8:fca686983d37cdab79a45d6fcd345360
-
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:680) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:498) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:374) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	... 94 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
-     1 change sets check sum
-          classpath:db/changelog/db.changelog-master.yaml::1::Antinie Radu was: 8:99577a9aa327e2f6affe7245dab967eb but is now: 8:fca686983d37cdab79a45d6fcd345360
-
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	... 102 common frames omitted
-Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
-     1 change sets check sum
-          classpath:db/changelog/db.changelog-master.yaml::1::Antinie Radu was: 8:99577a9aa327e2f6affe7245dab967eb but is now: 8:fca686983d37cdab79a45d6fcd345360
-
-	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:291) ~[liquibase-core-3.8.0.jar:na]
-	at liquibase.Liquibase.update(Liquibase.java:198) ~[liquibase-core-3.8.0.jar:na]
-	at liquibase.Liquibase.update(Liquibase.java:179) ~[liquibase-core-3.8.0.jar:na]
-	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:366) ~[liquibase-core-3.8.0.jar:na]
-	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:314) ~[liquibase-core-3.8.0.jar:na]
-	at org.springframework.boot.autoconfigure.liquibase.DataSourceClosingSpringLiquibase.afterPropertiesSet(DataSourceClosingSpringLiquibase.java:46) ~[spring-boot-autoconfigure-2.2.0.RELEASE.jar:2.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799) ~[spring-beans-5.2.0.RELEASE.jar:5.2.0.RELEASE]
-	... 111 common frames omitted
-
-2019-12-28 12:13:41.086  INFO 13920 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-28 12:13:43.224  INFO 13920 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-28 12:13:43.225  WARN 13920 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/auth-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-28 12:13:43.228  INFO 13920 --- [main] boardify.auth.AuthApplication            : No active profile set, falling back to default profiles: default
-2019-12-28 12:13:43.885  INFO 13920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-28 12:13:43.962  INFO 13920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64ms. Found 1 repository interfaces.
-2019-12-28 12:13:44.533  INFO 13920 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f636d101-b6ac-3007-b92f-d8bb90372010
-2019-12-28 12:13:44.732  INFO 13920 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-28 12:13:44.825  INFO 13920 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f195bb13] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-28 12:13:45.096  INFO 13920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-12-28 12:13:45.108  INFO 13920 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-28 12:13:45.108  INFO 13920 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-28 12:13:45.282  INFO 13920 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-28 12:13:45.282  INFO 13920 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2030 ms
-2019-12-28 12:13:45.483  INFO 13920 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-28 12:13:45.622  INFO 13920 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-28 12:13:46.457  INFO 13920 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 12:13:46.464  INFO 13920 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 12:13:46.467  INFO 13920 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM boardify_user_development.DATABASECHANGELOGLOCK WHERE ID=1
-2019-12-28 12:13:46.556  INFO 13920 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
-2019-12-28 12:13:47.910  INFO 13920 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM boardify_user_development.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
-2019-12-28 12:13:47.912  INFO 13920 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOG
-2019-12-28 12:13:47.914  INFO 13920 --- [main] l.c.StandardChangeLogHistoryService      : Reading from boardify_user_development.DATABASECHANGELOG
-2019-12-28 12:13:47.914  INFO 13920 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM boardify_user_development.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
-2019-12-28 12:13:47.986  INFO 13920 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
-2019-12-28 12:13:47.987  INFO 13920 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-12-28 12:13:48.001  INFO 13920 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-12-28 12:13:48.137  INFO 13920 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-28 12:13:48.244  INFO 13920 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
-2019-12-28 12:13:48.431  INFO 13920 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-28 12:13:48.534  INFO 13920 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-12-28 12:13:49.206  INFO 13920 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-28 12:13:49.215  INFO 13920 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-28 12:13:49.575  WARN 13920 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-28 12:13:49.909  INFO 13920 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2ddb260e, org.springframework.security.web.context.SecurityContextPersistenceFilter@7b50e70a, org.springframework.security.web.header.HeaderWriterFilter@5f386009, org.springframework.security.web.authentication.logout.LogoutFilter@283074e8, boardify.commonsecurity.filters.authMicroserviceFilters.AuthJwtFilter@7f2c36de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@58192546, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ce58c1c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@482040a, org.springframework.security.web.session.SessionManagementFilter@bf32f3f, org.springframework.security.web.access.ExceptionTranslationFilter@111ae918, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4951dc8c]
-2019-12-28 12:13:49.936  WARN 13920 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-28 12:13:49.936  INFO 13920 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-28 12:13:49.943  WARN 13920 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-28 12:13:49.943  INFO 13920 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-28 12:13:50.179  INFO 13920 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-28 12:13:53.052  WARN 13920 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-28 12:13:53.075  WARN 13920 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-28 12:13:53.199  INFO 13920 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-12-28 12:13:53.240  INFO 13920 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-12-28 12:13:53.403  INFO 13920 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-28 12:13:53.403  INFO 13920 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-28 12:13:53.619  INFO 13920 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-28 12:13:53.619  INFO 13920 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-28 12:13:53.854  INFO 13920 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 12:13:54.270  INFO 13920 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-12-28 12:13:54.270  INFO 13920 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-12-28 12:13:54.270  INFO 13920 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-12-28 12:13:54.270  INFO 13920 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-12-28 12:13:54.270  INFO 13920 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-12-28 12:13:54.270  INFO 13920 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2019-12-28 12:13:54.271  INFO 13920 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-12-28 12:13:54.470  INFO 13920 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-12-28 12:13:54.472  INFO 13920 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2019-12-28 12:13:54.475  INFO 13920 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2019-12-28 12:13:54.481  INFO 13920 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577528034479 with initial instances count: 3
-2019-12-28 12:13:54.485  INFO 13920 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
-2019-12-28 12:13:54.486  INFO 13920 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1577528034486, current=UP, previous=STARTING]
-2019-12-28 12:13:54.488  INFO 13920 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/192.168.2.112:auth-service:8082: registering service...
-2019-12-28 12:13:54.530  INFO 13920 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/192.168.2.112:auth-service:8082 - registration status: 204
-2019-12-28 12:13:54.534  INFO 13920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-12-28 12:13:54.536  INFO 13920 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
-2019-12-28 12:13:55.632  INFO 13920 --- [main] boardify.auth.AuthApplication            : Started AuthApplication in 18.559 seconds (JVM running for 20.368)
-2019-12-28 12:15:20.264  INFO 16392 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-28 12:15:22.381  INFO 16392 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-28 12:15:22.383  WARN 16392 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/auth-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-28 12:15:22.385  INFO 16392 --- [main] boardify.auth.AuthApplication            : No active profile set, falling back to default profiles: default
-2019-12-28 12:15:23.174  INFO 16392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-28 12:15:23.248  INFO 16392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59ms. Found 1 repository interfaces.
-2019-12-28 12:15:23.769  INFO 16392 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f636d101-b6ac-3007-b92f-d8bb90372010
-2019-12-28 12:15:23.919  INFO 16392 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-28 12:15:24.010  INFO 16392 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f195bb13] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-28 12:15:24.346  INFO 16392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-12-28 12:15:24.356  INFO 16392 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-28 12:15:24.356  INFO 16392 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-28 12:15:24.589  INFO 16392 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-28 12:15:24.589  INFO 16392 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2178 ms
-2019-12-28 12:15:24.823  INFO 16392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-28 12:15:24.973  INFO 16392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-28 12:15:25.734  INFO 16392 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 12:15:25.743  INFO 16392 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 12:15:25.746  INFO 16392 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM boardify_user_development.DATABASECHANGELOGLOCK WHERE ID=1
-2019-12-28 12:15:25.837  INFO 16392 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
-2019-12-28 12:15:27.171  INFO 16392 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM boardify_user_development.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
-2019-12-28 12:15:27.173  INFO 16392 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOG
-2019-12-28 12:15:27.174  INFO 16392 --- [main] l.c.StandardChangeLogHistoryService      : Reading from boardify_user_development.DATABASECHANGELOG
-2019-12-28 12:15:27.174  INFO 16392 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM boardify_user_development.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
-2019-12-28 12:15:27.348  INFO 16392 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
-2019-12-28 12:15:27.349  INFO 16392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-12-28 12:15:27.365  INFO 16392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-12-28 12:15:27.508  INFO 16392 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-28 12:15:27.628  INFO 16392 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
-2019-12-28 12:15:27.791  INFO 16392 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-28 12:15:27.911  INFO 16392 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-12-28 12:15:28.635  INFO 16392 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-28 12:15:28.643  INFO 16392 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-28 12:15:28.960  WARN 16392 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-28 12:15:29.291  INFO 16392 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@482040a, org.springframework.security.web.context.SecurityContextPersistenceFilter@70d61624, org.springframework.security.web.header.HeaderWriterFilter@41fdb59c, org.springframework.security.web.authentication.logout.LogoutFilter@4467088e, boardify.commonsecurity.filters.authMicroserviceFilters.AuthJwtFilter@7f2c36de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a0161ee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7115d5af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@b45e264, org.springframework.security.web.session.SessionManagementFilter@6b6b4177, org.springframework.security.web.access.ExceptionTranslationFilter@26f50a28, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@11c82829]
-2019-12-28 12:15:29.319  WARN 16392 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-28 12:15:29.320  INFO 16392 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-28 12:15:29.328  WARN 16392 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-28 12:15:29.328  INFO 16392 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-28 12:15:29.567  INFO 16392 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-28 12:15:32.173  WARN 16392 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-28 12:15:32.196  WARN 16392 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-28 12:15:32.388  INFO 16392 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-12-28 12:15:32.439  INFO 16392 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-12-28 12:15:32.598  INFO 16392 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-28 12:15:32.598  INFO 16392 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-28 12:15:32.796  INFO 16392 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-28 12:15:32.797  INFO 16392 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-28 12:15:33.023  INFO 16392 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 12:15:33.373  INFO 16392 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-12-28 12:15:33.374  INFO 16392 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-12-28 12:15:33.374  INFO 16392 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-12-28 12:15:33.374  INFO 16392 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-12-28 12:15:33.374  INFO 16392 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-12-28 12:15:33.374  INFO 16392 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2019-12-28 12:15:33.374  INFO 16392 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-12-28 12:15:33.499  INFO 16392 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-12-28 12:15:33.502  INFO 16392 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2019-12-28 12:15:33.506  INFO 16392 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2019-12-28 12:15:33.511  INFO 16392 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577528133510 with initial instances count: 3
-2019-12-28 12:15:33.515  INFO 16392 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
-2019-12-28 12:15:33.515  INFO 16392 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1577528133515, current=UP, previous=STARTING]
-2019-12-28 12:15:33.517  INFO 16392 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/192.168.2.112:auth-service:8082: registering service...
-2019-12-28 12:15:33.558  INFO 16392 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/192.168.2.112:auth-service:8082 - registration status: 204
-2019-12-28 12:15:33.562  INFO 16392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-12-28 12:15:33.563  INFO 16392 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
-2019-12-28 12:15:34.618  INFO 16392 --- [main] boardify.auth.AuthApplication            : Started AuthApplication in 18.007 seconds (JVM running for 19.823)
-2019-12-28 12:17:24.967  INFO 19620 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-28 12:17:27.205  INFO 19620 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-28 12:17:27.206  WARN 19620 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/auth-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-28 12:17:27.210  INFO 19620 --- [main] boardify.auth.AuthApplication            : No active profile set, falling back to default profiles: default
-2019-12-28 12:17:27.911  INFO 19620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-28 12:17:27.984  INFO 19620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61ms. Found 1 repository interfaces.
-2019-12-28 12:17:28.536  INFO 19620 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f636d101-b6ac-3007-b92f-d8bb90372010
-2019-12-28 12:17:28.716  INFO 19620 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-28 12:17:28.797  INFO 19620 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$fa6cea9f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-28 12:17:29.092  INFO 19620 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-12-28 12:17:29.102  INFO 19620 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-28 12:17:29.103  INFO 19620 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-28 12:17:29.341  INFO 19620 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-28 12:17:29.341  INFO 19620 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2109 ms
-2019-12-28 12:17:29.526  INFO 19620 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-28 12:17:29.726  INFO 19620 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-28 12:17:30.562  INFO 19620 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 12:17:30.570  INFO 19620 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 12:17:30.574  INFO 19620 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM boardify_user_development.DATABASECHANGELOGLOCK WHERE ID=1
-2019-12-28 12:17:30.659  INFO 19620 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
-2019-12-28 12:17:32.347  INFO 19620 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM boardify_user_development.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
-2019-12-28 12:17:32.350  INFO 19620 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOG
-2019-12-28 12:17:32.351  INFO 19620 --- [main] l.c.StandardChangeLogHistoryService      : Reading from boardify_user_development.DATABASECHANGELOG
-2019-12-28 12:17:32.352  INFO 19620 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM boardify_user_development.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
-2019-12-28 12:17:32.433  INFO 19620 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
-2019-12-28 12:17:32.435  INFO 19620 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-12-28 12:17:32.453  INFO 19620 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-12-28 12:17:32.638  INFO 19620 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-28 12:17:32.744  INFO 19620 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
-2019-12-28 12:17:32.913  INFO 19620 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-28 12:17:33.079  INFO 19620 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-12-28 12:17:33.994  INFO 19620 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-28 12:17:34.013  INFO 19620 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-28 12:17:34.457  WARN 19620 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-28 12:17:34.803  INFO 19620 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@490e1017, org.springframework.security.web.context.SecurityContextPersistenceFilter@70d61624, org.springframework.security.web.header.HeaderWriterFilter@41fdb59c, org.springframework.security.web.authentication.logout.LogoutFilter@4467088e, boardify.commonsecurity.filters.authMicroserviceFilters.AuthJwtFilter@7f2c36de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a0161ee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7115d5af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ddb260e, org.springframework.security.web.session.SessionManagementFilter@6b6b4177, org.springframework.security.web.access.ExceptionTranslationFilter@26f50a28, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@542aba71]
-2019-12-28 12:17:34.841  WARN 19620 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-28 12:17:34.842  INFO 19620 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-28 12:17:34.852  WARN 19620 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-28 12:17:34.854  INFO 19620 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-28 12:17:35.116  INFO 19620 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-28 12:17:38.174  WARN 19620 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-28 12:17:38.197  WARN 19620 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-28 12:17:38.356  INFO 19620 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-12-28 12:17:38.407  INFO 19620 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-12-28 12:17:38.565  INFO 19620 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-28 12:17:38.565  INFO 19620 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-28 12:17:38.818  INFO 19620 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-28 12:17:38.818  INFO 19620 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-28 12:17:39.127  INFO 19620 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 12:17:39.653  INFO 19620 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-12-28 12:17:39.653  INFO 19620 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-12-28 12:17:39.654  INFO 19620 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-12-28 12:17:39.654  INFO 19620 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-12-28 12:17:39.654  INFO 19620 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-12-28 12:17:39.654  INFO 19620 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2019-12-28 12:17:39.654  INFO 19620 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-12-28 12:17:39.982  INFO 19620 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-12-28 12:17:39.987  INFO 19620 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2019-12-28 12:17:39.991  INFO 19620 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2019-12-28 12:17:39.998  INFO 19620 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577528259996 with initial instances count: 3
-2019-12-28 12:17:40.006  INFO 19620 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
-2019-12-28 12:17:40.008  INFO 19620 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1577528260008, current=UP, previous=STARTING]
-2019-12-28 12:17:40.014  INFO 19620 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/192.168.2.112:auth-service:8082: registering service...
-2019-12-28 12:17:40.068  INFO 19620 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/192.168.2.112:auth-service:8082 - registration status: 204
-2019-12-28 12:17:40.075  INFO 19620 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-12-28 12:17:40.077  INFO 19620 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
-2019-12-28 12:17:41.381  INFO 19620 --- [main] boardify.auth.AuthApplication            : Started AuthApplication in 20.912 seconds (JVM running for 23.37)
-2019-12-28 12:18:47.980  INFO 12824 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-28 12:18:50.097  INFO 12824 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-28 12:18:50.098  WARN 12824 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/auth-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-28 12:18:50.101  INFO 12824 --- [main] boardify.auth.AuthApplication            : No active profile set, falling back to default profiles: default
-2019-12-28 12:18:50.750  INFO 12824 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-28 12:18:50.819  INFO 12824 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59ms. Found 1 repository interfaces.
-2019-12-28 12:18:51.360  INFO 12824 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f636d101-b6ac-3007-b92f-d8bb90372010
-2019-12-28 12:18:51.503  INFO 12824 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-28 12:18:51.595  INFO 12824 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f195bb13] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-28 12:18:51.878  INFO 12824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-12-28 12:18:51.889  INFO 12824 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-28 12:18:51.890  INFO 12824 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-28 12:18:52.080  INFO 12824 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-28 12:18:52.080  INFO 12824 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1957 ms
-2019-12-28 12:18:52.295  INFO 12824 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-28 12:18:52.456  INFO 12824 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-28 12:18:53.201  INFO 12824 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 12:18:53.242  INFO 12824 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE boardify_user_development.DATABASECHANGELOGLOCK (ID INT NOT NULL, `LOCKED` BIT(1) NOT NULL, LOCKGRANTED datetime NULL, LOCKEDBY VARCHAR(255) NULL, CONSTRAINT PK_DATABASECHANGELOGLOCK PRIMARY KEY (ID))
-2019-12-28 12:18:53.451  INFO 12824 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 12:18:53.459  INFO 12824 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 12:18:53.460  INFO 12824 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO boardify_user_development.DATABASECHANGELOGLOCK (ID, `LOCKED`) VALUES (1, 0)
-2019-12-28 12:18:53.502  INFO 12824 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM boardify_user_development.DATABASECHANGELOGLOCK WHERE ID=1
-2019-12-28 12:18:53.562  INFO 12824 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
-2019-12-28 12:18:54.677  INFO 12824 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: boardify_user_development.DATABASECHANGELOG
-2019-12-28 12:18:54.679  INFO 12824 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE boardify_user_development.DATABASECHANGELOG (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED datetime NOT NULL, ORDEREXECUTED INT NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35) NULL, `DESCRIPTION` VARCHAR(255) NULL, COMMENTS VARCHAR(255) NULL, TAG VARCHAR(255) NULL, LIQUIBASE VARCHAR(20) NULL, CONTEXTS VARCHAR(255) NULL, LABELS VARCHAR(255) NULL, DEPLOYMENT_ID VARCHAR(10) NULL)
-2019-12-28 12:18:55.176  INFO 12824 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOG
-2019-12-28 12:18:55.178  INFO 12824 --- [main] l.c.StandardChangeLogHistoryService      : Reading from boardify_user_development.DATABASECHANGELOG
-2019-12-28 12:18:55.179  INFO 12824 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM boardify_user_development.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
-2019-12-28 12:18:55.198  INFO 12824 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 12:18:55.209  INFO 12824 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE IF NOT EXISTS ROLES (
-  ID   INT(10) PRIMARY KEY AUTO_INCREMENT,
-  TYPE varchar(40)
-)
-2019-12-28 12:18:55.450  INFO 12824 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE IF NOT EXISTS USERS (
-  USER_ID  VARCHAR(50) PRIMARY KEY,
-  ROLE_ID  INT(255)     NOT NULL,
-  PASSWORD VARCHAR(255) NOT NULL,
-  FOREIGN KEY (ROLE_ID) REFERENCES ROLES (ID)
-)
-2019-12-28 12:18:55.664  INFO 12824 --- [main] liquibase.changelog.ChangeSet            : SQL in file changes/changelog_users.sql executed
-2019-12-28 12:18:55.665  INFO 12824 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:db/changelog/db.changelog-master.yaml::1::Antinie Radu ran successfully in 460ms
-2019-12-28 12:18:55.666  INFO 12824 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM boardify_user_development.DATABASECHANGELOG
-2019-12-28 12:18:55.670  INFO 12824 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO boardify_user_development.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, `DESCRIPTION`, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1', 'Antinie Radu', 'classpath:db/changelog/db.changelog-master.yaml', NOW(), 1, '8:99577a9aa327e2f6affe7245dab967eb', 'sqlFile', '', 'EXECUTED', NULL, NULL, '3.8.0', '7528335200')
-2019-12-28 12:18:55.764  INFO 12824 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
-2019-12-28 12:18:55.765  INFO 12824 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-12-28 12:18:55.781  INFO 12824 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-12-28 12:18:55.935  INFO 12824 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-28 12:18:56.027  INFO 12824 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
-2019-12-28 12:18:56.196  INFO 12824 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-28 12:18:56.377  INFO 12824 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-12-28 12:18:57.124  INFO 12824 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-28 12:18:57.135  INFO 12824 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-28 12:18:57.478  WARN 12824 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-28 12:18:57.748  INFO 12824 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@72e806, org.springframework.security.web.context.SecurityContextPersistenceFilter@4f61c7e1, org.springframework.security.web.header.HeaderWriterFilter@70d61624, org.springframework.security.web.authentication.logout.LogoutFilter@4dfe14d4, boardify.commonsecurity.filters.authMicroserviceFilters.AuthJwtFilter@45aa02de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6289376f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@709c41da, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@270a113f, org.springframework.security.web.session.SessionManagementFilter@36996b37, org.springframework.security.web.access.ExceptionTranslationFilter@6b6b4177, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@76a90ecb]
-2019-12-28 12:18:57.771  WARN 12824 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-28 12:18:57.771  INFO 12824 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-28 12:18:57.778  WARN 12824 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-28 12:18:57.779  INFO 12824 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-28 12:18:58.032  INFO 12824 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-28 12:19:00.600  WARN 12824 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-28 12:19:00.626  WARN 12824 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-28 12:19:00.774  INFO 12824 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-12-28 12:19:00.825  INFO 12824 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-12-28 12:19:00.990  INFO 12824 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-28 12:19:00.990  INFO 12824 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-28 12:19:01.208  INFO 12824 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-28 12:19:01.208  INFO 12824 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-28 12:19:01.437  INFO 12824 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 12:19:01.805  INFO 12824 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-12-28 12:19:01.806  INFO 12824 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-12-28 12:19:01.806  INFO 12824 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-12-28 12:19:01.806  INFO 12824 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-12-28 12:19:01.807  INFO 12824 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-12-28 12:19:01.808  INFO 12824 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2019-12-28 12:19:01.808  INFO 12824 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-12-28 12:19:01.994  INFO 12824 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-12-28 12:19:01.999  INFO 12824 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2019-12-28 12:19:02.002  INFO 12824 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2019-12-28 12:19:02.007  INFO 12824 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577528342006 with initial instances count: 3
-2019-12-28 12:19:02.012  INFO 12824 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
-2019-12-28 12:19:02.013  INFO 12824 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1577528342013, current=UP, previous=STARTING]
-2019-12-28 12:19:02.017  INFO 12824 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/192.168.2.112:auth-service:8082: registering service...
-2019-12-28 12:19:02.070  INFO 12824 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/192.168.2.112:auth-service:8082 - registration status: 204
-2019-12-28 12:19:02.074  INFO 12824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-12-28 12:19:02.076  INFO 12824 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
-2019-12-28 12:19:03.158  INFO 12824 --- [main] boardify.auth.AuthApplication            : Started AuthApplication in 18.514 seconds (JVM running for 20.278)
-2019-12-28 12:20:12.917  INFO 19064 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-28 12:20:15.041  INFO 19064 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-28 12:20:15.042  WARN 19064 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/auth-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-28 12:20:15.044  INFO 19064 --- [main] boardify.auth.AuthApplication            : No active profile set, falling back to default profiles: default
-2019-12-28 12:20:15.736  INFO 19064 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-28 12:20:15.830  INFO 19064 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80ms. Found 1 repository interfaces.
-2019-12-28 12:20:16.439  INFO 19064 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f636d101-b6ac-3007-b92f-d8bb90372010
-2019-12-28 12:20:16.584  INFO 19064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-28 12:20:16.653  INFO 19064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$fa6cea9f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-28 12:20:16.945  INFO 19064 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-12-28 12:20:16.959  INFO 19064 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-28 12:20:16.960  INFO 19064 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-28 12:20:17.175  INFO 19064 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-28 12:20:17.176  INFO 19064 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2112 ms
-2019-12-28 12:20:17.389  INFO 19064 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-28 12:20:17.560  INFO 19064 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-28 12:20:18.306  INFO 19064 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 12:20:18.330  INFO 19064 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE boardify_user_development.DATABASECHANGELOGLOCK (ID INT NOT NULL, `LOCKED` BIT(1) NOT NULL, LOCKGRANTED datetime NULL, LOCKEDBY VARCHAR(255) NULL, CONSTRAINT PK_DATABASECHANGELOGLOCK PRIMARY KEY (ID))
-2019-12-28 12:20:18.567  INFO 19064 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 12:20:18.575  INFO 19064 --- [main] liquibase.executor.jvm.JdbcExecutor      : DELETE FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 12:20:18.576  INFO 19064 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO boardify_user_development.DATABASECHANGELOGLOCK (ID, `LOCKED`) VALUES (1, 0)
-2019-12-28 12:20:18.607  INFO 19064 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM boardify_user_development.DATABASECHANGELOGLOCK WHERE ID=1
-2019-12-28 12:20:18.651  INFO 19064 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
-2019-12-28 12:20:20.162  INFO 19064 --- [main] l.c.StandardChangeLogHistoryService      : Creating database history table with name: boardify_user_development.DATABASECHANGELOG
-2019-12-28 12:20:20.166  INFO 19064 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE boardify_user_development.DATABASECHANGELOG (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED datetime NOT NULL, ORDEREXECUTED INT NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35) NULL, `DESCRIPTION` VARCHAR(255) NULL, COMMENTS VARCHAR(255) NULL, TAG VARCHAR(255) NULL, LIQUIBASE VARCHAR(20) NULL, CONTEXTS VARCHAR(255) NULL, LABELS VARCHAR(255) NULL, DEPLOYMENT_ID VARCHAR(10) NULL)
-2019-12-28 12:20:20.359  INFO 19064 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOG
-2019-12-28 12:20:20.361  INFO 19064 --- [main] l.c.StandardChangeLogHistoryService      : Reading from boardify_user_development.DATABASECHANGELOG
-2019-12-28 12:20:20.362  INFO 19064 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM boardify_user_development.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
-2019-12-28 12:20:20.364  INFO 19064 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 12:20:20.390  INFO 19064 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE IF NOT EXISTS ROLES (
-  ID   INT(10) PRIMARY KEY AUTO_INCREMENT,
-  TYPE varchar(40)
-)
-2019-12-28 12:20:20.593  INFO 19064 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE IF NOT EXISTS USERS (
-  USER_ID  VARCHAR(50) PRIMARY KEY,
-  ROLE_ID  INT(255)     NOT NULL,
-  PASSWORD VARCHAR(255) NOT NULL,
-  LOCATION VARCHAR(255),
-  FOREIGN KEY (ROLE_ID) REFERENCES ROLES (ID)
-)
-2019-12-28 12:20:21.046  INFO 19064 --- [main] liquibase.changelog.ChangeSet            : SQL in file changes/changelog_users.sql executed
-2019-12-28 12:20:21.047  INFO 19064 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:db/changelog/db.changelog-master.yaml::1::Antinie Radu ran successfully in 661ms
-2019-12-28 12:20:21.048  INFO 19064 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM boardify_user_development.DATABASECHANGELOG
-2019-12-28 12:20:21.053  INFO 19064 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO boardify_user_development.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, `DESCRIPTION`, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1', 'Antinie Radu', 'classpath:db/changelog/db.changelog-master.yaml', NOW(), 1, '8:fca686983d37cdab79a45d6fcd345360', 'sqlFile', '', 'EXECUTED', NULL, NULL, '3.8.0', '7528420381')
-2019-12-28 12:20:21.119  INFO 19064 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
-2019-12-28 12:20:21.121  INFO 19064 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-12-28 12:20:21.135  INFO 19064 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-12-28 12:20:21.279  INFO 19064 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-28 12:20:21.398  INFO 19064 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
-2019-12-28 12:20:21.612  INFO 19064 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-28 12:20:21.775  INFO 19064 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-12-28 12:20:22.635  INFO 19064 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-28 12:20:22.644  INFO 19064 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-28 12:20:22.981  WARN 19064 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-28 12:20:23.279  INFO 19064 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58885a2e, org.springframework.security.web.context.SecurityContextPersistenceFilter@36996b37, org.springframework.security.web.header.HeaderWriterFilter@6b6b4177, org.springframework.security.web.authentication.logout.LogoutFilter@1c8e4810, boardify.commonsecurity.filters.authMicroserviceFilters.AuthJwtFilter@45aa02de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f61c7e1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4d5d6297, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d2bcf0a, org.springframework.security.web.session.SessionManagementFilter@7115d5af, org.springframework.security.web.access.ExceptionTranslationFilter@8ae7e03, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@466d6ea5]
-2019-12-28 12:20:23.301  WARN 19064 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-28 12:20:23.301  INFO 19064 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-28 12:20:23.309  WARN 19064 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-28 12:20:23.309  INFO 19064 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-28 12:20:23.537  INFO 19064 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-28 12:20:26.366  WARN 19064 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-28 12:20:26.393  WARN 19064 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-28 12:20:26.622  INFO 19064 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-12-28 12:20:26.708  INFO 19064 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-12-28 12:20:27.020  INFO 19064 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-28 12:20:27.021  INFO 19064 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-28 12:20:27.392  INFO 19064 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-28 12:20:27.392  INFO 19064 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-28 12:20:27.760  INFO 19064 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 12:20:28.184  INFO 19064 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-12-28 12:20:28.184  INFO 19064 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-12-28 12:20:28.184  INFO 19064 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-12-28 12:20:28.184  INFO 19064 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-12-28 12:20:28.185  INFO 19064 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-12-28 12:20:28.185  INFO 19064 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2019-12-28 12:20:28.185  INFO 19064 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-12-28 12:20:28.361  INFO 19064 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-12-28 12:20:28.365  INFO 19064 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2019-12-28 12:20:28.369  INFO 19064 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2019-12-28 12:20:28.375  INFO 19064 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577528428374 with initial instances count: 3
-2019-12-28 12:20:28.382  INFO 19064 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
-2019-12-28 12:20:28.384  INFO 19064 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1577528428384, current=UP, previous=STARTING]
-2019-12-28 12:20:28.388  INFO 19064 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/192.168.2.112:auth-service:8082: registering service...
-2019-12-28 12:20:28.439  INFO 19064 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/192.168.2.112:auth-service:8082 - registration status: 204
-2019-12-28 12:20:28.443  INFO 19064 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-12-28 12:20:28.444  INFO 19064 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
-2019-12-28 12:20:29.649  INFO 19064 --- [main] boardify.auth.AuthApplication            : Started AuthApplication in 20.458 seconds (JVM running for 22.599)
-2019-12-28 12:20:30.227  INFO 19064 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-28 12:20:30.227  INFO 19064 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-28 12:20:30.244  INFO 19064 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
-2019-12-28 12:20:30.460  INFO 19064 --- [http-nio-8082-exec-1] boardify.auth.controller.Controller      : +++++++++LOGGING login+++++++++
-2019-12-28 12:20:30.463  INFO 19064 --- [http-nio-8082-exec-1] boardify.auth.controller.Controller      : Username: a@a.com
-2019-12-28 12:20:30.463  INFO 19064 --- [http-nio-8082-exec-1] boardify.auth.controller.Controller      : Password: a
-2019-12-28 12:20:30.464  INFO 19064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING login+++++++++++++++++++++++++++++++
-2019-12-28 12:20:30.464  INFO 19064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : username: a@a.com
-2019-12-28 12:20:30.464  INFO 19064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : password: a
-2019-12-28 12:20:30.466  INFO 19064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
-2019-12-28 12:20:30.466  INFO 19064 --- [http-nio-8082-exec-1] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++LOGGING findUser+++++++++
-2019-12-28 12:20:30.466  INFO 19064 --- [http-nio-8082-exec-1] b.a.dao.impl.jpaRepository.UserDaoJpa    : username: a@a.com
-2019-12-28 12:20:30.490  INFO 19064 --- [http-nio-8082-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2019-12-28 12:20:30.490  WARN 19064 --- [http-nio-8082-exec-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-12-28 12:20:30.493  INFO 19064 --- [http-nio-8082-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2019-12-28 12:20:30.548  INFO 19064 --- [http-nio-8082-exec-1] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++SUCCESSFUL LOGGING findUser+++++++++
-2019-12-28 12:20:30.551 ERROR 19064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : ERROR IN LOGIN: Bad credentials
-2019-12-28 12:20:30.555 ERROR 19064 --- [http-nio-8082-exec-1] boardify.auth.controller.Controller      : +++++++++LOGGING handleException+++++++++
-2019-12-28 12:20:30.556 ERROR 19064 --- [http-nio-8082-exec-1] boardify.auth.controller.Controller      : Incorrect username or password
-2019-12-28 12:20:30.556 ERROR 19064 --- [http-nio-8082-exec-1] boardify.auth.controller.Controller      : +++++++++END LOGGING handleException+++++++++
-2019-12-28 12:24:50.333  INFO 19064 --- [http-nio-8082-exec-5] boardify.auth.controller.Controller      : +++++++++LOGGING login+++++++++
-2019-12-28 12:24:50.334  INFO 19064 --- [http-nio-8082-exec-5] boardify.auth.controller.Controller      : Username: a@a.com
-2019-12-28 12:24:50.334  INFO 19064 --- [http-nio-8082-exec-5] boardify.auth.controller.Controller      : Password: a
-2019-12-28 12:24:50.334  INFO 19064 --- [http-nio-8082-exec-5] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING login+++++++++++++++++++++++++++++++
-2019-12-28 12:24:50.334  INFO 19064 --- [http-nio-8082-exec-5] boardify.auth.service.impl.ServiceImpl   : username: a@a.com
-2019-12-28 12:24:50.334  INFO 19064 --- [http-nio-8082-exec-5] boardify.auth.service.impl.ServiceImpl   : password: a
-2019-12-28 12:24:50.335  INFO 19064 --- [http-nio-8082-exec-5] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
-2019-12-28 12:24:50.335  INFO 19064 --- [http-nio-8082-exec-5] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++LOGGING findUser+++++++++
-2019-12-28 12:24:50.336  INFO 19064 --- [http-nio-8082-exec-5] b.a.dao.impl.jpaRepository.UserDaoJpa    : username: a@a.com
-2019-12-28 12:24:50.367  INFO 19064 --- [http-nio-8082-exec-5] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++SUCCESSFUL LOGGING findUser+++++++++
-2019-12-28 12:24:50.368  INFO 19064 --- [http-nio-8082-exec-5] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
-2019-12-28 12:24:50.755  INFO 19064 --- [http-nio-8082-exec-5] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING login+++++++++++++++++++++++++++++++
-2019-12-28 12:24:50.755  INFO 19064 --- [http-nio-8082-exec-5] boardify.auth.controller.Controller      : +++++++++SUCCESSFUL LOGGING login+++++++++
-2019-12-28 12:25:28.187  INFO 19064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 12:30:28.190  INFO 19064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 12:35:28.191  INFO 19064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 12:40:28.192  INFO 19064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 12:45:28.194  INFO 19064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 12:50:28.196  INFO 19064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 12:55:28.198  INFO 19064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 13:00:28.199  INFO 19064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 13:05:28.201  INFO 19064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 13:10:28.202  INFO 19064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 13:15:28.203  INFO 19064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 13:20:28.206  INFO 19064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 13:24:43.974  INFO 25064 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-28 13:24:46.094  INFO 25064 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-28 13:24:46.096  WARN 25064 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/auth-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-28 13:24:46.099  INFO 25064 --- [main] boardify.auth.AuthApplication            : No active profile set, falling back to default profiles: default
-2019-12-28 13:24:47.420  INFO 25064 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-28 13:24:47.498  INFO 25064 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65ms. Found 1 repository interfaces.
-2019-12-28 13:24:48.168  INFO 25064 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f636d101-b6ac-3007-b92f-d8bb90372010
-2019-12-28 13:24:48.346  INFO 25064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-28 13:24:48.417  INFO 25064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f195bb13] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-28 13:24:48.696  INFO 25064 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-12-28 13:24:48.707  INFO 25064 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-28 13:24:48.708  INFO 25064 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-28 13:24:48.893  INFO 25064 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-28 13:24:48.893  INFO 25064 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2768 ms
-2019-12-28 13:24:49.105  INFO 25064 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-28 13:24:49.315  INFO 25064 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-28 13:24:50.229  INFO 25064 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 13:24:50.238  INFO 25064 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-28 13:24:50.243  INFO 25064 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM boardify_user_development.DATABASECHANGELOGLOCK WHERE ID=1
-2019-12-28 13:24:50.312  INFO 25064 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
-2019-12-28 13:24:51.804  INFO 25064 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM boardify_user_development.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
-2019-12-28 13:24:51.806  INFO 25064 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOG
-2019-12-28 13:24:51.807  INFO 25064 --- [main] l.c.StandardChangeLogHistoryService      : Reading from boardify_user_development.DATABASECHANGELOG
-2019-12-28 13:24:51.807  INFO 25064 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM boardify_user_development.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
-2019-12-28 13:24:51.861  INFO 25064 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
-2019-12-28 13:24:51.862  INFO 25064 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-12-28 13:24:51.876  INFO 25064 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-12-28 13:24:52.014  INFO 25064 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-28 13:24:52.116  INFO 25064 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
-2019-12-28 13:24:52.281  INFO 25064 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-28 13:24:52.425  INFO 25064 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-12-28 13:24:53.273  INFO 25064 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-28 13:24:53.284  INFO 25064 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-28 13:24:53.648  WARN 25064 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-28 13:24:54.057  INFO 25064 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@270a113f, org.springframework.security.web.context.SecurityContextPersistenceFilter@442e7215, org.springframework.security.web.header.HeaderWriterFilter@58192546, org.springframework.security.web.authentication.logout.LogoutFilter@23674e3d, boardify.commonsecurity.filters.authMicroserviceFilters.AuthJwtFilter@6347ebbc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b802baa, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3741a170, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3dc976da, org.springframework.security.web.session.SessionManagementFilter@1fb4377d, org.springframework.security.web.access.ExceptionTranslationFilter@7b50e70a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@52d202f0]
-2019-12-28 13:24:54.080  WARN 25064 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-28 13:24:54.080  INFO 25064 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-28 13:24:54.087  WARN 25064 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-28 13:24:54.087  INFO 25064 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-28 13:24:54.341  INFO 25064 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-28 13:24:57.199  WARN 25064 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-28 13:24:57.227  WARN 25064 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-28 13:24:57.421  INFO 25064 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-12-28 13:24:57.498  INFO 25064 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-12-28 13:24:57.710  INFO 25064 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-28 13:24:57.710  INFO 25064 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-28 13:24:57.934  INFO 25064 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-28 13:24:57.934  INFO 25064 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-28 13:24:58.234  INFO 25064 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 13:24:58.650  INFO 25064 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-12-28 13:24:58.651  INFO 25064 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-12-28 13:24:58.651  INFO 25064 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-12-28 13:24:58.652  INFO 25064 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-12-28 13:24:58.652  INFO 25064 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-12-28 13:24:58.652  INFO 25064 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2019-12-28 13:24:58.652  INFO 25064 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-12-28 13:24:58.813  INFO 25064 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-12-28 13:24:58.818  INFO 25064 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2019-12-28 13:24:58.821  INFO 25064 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2019-12-28 13:24:58.823  INFO 25064 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577532298823 with initial instances count: 3
-2019-12-28 13:24:58.827  INFO 25064 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
-2019-12-28 13:24:58.827  INFO 25064 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1577532298827, current=UP, previous=STARTING]
-2019-12-28 13:24:58.830  INFO 25064 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/192.168.2.112:auth-service:8082: registering service...
-2019-12-28 13:24:58.881  INFO 25064 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/192.168.2.112:auth-service:8082 - registration status: 204
-2019-12-28 13:24:58.883  INFO 25064 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-12-28 13:24:58.884  INFO 25064 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
-2019-12-28 13:24:59.992  INFO 25064 --- [main] boardify.auth.AuthApplication            : Started AuthApplication in 20.299 seconds (JVM running for 22.731)
-2019-12-28 13:34:58.659  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 13:39:58.662  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 13:44:58.664  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 13:49:58.666  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 13:54:58.669  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 13:59:58.673  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 14:04:58.676  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-28 14:09:22.327  INFO 25064 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-28 14:09:22.328  INFO 25064 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-28 14:09:22.383  INFO 25064 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 54 ms
-2019-12-28 14:09:22.629  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.controller.Controller      : +++++++++LOGGING login+++++++++
-2019-12-28 14:09:22.634  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.controller.Controller      : Username: a@a.com
-2019-12-28 14:09:22.635  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.controller.Controller      : Password: a
-2019-12-28 14:09:22.635  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING login+++++++++++++++++++++++++++++++
-2019-12-28 14:09:22.635  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : username: a@a.com
-2019-12-28 14:09:22.635  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : password: a
-2019-12-28 14:09:22.637  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
-2019-12-28 14:09:22.637  INFO 25064 --- [http-nio-8082-exec-1] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++LOGGING findUser+++++++++
-2019-12-28 14:09:22.637  INFO 25064 --- [http-nio-8082-exec-1] b.a.dao.impl.jpaRepository.UserDaoJpa    : username: a@a.com
-2019-12-28 14:09:22.670  INFO 25064 --- [http-nio-8082-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2019-12-28 14:09:22.671  WARN 25064 --- [http-nio-8082-exec-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-12-28 14:09:22.680  INFO 25064 --- [http-nio-8082-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2019-12-28 14:09:22.782  INFO 25064 --- [http-nio-8082-exec-1] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++SUCCESSFUL LOGGING findUser+++++++++
-2019-12-28 14:09:22.783  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
-2019-12-28 14:09:23.202  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING login+++++++++++++++++++++++++++++++
-2019-12-28 14:09:23.202  INFO 25064 --- [http-nio-8082-exec-1] boardify.auth.controller.Controller      : +++++++++SUCCESSFUL LOGGING login+++++++++
-2019-12-28 14:09:58.683  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-29 00:00:22.178  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-29 00:05:22.231  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-29 00:10:22.234  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-29 00:15:22.237  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-29 00:20:22.238  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-29 00:25:22.241  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-29 15:39:34.550  WARN 25064 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=15h12m47s726ms451µs400ns).
+2019-12-29 15:42:39.956  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-29 15:47:39.958  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-29 15:52:39.960  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-29 15:57:40.056  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-29 15:59:44.435  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.controller.Controller      : +++++++++LOGGING login+++++++++
+2019-12-29 15:59:44.436  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.controller.Controller      : Username: a@a.com
+2019-12-29 15:59:44.436  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.controller.Controller      : Password: a
+2019-12-29 15:59:44.436  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING login+++++++++++++++++++++++++++++++
+2019-12-29 15:59:44.436  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : username: a@a.com
+2019-12-29 15:59:44.437  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : password: a
+2019-12-29 15:59:44.437  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
+2019-12-29 15:59:44.437  INFO 25064 --- [http-nio-8082-exec-10] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++LOGGING findUser+++++++++
+2019-12-29 15:59:44.437  INFO 25064 --- [http-nio-8082-exec-10] b.a.dao.impl.jpaRepository.UserDaoJpa    : username: a@a.com
+2019-12-29 15:59:44.469  INFO 25064 --- [http-nio-8082-exec-10] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++SUCCESSFUL LOGGING findUser+++++++++
+2019-12-29 15:59:44.469  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
+2019-12-29 15:59:44.473  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING login+++++++++++++++++++++++++++++++
+2019-12-29 15:59:44.474  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.controller.Controller      : +++++++++SUCCESSFUL LOGGING login+++++++++
+2019-12-29 16:02:40.168  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-29 16:09:37.253  INFO 1072 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-12-29 16:09:39.369  INFO 1072 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2019-12-29 16:09:39.369  WARN 1072 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/auth-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-12-29 16:09:39.369  INFO 1072 --- [main] boardify.auth.AuthApplication            : No active profile set, falling back to default profiles: default
+2019-12-29 16:09:39.836  INFO 1072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-29 16:09:39.883  INFO 1072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41ms. Found 1 repository interfaces.
+2019-12-29 16:09:40.269  INFO 1072 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f636d101-b6ac-3007-b92f-d8bb90372010
+2019-12-29 16:09:40.363  INFO 1072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 16:09:40.410  INFO 1072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$fa6cea9f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 16:09:40.637  INFO 1072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-12-29 16:09:40.645  INFO 1072 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-29 16:09:40.645  INFO 1072 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-29 16:09:40.774  INFO 1072 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-29 16:09:40.774  INFO 1072 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1390 ms
+2019-12-29 16:09:40.915  INFO 1072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-29 16:09:41.045  INFO 1072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-12-29 16:09:41.538  INFO 1072 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
+2019-12-29 16:09:41.544  INFO 1072 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
+2019-12-29 16:09:41.546  INFO 1072 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM boardify_user_development.DATABASECHANGELOGLOCK WHERE ID=1
+2019-12-29 16:09:41.681  INFO 1072 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2019-12-29 16:09:42.594  INFO 1072 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM boardify_user_development.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-12-29 16:09:42.594  INFO 1072 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOG
+2019-12-29 16:09:42.594  INFO 1072 --- [main] l.c.StandardChangeLogHistoryService      : Reading from boardify_user_development.DATABASECHANGELOG
+2019-12-29 16:09:42.594  INFO 1072 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM boardify_user_development.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-12-29 16:09:42.743  INFO 1072 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2019-12-29 16:09:42.744  INFO 1072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-12-29 16:09:42.756  INFO 1072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-12-29 16:09:42.837  INFO 1072 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-12-29 16:09:42.916  INFO 1072 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
+2019-12-29 16:09:43.031  INFO 1072 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-12-29 16:09:43.109  INFO 1072 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-12-29 16:09:43.638  INFO 1072 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-12-29 16:09:43.645  INFO 1072 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-12-29 16:09:43.863  WARN 1072 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-12-29 16:09:44.051  INFO 1072 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@482040a, org.springframework.security.web.context.SecurityContextPersistenceFilter@70d61624, org.springframework.security.web.header.HeaderWriterFilter@41fdb59c, org.springframework.security.web.authentication.logout.LogoutFilter@4467088e, boardify.commonsecurity.filters.authMicroserviceFilters.AuthJwtFilter@7f2c36de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a0161ee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7115d5af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@b45e264, org.springframework.security.web.session.SessionManagementFilter@6b6b4177, org.springframework.security.web.access.ExceptionTranslationFilter@26f50a28, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@11c82829]
+2019-12-29 16:09:44.067  WARN 1072 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-12-29 16:09:44.067  INFO 1072 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-12-29 16:09:44.073  WARN 1072 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-12-29 16:09:44.073  INFO 1072 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-12-29 16:09:44.219  INFO 1072 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-29 16:09:46.154  WARN 1072 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2019-12-29 16:09:46.173  WARN 1072 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2019-12-29 16:09:46.258  INFO 1072 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2019-12-29 16:09:46.290  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2019-12-29 16:09:46.415  INFO 1072 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2019-12-29 16:09:46.415  INFO 1072 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2019-12-29 16:09:46.563  INFO 1072 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2019-12-29 16:09:46.563  INFO 1072 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2019-12-29 16:09:46.721  INFO 1072 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-29 16:09:47.063  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2019-12-29 16:09:47.063  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2019-12-29 16:09:47.063  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2019-12-29 16:09:47.064  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2019-12-29 16:09:47.064  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2019-12-29 16:09:47.064  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2019-12-29 16:09:47.064  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2019-12-29 16:09:47.176  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2019-12-29 16:09:47.179  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2019-12-29 16:09:47.181  INFO 1072 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-12-29 16:09:47.184  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577628587183 with initial instances count: 4
+2019-12-29 16:09:47.187  INFO 1072 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
+2019-12-29 16:09:47.187  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1577628587187, current=UP, previous=STARTING]
+2019-12-29 16:09:47.190  INFO 1072 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/192.168.2.112:auth-service:8082: registering service...
+2019-12-29 16:09:47.222  INFO 1072 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/192.168.2.112:auth-service:8082 - registration status: 204
+2019-12-29 16:09:47.222  INFO 1072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2019-12-29 16:09:47.222  INFO 1072 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2019-12-29 16:09:48.174  INFO 1072 --- [main] boardify.auth.AuthApplication            : Started AuthApplication in 13.335 seconds (JVM running for 14.687)
+2019-12-29 16:10:18.553  INFO 1072 --- [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-29 16:10:18.553  INFO 1072 --- [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-29 16:10:18.560  INFO 1072 --- [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2019-12-29 16:10:18.665  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.controller.Controller      : +++++++++LOGGING login+++++++++
+2019-12-29 16:10:18.668  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.controller.Controller      : Username: a@a.com
+2019-12-29 16:10:18.669  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.controller.Controller      : Password: a
+2019-12-29 16:10:18.669  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING login+++++++++++++++++++++++++++++++
+2019-12-29 16:10:18.669  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.service.impl.ServiceImpl   : username: a@a.com
+2019-12-29 16:10:18.669  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.service.impl.ServiceImpl   : password: a
+2019-12-29 16:10:18.670  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
+2019-12-29 16:10:18.670  INFO 1072 --- [http-nio-8082-exec-2] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++LOGGING findUser+++++++++
+2019-12-29 16:10:18.670  INFO 1072 --- [http-nio-8082-exec-2] b.a.dao.impl.jpaRepository.UserDaoJpa    : username: a@a.com
+2019-12-29 16:10:18.687  INFO 1072 --- [http-nio-8082-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2019-12-29 16:10:18.687  WARN 1072 --- [http-nio-8082-exec-2] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-12-29 16:10:18.691  INFO 1072 --- [http-nio-8082-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2019-12-29 16:10:18.789  INFO 1072 --- [http-nio-8082-exec-2] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++SUCCESSFUL LOGGING findUser+++++++++
+2019-12-29 16:10:18.790  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
+2019-12-29 16:10:19.029  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING login+++++++++++++++++++++++++++++++
+2019-12-29 16:10:19.029  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.controller.Controller      : +++++++++SUCCESSFUL LOGGING login+++++++++
+2019-12-29 16:14:47.066  INFO 1072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-29 16:19:47.068  INFO 1072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
