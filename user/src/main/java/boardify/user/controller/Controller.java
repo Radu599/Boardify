@@ -1,6 +1,7 @@
 package boardify.user.controller;
 
 import boardify.user.service.Service;
+import boardify.user.service.exception.UserExceptionType;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -10,11 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -38,5 +37,21 @@ public class Controller {
         String location = service.findLocationByEmail(email);
         logger.info("+++++++++SUCCESSFUL LOGGING findLocationByEmail+++++++++");
         return new ResponseEntity<>(location, HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "Update given user")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "SUCCESS", response = UserExceptionType.class),
+            @ApiResponse(code = 404, message = "ENTITY_NOT_FOUND", response = UserExceptionType.class)
+    })
+    @RequestMapping(value = "/location", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<UserExceptionType> updateLocation(Principal principal, @RequestBody String location) {
+
+        String email = principal.getName();
+        logger.info("+++++++++LOGGING updateLocation+++++++++");
+        //loggingEntity(user);
+        service.updateLocation(email, location);
+        logger.info("+++++++++SUCCESSFUL LOGGING updateLocation+++++++++");
+        return new ResponseEntity<UserExceptionType>(UserExceptionType.SUCCESS, HttpStatus.OK);
     }
 }

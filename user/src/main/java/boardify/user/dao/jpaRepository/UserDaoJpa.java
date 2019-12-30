@@ -27,6 +27,32 @@ public class UserDaoJpa implements UserDao {
         return convertUserPersistanceToUser(jpaRepository.findById(email).get()).getLocation();
     }
 
+    @Override
+    public User updateLocation(String email, String location) {
+
+        UserPersistance oldUser = jpaRepository.findById(email).orElse(null);
+        if (oldUser == null) {
+            return null;
+        }
+
+        //deep copy for oldUser because JpaRepository will modify oldUser after save
+        //(JpaRepository will bind the entity returned by 'findById' method and all changes from DB for the given row in the table will change the entity fields)
+        oldUser = UserPersistance.builder()
+                .email(oldUser.getEmail())
+                .location(oldUser.getLocation())
+                .password(oldUser.getPassword())//TODO:
+                .build();
+
+        UserPersistance user = UserPersistance.builder()
+                .email(email)
+                .location(location)
+                .password(oldUser.getPassword())
+                .build();
+
+        jpaRepository.save(user);
+        return convertUserPersistanceToUser(oldUser);
+    }
+
     private User convertUserPersistanceToUser(UserPersistance userPersistence) {
 
         return userPersistence == null ? null : User

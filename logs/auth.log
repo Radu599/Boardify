@@ -1,113 +1,19 @@
-2019-12-29 00:00:22.178  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-29 00:05:22.231  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-29 00:10:22.234  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-29 00:15:22.237  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-29 00:20:22.238  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-29 00:25:22.241  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-29 15:39:34.550  WARN 25064 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=15h12m47s726ms451µs400ns).
-2019-12-29 15:42:39.956  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-29 15:47:39.958  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-29 15:52:39.960  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-29 15:57:40.056  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-29 15:59:44.435  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.controller.Controller      : +++++++++LOGGING login+++++++++
-2019-12-29 15:59:44.436  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.controller.Controller      : Username: a@a.com
-2019-12-29 15:59:44.436  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.controller.Controller      : Password: a
-2019-12-29 15:59:44.436  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING login+++++++++++++++++++++++++++++++
-2019-12-29 15:59:44.436  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : username: a@a.com
-2019-12-29 15:59:44.437  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : password: a
-2019-12-29 15:59:44.437  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
-2019-12-29 15:59:44.437  INFO 25064 --- [http-nio-8082-exec-10] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++LOGGING findUser+++++++++
-2019-12-29 15:59:44.437  INFO 25064 --- [http-nio-8082-exec-10] b.a.dao.impl.jpaRepository.UserDaoJpa    : username: a@a.com
-2019-12-29 15:59:44.469  INFO 25064 --- [http-nio-8082-exec-10] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++SUCCESSFUL LOGGING findUser+++++++++
-2019-12-29 15:59:44.469  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
-2019-12-29 15:59:44.473  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING login+++++++++++++++++++++++++++++++
-2019-12-29 15:59:44.474  INFO 25064 --- [http-nio-8082-exec-10] boardify.auth.controller.Controller      : +++++++++SUCCESSFUL LOGGING login+++++++++
-2019-12-29 16:02:40.168  INFO 25064 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-29 16:09:37.253  INFO 1072 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
-2019-12-29 16:09:39.369  INFO 1072 --- [main] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2019-12-29 16:09:39.369  WARN 1072 --- [main] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/auth-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
-2019-12-29 16:09:39.369  INFO 1072 --- [main] boardify.auth.AuthApplication            : No active profile set, falling back to default profiles: default
-2019-12-29 16:09:39.836  INFO 1072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-29 16:09:39.883  INFO 1072 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41ms. Found 1 repository interfaces.
-2019-12-29 16:09:40.269  INFO 1072 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f636d101-b6ac-3007-b92f-d8bb90372010
-2019-12-29 16:09:40.363  INFO 1072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-29 16:09:40.410  INFO 1072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$fa6cea9f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-29 16:09:40.637  INFO 1072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2019-12-29 16:09:40.645  INFO 1072 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-29 16:09:40.645  INFO 1072 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-29 16:09:40.774  INFO 1072 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-29 16:09:40.774  INFO 1072 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1390 ms
-2019-12-29 16:09:40.915  INFO 1072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-29 16:09:41.045  INFO 1072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-29 16:09:41.538  INFO 1072 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-29 16:09:41.544  INFO 1072 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOGLOCK
-2019-12-29 16:09:41.546  INFO 1072 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM boardify_user_development.DATABASECHANGELOGLOCK WHERE ID=1
-2019-12-29 16:09:41.681  INFO 1072 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
-2019-12-29 16:09:42.594  INFO 1072 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM boardify_user_development.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
-2019-12-29 16:09:42.594  INFO 1072 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM boardify_user_development.DATABASECHANGELOG
-2019-12-29 16:09:42.594  INFO 1072 --- [main] l.c.StandardChangeLogHistoryService      : Reading from boardify_user_development.DATABASECHANGELOG
-2019-12-29 16:09:42.594  INFO 1072 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM boardify_user_development.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
-2019-12-29 16:09:42.743  INFO 1072 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
-2019-12-29 16:09:42.744  INFO 1072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-12-29 16:09:42.756  INFO 1072 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-12-29 16:09:42.837  INFO 1072 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-29 16:09:42.916  INFO 1072 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
-2019-12-29 16:09:43.031  INFO 1072 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-29 16:09:43.109  INFO 1072 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-12-29 16:09:43.638  INFO 1072 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-29 16:09:43.645  INFO 1072 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-29 16:09:43.863  WARN 1072 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-29 16:09:44.051  INFO 1072 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@482040a, org.springframework.security.web.context.SecurityContextPersistenceFilter@70d61624, org.springframework.security.web.header.HeaderWriterFilter@41fdb59c, org.springframework.security.web.authentication.logout.LogoutFilter@4467088e, boardify.commonsecurity.filters.authMicroserviceFilters.AuthJwtFilter@7f2c36de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a0161ee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7115d5af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@b45e264, org.springframework.security.web.session.SessionManagementFilter@6b6b4177, org.springframework.security.web.access.ExceptionTranslationFilter@26f50a28, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@11c82829]
-2019-12-29 16:09:44.067  WARN 1072 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-29 16:09:44.067  INFO 1072 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-29 16:09:44.073  WARN 1072 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-12-29 16:09:44.073  INFO 1072 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-12-29 16:09:44.219  INFO 1072 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-29 16:09:46.154  WARN 1072 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-29 16:09:46.173  WARN 1072 --- [main] eactorLoadBalancerClientRibbonWarnLogger : You have RibbonLoadBalancerClient on your classpath. LoadBalancerExchangeFilterFunction that uses it under the hood will be used by default. Spring Cloud Ribbon is now in maintenance mode, so we suggest switching to ReactorLoadBalancerExchangeFilterFunction instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
-2019-12-29 16:09:46.258  INFO 1072 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-12-29 16:09:46.290  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-12-29 16:09:46.415  INFO 1072 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-12-29 16:09:46.415  INFO 1072 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-12-29 16:09:46.563  INFO 1072 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-12-29 16:09:46.563  INFO 1072 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-12-29 16:09:46.721  INFO 1072 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-29 16:09:47.063  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2019-12-29 16:09:47.063  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2019-12-29 16:09:47.063  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2019-12-29 16:09:47.064  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2019-12-29 16:09:47.064  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2019-12-29 16:09:47.064  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2019-12-29 16:09:47.064  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2019-12-29 16:09:47.176  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2019-12-29 16:09:47.179  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2019-12-29 16:09:47.181  INFO 1072 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2019-12-29 16:09:47.184  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1577628587183 with initial instances count: 4
-2019-12-29 16:09:47.187  INFO 1072 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application AUTH-SERVICE with eureka with status UP
-2019-12-29 16:09:47.187  INFO 1072 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1577628587187, current=UP, previous=STARTING]
-2019-12-29 16:09:47.190  INFO 1072 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/192.168.2.112:auth-service:8082: registering service...
-2019-12-29 16:09:47.222  INFO 1072 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTH-SERVICE/192.168.2.112:auth-service:8082 - registration status: 204
-2019-12-29 16:09:47.222  INFO 1072 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2019-12-29 16:09:47.222  INFO 1072 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
-2019-12-29 16:09:48.174  INFO 1072 --- [main] boardify.auth.AuthApplication            : Started AuthApplication in 13.335 seconds (JVM running for 14.687)
-2019-12-29 16:10:18.553  INFO 1072 --- [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-29 16:10:18.553  INFO 1072 --- [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-29 16:10:18.560  INFO 1072 --- [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2019-12-29 16:10:18.665  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.controller.Controller      : +++++++++LOGGING login+++++++++
-2019-12-29 16:10:18.668  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.controller.Controller      : Username: a@a.com
-2019-12-29 16:10:18.669  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.controller.Controller      : Password: a
-2019-12-29 16:10:18.669  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING login+++++++++++++++++++++++++++++++
-2019-12-29 16:10:18.669  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.service.impl.ServiceImpl   : username: a@a.com
-2019-12-29 16:10:18.669  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.service.impl.ServiceImpl   : password: a
-2019-12-29 16:10:18.670  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
-2019-12-29 16:10:18.670  INFO 1072 --- [http-nio-8082-exec-2] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++LOGGING findUser+++++++++
-2019-12-29 16:10:18.670  INFO 1072 --- [http-nio-8082-exec-2] b.a.dao.impl.jpaRepository.UserDaoJpa    : username: a@a.com
-2019-12-29 16:10:18.687  INFO 1072 --- [http-nio-8082-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2019-12-29 16:10:18.687  WARN 1072 --- [http-nio-8082-exec-2] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-12-29 16:10:18.691  INFO 1072 --- [http-nio-8082-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2019-12-29 16:10:18.789  INFO 1072 --- [http-nio-8082-exec-2] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++SUCCESSFUL LOGGING findUser+++++++++
-2019-12-29 16:10:18.790  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
-2019-12-29 16:10:19.029  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING login+++++++++++++++++++++++++++++++
-2019-12-29 16:10:19.029  INFO 1072 --- [http-nio-8082-exec-2] boardify.auth.controller.Controller      : +++++++++SUCCESSFUL LOGGING login+++++++++
-2019-12-29 16:14:47.066  INFO 1072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2019-12-29 16:19:47.068  INFO 1072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-30 09:46:33.665  WARN 1072 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=10h34m4s959ms420µs300ns).
+2019-12-30 09:51:01.530  INFO 1072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-30 09:56:01.537  INFO 1072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-30 09:58:03.392  INFO 1072 --- [http-nio-8082-exec-10] boardify.auth.controller.Controller      : +++++++++LOGGING login+++++++++
+2019-12-30 09:58:03.394  INFO 1072 --- [http-nio-8082-exec-10] boardify.auth.controller.Controller      : Username: a@a.com
+2019-12-30 09:58:03.441  INFO 1072 --- [http-nio-8082-exec-10] boardify.auth.controller.Controller      : Password: a
+2019-12-30 09:58:03.442  INFO 1072 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING login+++++++++++++++++++++++++++++++
+2019-12-30 09:58:03.442  INFO 1072 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : username: a@a.com
+2019-12-30 09:58:03.443  INFO 1072 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : password: a
+2019-12-30 09:58:03.444  INFO 1072 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
+2019-12-30 09:58:03.444  INFO 1072 --- [http-nio-8082-exec-10] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++LOGGING findUser+++++++++
+2019-12-30 09:58:03.444  INFO 1072 --- [http-nio-8082-exec-10] b.a.dao.impl.jpaRepository.UserDaoJpa    : username: a@a.com
+2019-12-30 09:58:03.653  INFO 1072 --- [http-nio-8082-exec-10] b.a.dao.impl.jpaRepository.UserDaoJpa    : +++++++++SUCCESSFUL LOGGING findUser+++++++++
+2019-12-30 09:58:03.654  INFO 1072 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING loadUserByUsername+++++++++++++++++++++++++++++++
+2019-12-30 09:58:03.710  INFO 1072 --- [http-nio-8082-exec-10] boardify.auth.service.impl.ServiceImpl   : +++++++++++++++++++++++++++++++SUCCESSFUL LOGGING login+++++++++++++++++++++++++++++++
+2019-12-30 09:58:03.710  INFO 1072 --- [http-nio-8082-exec-10] boardify.auth.controller.Controller      : +++++++++SUCCESSFUL LOGGING login+++++++++
+2019-12-30 10:01:01.538  INFO 1072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-30 10:06:01.650  INFO 1072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2019-12-30 10:11:01.651  INFO 1072 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
