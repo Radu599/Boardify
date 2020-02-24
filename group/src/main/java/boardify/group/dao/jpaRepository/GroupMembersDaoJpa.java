@@ -4,6 +4,7 @@ import boardify.group.dao.GroupMembersDao;
 import boardify.group.dto.UserDto;
 import boardify.group.model.GroupMembers;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -37,19 +38,16 @@ public class GroupMembersDaoJpa implements GroupMembersDao {
                                             .map(GroupMembers::getUser_email)
                                             .collect(Collectors.toList());
 
+        // refactor
         List<UserDto> result = new ArrayList<>();
-        groupMembersEmails.forEach(userEmail -> result.add(getUser(userEmail)));
+        groupMembersEmails.forEach(userEmail -> result.add(UserDto.builder().email(userEmail).build()));
 
         return result;
     }
 
-    private UserDto getUser(String userEmail) {
-        return UserDto.builder().email("a@a.com").build(); // TODO
-    }
-
     public List<GroupMembers> findGroupMembersByGameGroupID(int gameGroupID) {
 
-        return groupMembersJpaRepository.findByGameGroupId(gameGroupID)
+        return groupMembersJpaRepository.findByGameGroupID(gameGroupID)
                 .stream()
                 .map(this::convertGroupMembersPersitanceToGroupMembers)
                 .collect(Collectors.toList());

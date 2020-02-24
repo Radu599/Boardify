@@ -48,6 +48,9 @@ public class Controller {
     public ResponseEntity<UserExceptionType> updateLocation(Principal principal, @RequestBody String location) {
 
         String email = principal.getName();
+
+        assert(email!=null);
+
         logger.info("+++++++++LOGGING updateLocation+++++++++");
         //loggingEntity(user);
         service.updateLocation(email, location);

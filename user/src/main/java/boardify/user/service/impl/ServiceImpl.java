@@ -56,5 +56,6 @@ public class ServiceImpl implements Service, UserDetailsService {
         if (userDao.updateLocation(email, location) == null) {
             throw new UserServiceException("Doesn't exist a user with id = " + email, UserExceptionType.USER_NOT_FOUND, HttpStatus.NOT_FOUND);
         }
+        assert(userDao.findLocationByEmail(email).equals(location));
     }
 }

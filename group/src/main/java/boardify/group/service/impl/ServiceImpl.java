@@ -31,7 +31,7 @@ public class ServiceImpl implements Service, UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority("ADMIN"));
-        return new User("a@a.com", "a", authorities);
+        return new User("a@a.com", "a", authorities); //TODO:
     }
 
     @Override

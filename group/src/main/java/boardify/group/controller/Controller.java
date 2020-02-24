@@ -42,6 +42,9 @@ public class Controller {
 
         logger.info("+++++++++LOGGING findAllGames+++++++++");
         String email = principal.getName();
+
+        assert(email!=null);
+
         List<UserDto> userDtos = service.findGroupForUser(email);
         logger.info("+++++++++SUCCESSFUL LOGGING findAllGames+++++++++");
         return new ResponseEntity<>(userDtos, HttpStatus.OK);

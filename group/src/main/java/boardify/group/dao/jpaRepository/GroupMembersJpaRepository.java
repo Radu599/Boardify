@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface GroupMembersJpaRepository extends JpaRepository<GroupMembersPersistance, String> {
 
-    List<GroupMembersPersistance> findByGameGroupId(int gameGroupId);
+    List<GroupMembersPersistance> findByGameGroupID(int gameGroupID);
 
 }
