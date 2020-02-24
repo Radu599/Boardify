@@ -1431,3 +1431,4 @@ java.util.concurrent.TimeoutException: null
 2020-02-24 15:40:07.183  WARN 13320 --- [http-nio-8085-exec-2] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
 2020-02-24 15:40:07.187  INFO 13320 --- [http-nio-8085-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
 2020-02-24 15:40:07.405  INFO 13320 --- [http-nio-8085-exec-2] boardify.group.controller.Controller     : +++++++++SUCCESSFUL LOGGING findAllGames+++++++++
+2020-02-24 15:45:02.284  INFO 13320 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

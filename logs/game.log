@@ -259,3 +259,4 @@ io.jsonwebtoken.ExpiredJwtException: JWT expired at 2020-02-24T15:17:24Z. Curren
 2020-02-24 15:28:43.485  INFO 2820 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-02-24 15:33:43.487  INFO 2820 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-02-24 15:38:43.489  INFO 2820 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-02-24 15:43:43.493  INFO 2820 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
