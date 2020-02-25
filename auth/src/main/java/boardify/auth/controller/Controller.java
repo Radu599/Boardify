@@ -74,6 +74,4 @@ public class Controller {
         logger.error("+++++++++END LOGGING handleException+++++++++");
         return new ResponseEntity<>(exception.getType(), new HttpHeaders(), exception.getHttpStatus());
     }
-
-
 }
