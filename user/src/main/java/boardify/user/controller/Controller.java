@@ -44,10 +44,13 @@ public class Controller {
             @ApiResponse(code = 200, message = "SUCCESS", response = UserExceptionType.class),
             @ApiResponse(code = 404, message = "ENTITY_NOT_FOUND", response = UserExceptionType.class)
     })
-    @RequestMapping(value = "/location", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<UserExceptionType> updateLocation(Principal principal, @RequestBody String location) {
+    @RequestMapping(value = "/location/{location}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<UserExceptionType> updateLocation(Principal principal, @PathVariable String location) {
 
         String email = principal.getName();
+
+        assert(email!=null);
+
         logger.info("+++++++++LOGGING updateLocation+++++++++");
         //loggingEntity(user);
         service.updateLocation(email, location);
