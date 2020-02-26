@@ -12,10 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -23,10 +24,7 @@ import java.util.List;
 public class Controller {
 
     private final Logger logger = LogManager.getLogger();
-    @Autowired
-    private WebClient.Builder webClientBuilder;
-    @Autowired
-    private RestTemplate restTemplate;
+
     @Autowired
     private Service service;
 
@@ -35,8 +33,9 @@ public class Controller {
             @ApiResponse(code = 200, message = "SUCCESS", response = List.class),
     })
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Game>> findAllGames() {
+    public ResponseEntity<List<Game>> findAllGames(Principal principal) {
 
+        logger.info(principal.getName() +  " called findAllGames()");
         logger.info("+++++++++LOGGING findAllGames+++++++++");
         List<Game> entities = service.findAllGames();
         logger.info("+++++++++SUCCESSFUL LOGGING findAllGames+++++++++");

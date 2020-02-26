@@ -19,7 +19,7 @@ import java.util.List;
 @org.springframework.stereotype.Service
 @Primary
 @Component
-public class ServiceImpl implements Service, UserDetailsService {
+public class ServiceImpl implements Service {
 
     @Autowired
     private GameDao gameDao;
@@ -28,11 +28,5 @@ public class ServiceImpl implements Service, UserDetailsService {
     public List<Game> findAllGames() {
 
         return gameDao.findAllGames();
-    }
-
-    @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority("ADMIN"));
-        return new User("a@a.com", "a", authorities);
     }
 }
