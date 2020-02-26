@@ -1,32 +1,32 @@
 package boardify.group.config;
 
+import boardify.commonsecurity.config.JwtAuthenticationConfig;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 
-/**
- * class for @Beans and other configurations
- */
+import static org.springframework.context.annotation.FilterType.ASSIGNABLE_TYPE;
+
 @Configuration
+@ComponentScan(basePackages = {
+        "boardify.commonsecurity.config",
+        "boardify.commonsecurity.filters.microserviceFilters",
+        "boardify.commonsecurity.util",
+        "boardify.group"},
+        excludeFilters = @ComponentScan.Filter(type = ASSIGNABLE_TYPE,
+                value = {
+                        JwtAuthenticationConfig.class
+                })
+)
 public class GroupConfiguration {
 
     @Bean
     @LoadBalanced
-    public WebClient.Builder getWebClientBuilder() {
+    public WebClient.Builder buildWebClientBuilder() {
 
         return WebClient.builder();
-    }
-
-
-    // if you want to use RestTemplate for calls between microservices using EurekaServiceDiscovery, you must add here '@LoadBalanced' annotation
-    // for more information about '@LoadBalanced' check here:
-    // ** https://www.logicbig.com/tutorials/spring-framework/spring-cloud/rest-template-load-balancer.html
-    // ** or ask me
-    @Bean
-    public RestTemplate getRestTemplate() {
-
-        return new RestTemplate();
     }
 }

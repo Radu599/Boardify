@@ -26,10 +26,7 @@ import java.util.List;
 public class Controller {
 
     private final Logger logger = LogManager.getLogger();
-    @Autowired
-    private WebClient.Builder webClientBuilder;
-    @Autowired
-    private RestTemplate restTemplate;
+
     @Autowired
     private Service service;
 
