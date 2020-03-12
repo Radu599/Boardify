@@ -18,4 +18,5 @@ public class Game {
     private int suggestedAge;
     private int averagePlayingTime;
     private String description;
+    private String imageLink;
 }
