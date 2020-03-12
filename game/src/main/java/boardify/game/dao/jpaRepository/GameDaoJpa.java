@@ -41,6 +41,7 @@ public class GameDaoJpa implements GameDao {
                 .maximumNumberOfPlayers(gamePersistence.getMaximumNumberOfPlayers())
                 .minimumNumberOfPlayers(gamePersistence.getMinimumNumberOfPlayers())
                 .suggestedAge(gamePersistence.getSuggestedAge())
+                .imageLink(gamePersistence.getImageLink())
                 .build();
     }
 }

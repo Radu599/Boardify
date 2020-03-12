@@ -1,10 +1,10 @@
-INSERT INTO `game` (`ID`, `name`, `minimum_number_of_players`, `maximum_number_of_players`, `suggested_age`, `average_playing_time`, `description`)
-VALUES (1, "COSMIC ENCOUNTER", 3, 5, 7, 60, ". COSMIC ENCOUNTER is a brilliant mix of genuine strategy and unpredictable hilarity");
-INSERT INTO `game` (`ID`, `name`, `minimum_number_of_players`, `maximum_number_of_players`, `suggested_age`, `average_playing_time`, `description`)
-VALUES (2, "SPLENDOR", 2, 4, 10, 40, "For a small and light board game that contains enough strategy to play over and over, while also not being intimidating to new players, Splendor is the ideal option. ");
-INSERT INTO `game` (`ID`, `name`, `minimum_number_of_players`, `maximum_number_of_players`, `suggested_age`, `average_playing_time`, `description`)
-VALUES (3, "PANDEMIC LEGACY: SEASON 1", 2, 4, 13, 75, "Pandemic is a game of trying to stop diseases outbreaking all over the Earth. ");
-INSERT INTO `game` (`ID`, `name`, `minimum_number_of_players`, `maximum_number_of_players`, `suggested_age`, `average_playing_time`, `description`)
-VALUES (4, "QUACKS OF QUEDLINBURG", 2, 4, 10, 50, "Though its name may be needlessly complex, Quacks (as we''''ve taken to calling it) is easy to teach and simple to play: most of the game involves reaching into a bag of tokens and then revelling in the agony or the ecstasy of what you’ve drawn.");
-INSERT INTO `game` (`ID`, `name`, `minimum_number_of_players`, `maximum_number_of_players`, `suggested_age`, `average_playing_time`, `description`)
-VALUES (5, "SURVIVE: ESCAPE FROM ATLANTIS", 2, 4, 8, 50, "The idea of the game is that you all control a group of inhabitants of the island of Atlantis, which is in the process of sinking in the water. ");
+INSERT INTO `game` (`ID`, `name`, `minimum_number_of_players`, `maximum_number_of_players`, `suggested_age`, `average_playing_time`, `description`, `image_link`)
+VALUES (1, "COSMIC ENCOUNTER", 3, 5, 7, 60, ". COSMIC ENCOUNTER is a brilliant mix of genuine strategy and unpredictable hilarity", "https://cf.geekdo-images.com/opengraph/img/aSPoR14lqt1IWmeuSzgSpK6IQL8=/fit-in/1200x630/pic4243113.jpg");
+INSERT INTO `game` (`ID`, `name`, `minimum_number_of_players`, `maximum_number_of_players`, `suggested_age`, `average_playing_time`, `description`, `image_link`)
+VALUES (2, "SPLENDOR", 2, 4, 10, 40, "For a small and light board game that contains enough strategy to play over and over, while also not being intimidating to new players, Splendor is the ideal option. ", "https://cf.geekdo-images.com/opengraph/img/9ZQ1bKSqxPFhRn9MF01Wwf-wgPA=/fit-in/1200x630/pic1904079.jpg");
+INSERT INTO `game` (`ID`, `name`, `minimum_number_of_players`, `maximum_number_of_players`, `suggested_age`, `average_playing_time`, `description`, `image_link`)
+VALUES (3, "PANDEMIC LEGACY: SEASON 1", 2, 4, 13, 75, "Pandemic is a game of trying to stop diseases outbreaking all over the Earth. ", "https://images-na.ssl-images-amazon.com/images/I/61RUJVWvf9L._AC_.jpg");
+INSERT INTO `game` (`ID`, `name`, `minimum_number_of_players`, `maximum_number_of_players`, `suggested_age`, `average_playing_time`, `description`, `image_link`)
+VALUES (4, "QUACKS OF QUEDLINBURG", 2, 4, 10, 50, "Though its name may be needlessly complex, Quacks (as we''''ve taken to calling it) is easy to teach and simple to play: most of the game involves reaching into a bag of tokens and then revelling in the agony or the ecstasy of what you’ve drawn.", "https://cf.geekdo-images.com/opengraph/img/TZVmfChYRrrBESKa3z9oMBlggRk=/fit-in/1200x630/pic4474567.jpg");
+INSERT INTO `game` (`ID`, `name`, `minimum_number_of_players`, `maximum_number_of_players`, `suggested_age`, `average_playing_time`, `description`, `image_link`)
+VALUES (5, "SURVIVE: ESCAPE FROM ATLANTIS", 2, 4, 8, 50, "The idea of the game is that you all control a group of inhabitants of the island of Atlantis, which is in the process of sinking in the water. ", "https://cf.geekdo-images.com/opengraph/img/yqc6wsSENdTGcbWj_Fwx9gxdJ1s=/fit-in/1200x630/pic1300182.png");

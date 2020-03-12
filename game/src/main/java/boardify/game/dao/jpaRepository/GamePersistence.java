@@ -29,4 +29,6 @@ class GamePersistence {
     private int averagePlayingTime;
     @Column(name = "description")
     private String description;
+    @Column(name = "image_link")
+    private String imageLink;
 }
