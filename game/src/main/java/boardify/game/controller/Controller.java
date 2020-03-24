@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.Principal;
 import java.util.List;
 
-@CrossOrigin
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/games")
 public class Controller {

@@ -7,4 +7,5 @@ import java.util.List;
 public interface Service {
 
     List<UserDto> findGroupForUser(String email);
+    //boolean isGroupInQueue(int gameId);
 }
