@@ -2,9 +2,8 @@ package boardify.group.dao.jpaRepository;
 
 import boardify.group.dao.GroupMembersDao;
 import boardify.group.dto.UserDto;
-import boardify.group.model.GroupMembers;
+import boardify.group.model.GroupMember;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -23,7 +22,6 @@ public class GroupMembersDaoJpa implements GroupMembersDao {
         this.groupMembersJpaRepository = jpaRepository;
     }
 
-
     @Override
     public List<UserDto> findGroupForUser(String email) {
 
@@ -31,11 +29,11 @@ public class GroupMembersDaoJpa implements GroupMembersDao {
         int gameGroupID = findGameGroupID(email);
 
         // find all group members in his group
-        List<GroupMembers> groupMembers = findGroupMembersByGameGroupID(gameGroupID);
+        List<GroupMember> groupMembers = findGroupMembersByGameGroupID(gameGroupID);
 
         // find emails of all group members
         List<String> groupMembersEmails = groupMembers.stream()
-                                            .map(GroupMembers::getUser_email)
+                                            .map(GroupMember::getUser_email)
                                             .collect(Collectors.toList());
 
         // refactor
@@ -45,7 +43,8 @@ public class GroupMembersDaoJpa implements GroupMembersDao {
         return result;
     }
 
-    public List<GroupMembers> findGroupMembersByGameGroupID(int gameGroupID) {
+    @Override
+    public List<GroupMember> findGroupMembersByGameGroupID(int gameGroupID) {
 
         return groupMembersJpaRepository.findByGameGroupID(gameGroupID)
                 .stream()
@@ -53,17 +52,39 @@ public class GroupMembersDaoJpa implements GroupMembersDao {
                 .collect(Collectors.toList());
     }
 
-    private GroupMembers convertGroupMembersPersitanceToGroupMembers(GroupMembersPersistance groupMembersPersistance) {
+    @Override
+    public int findSizeForGroup(int gameGroupID) {
 
-        return groupMembersPersistance == null ? null : GroupMembers
+        return this.findGroupMembersByGameGroupID(gameGroupID).size();
+    }
+
+
+    private GroupMember convertGroupMembersPersitanceToGroupMembers(GroupMembersPersistance groupMembersPersistance) {
+
+        return groupMembersPersistance == null ? null : GroupMember
                 .builder()
                 .user_email(groupMembersPersistance.getUserEmail())
                 .gameGroupId(groupMembersPersistance.getGameGroupID())
                 .build();
     }
 
+    @Override
     public int findGameGroupID(String email) {
 
         return groupMembersJpaRepository.findById(email).get().getGameGroupID();
+    }
+
+    @Override
+    public void save(GroupMember groupMember) {
+
+        groupMembersJpaRepository.save(this.convertGroupMemberToGroupMemberPersistance(groupMember));
+    }
+
+    private GroupMembersPersistance convertGroupMemberToGroupMemberPersistance(GroupMember groupMember) {
+
+        return groupMember == null ? null : GroupMembersPersistance.builder()
+                .gameGroupID(groupMember.getGameGroupId())
+                .userEmail(groupMember.getUser_email())
+                .build();
     }
 }

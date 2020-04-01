@@ -22,4 +22,10 @@ public class ServiceImpl implements Service {
 
         return gameDao.findAllGames();
     }
+
+    @Override
+    public int getMinimumNumberOfPlayers(int gameId) {
+
+        return gameDao.getMinimumNumberOfPlayers(gameId);
+    }
 }

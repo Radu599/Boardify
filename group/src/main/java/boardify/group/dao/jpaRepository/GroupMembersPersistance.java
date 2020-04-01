@@ -11,6 +11,7 @@ import javax.persistence.*;
 @Builder
 @Entity
 @Table(name = "GROUP_MEMBERS")
+public
 class GroupMembersPersistance {
 
     @Id

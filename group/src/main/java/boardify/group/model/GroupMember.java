@@ -7,7 +7,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-public class GroupMembers {
+public class GroupMember {
 
     String user_email;
     int gameGroupId;

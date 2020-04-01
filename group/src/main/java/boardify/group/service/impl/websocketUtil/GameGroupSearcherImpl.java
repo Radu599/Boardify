@@ -18,9 +18,8 @@ public class GameGroupSearcherImpl implements GameGroupSearcher {
     private int gameId;
 
     @Override
-    public int findGameGroup() {
-
-
+    public int findGameGroup(String email, int gameId) {
+        //TODO:
 
         return 0;
     }

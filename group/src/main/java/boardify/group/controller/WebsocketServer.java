@@ -1,4 +1,4 @@
-package boardify.group.service.impl;
+package boardify.group.controller;
 
 import boardify.group.dto.Message;
 import boardify.group.dto.MessageType;
@@ -72,7 +72,7 @@ public class WebsocketServer extends WebSocketServer {
 
             switch (msg.getType()) {
                 case SEARCH_GAME:
-                    gameGroupSearcher.findGameGroup();
+                    int groupId = gameGroupSearcher.findGameGroup(msg.getEmail(), msg.getGameId());
                     HashMap value = new HashMap();
                     value.put(conn, msg.getEmail());
                     //TODO: the key should be the group id because there may be more instances of same game going on
