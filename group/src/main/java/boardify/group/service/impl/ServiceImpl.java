@@ -41,6 +41,17 @@ public class ServiceImpl implements Service {
     }
 
     @Override
+    public int saveGroup(int gameID) {
+
+        return groupDao.save(gameID);
+    }
+
+    @Override
+    public int findGameForGroup(int groupID) {
+        return groupDao.findGameForGroup(groupID);
+    }
+
+    @Override
     public void saveGroupMember(GroupMember groupMember) {
 
         groupMembersDao.save(groupMember);

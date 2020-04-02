@@ -11,4 +11,8 @@ public class GameGroup {
 
     int id;
     int gameId;
+
+    public GameGroup(int gameId){
+        this.gameId = gameId;
+    }
 }

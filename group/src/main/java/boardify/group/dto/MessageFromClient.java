@@ -7,7 +7,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-public class Message {
+public class MessageFromClient {
 
     private String email;
     private int gameId;

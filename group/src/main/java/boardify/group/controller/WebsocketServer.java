@@ -1,7 +1,8 @@
 package boardify.group.controller;
 
-import boardify.group.dto.Message;
-import boardify.group.dto.MessageType;
+import boardify.group.dto.ClientNotification;
+import boardify.group.dto.ClientNotificationType;
+import boardify.group.dto.MessageFromClient;
 import boardify.group.service.GameGroupSearcher;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,6 +16,7 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 
@@ -43,7 +45,6 @@ public class WebsocketServer extends WebSocketServer {
 
     @Override
     public void onOpen(WebSocket webSocket, ClientHandshake clientHandshake) {
-        conns.add(webSocket);
         System.out.println("New connection from " + webSocket.getRemoteSocketAddress().getAddress().getHostAddress());
     }
 
@@ -68,16 +69,21 @@ public class WebsocketServer extends WebSocketServer {
         System.out.println("Message:" + message);
         ObjectMapper mapper = new ObjectMapper();
         try {
-            Message msg = mapper.readValue(message, Message.class);
+            MessageFromClient msg = mapper.readValue(message, MessageFromClient.class);
 
             switch (msg.getType()) {
                 case SEARCH_GAME:
-                    int groupId = gameGroupSearcher.findGameGroup(msg.getEmail(), msg.getGameId());
-                    HashMap value = new HashMap();
+                    int groupId = gameGroupSearcher.joinGame(msg.getEmail(), msg.getGameId()).get(0).getId();
+                    // add user to it's group
+                    HashMap value = groups.get(groupId);
+
+                    if(value==null)
+                        value = new HashMap();
+
                     value.put(conn, msg.getEmail());
-                    //TODO: the key should be the group id because there may be more instances of same game going on
-                    groups.put(msg.getGameId(), value);
-                    searchGame(new Message(msg.getEmail(),msg.getGameId(), msg.getType()), conn);
+
+                    groups.put(groupId, value);
+                    notifyGroupMembers(groupId);
                     break;
             }
 
@@ -98,24 +104,21 @@ public class WebsocketServer extends WebSocketServer {
         System.out.println("ERROR from " + conn.getRemoteSocketAddress().getAddress().getHostAddress());
     }
 
-    private void broadcastMessage(Message msg) {
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            String messageJson = mapper.writeValueAsString(msg);
-            for (WebSocket sock : conns) {
-                sock.send(messageJson);
-                System.out.println("sending " + msg.toString() + " to " + sock.getLocalSocketAddress());
-            }
-        } catch (JsonProcessingException e) {
 
-        }
+    private void notifyGroupMembers(int groupId) throws JsonProcessingException {
+
+        HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
+
+        if(usersInCurrentGroup.size()>=gameGroupSearcher.getMinimumNumberOfPlayers(gameGroupSearcher.findGameForGroup(groupId)))// TODO: start game if enough users
+            broadcastGameStarts(groupId);
+        else
+            broadcastUserJoinedTheGroup(groupId);// TODO: other type; used this just for debug
     }
 
-    private void searchGame(Message message, WebSocket conn) throws JsonProcessingException {
+    private void broadcastGameStarts(int groupId) {
 
-        users.put(conn, message.getEmail()); // TODO: useless?
-        acknowledgeUserJoined(message.getEmail(), conn);
-        broadcastUserActivityMessage(MessageType.SEARCH_GAME);// TODO: other type; used this just for debug
+        broadcastMessageToGroup(new ClientNotification(ClientNotificationType.START_GAME), groupId);
+
     }
 
     private void removeUser(WebSocket conn) throws JsonProcessingException {
@@ -123,20 +126,30 @@ public class WebsocketServer extends WebSocketServer {
         //broadcastUserActivityMessage(MessageType.USER_LEFT);
     }
 
-    private void acknowledgeUserJoined(String email, WebSocket conn) throws JsonProcessingException {
 
-        // TODO: user joined game logic
-        System.out.println("acknowledgeUserJoined");
+    private void broadcastUserJoinedTheGroup(int groupId) throws JsonProcessingException {
+
+        HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
+
+        broadcastMessageToGroup(new ClientNotification(String.valueOf(usersInCurrentGroup.size()), ClientNotificationType.JOINED), groupId);
+
     }
 
-    private void broadcastUserActivityMessage(MessageType messageType) throws JsonProcessingException {
+    private void broadcastMessageToGroup(ClientNotification clientNotification, int groupId) {
 
-        Message newMessage = new Message();
+        HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
 
         ObjectMapper mapper = new ObjectMapper();
-        String data = mapper.writeValueAsString(users.values());
-        //newMessage.setData(data);
-        //newMessage.setType(messageType);
-        broadcastMessage(newMessage);
+        String messageJson = null;
+        try {
+            messageJson = mapper.writeValueAsString(clientNotification);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        for (Map.Entry<WebSocket,String> entry : usersInCurrentGroup.entrySet()) {
+            WebSocket sock = entry.getKey();
+            sock.send(messageJson);
+        }
     }
 }
