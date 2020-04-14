@@ -33,7 +33,7 @@ public class GroupMembersDaoJpa implements GroupMembersDao {
 
         // find emails of all group members
         List<String> groupMembersEmails = groupMembers.stream()
-                                            .map(GroupMember::getUser_email)
+                                            .map(GroupMember::getUserEmail)
                                             .collect(Collectors.toList());
 
         // refactor
@@ -63,8 +63,8 @@ public class GroupMembersDaoJpa implements GroupMembersDao {
 
         return groupMembersPersistance == null ? null : GroupMember
                 .builder()
-                .user_email(groupMembersPersistance.getUserEmail())
-                .gameGroupId(groupMembersPersistance.getGameGroupID())
+                .userEmail(groupMembersPersistance.getUserEmail())
+                .gameGroupID(groupMembersPersistance.getGameGroupID())
                 .build();
     }
 
@@ -83,8 +83,8 @@ public class GroupMembersDaoJpa implements GroupMembersDao {
     private GroupMembersPersistance convertGroupMemberToGroupMemberPersistance(GroupMember groupMember) {
 
         return groupMember == null ? null : GroupMembersPersistance.builder()
-                .gameGroupID(groupMember.getGameGroupId())
-                .userEmail(groupMember.getUser_email())
+                .gameGroupID(groupMember.getGameGroupID())
+                .userEmail(groupMember.getUserEmail())
                 .build();
     }
 }

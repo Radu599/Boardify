@@ -1,8 +1,10 @@
 package boardify.group.dao.jpaRepository;
 
+import boardify.group.model.GroupMember;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Getter
 @Setter
@@ -11,12 +13,13 @@ import javax.persistence.*;
 @Builder
 @Entity
 @Table(name = "GROUP_MEMBERS")
-public
-class GroupMembersPersistance {
+@IdClass(GroupMember.class)
+public class GroupMembersPersistance implements Serializable {
 
     @Id
     @Column(name = "USER_EMAIL")
     private String userEmail;
+    @Id
     @Column(name = "GAME_GROUP_ID")
     private int gameGroupID;
 }
