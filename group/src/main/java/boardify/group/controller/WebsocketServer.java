@@ -1,8 +1,10 @@
 package boardify.group.controller;
 
-import boardify.group.dto.ClientNotification;
-import boardify.group.dto.ClientNotificationType;
-import boardify.group.dto.MessageFromClient;
+import boardify.group.dto.ChatDto.ClientToServer.ChatClientToServerMessage;
+import boardify.group.dto.JoinGroupDto.ClientToServer.JoinGroupMessageFromClient;
+import boardify.group.dto.JoinGroupDto.ServerToClient.ClientNotification;
+import boardify.group.dto.JoinGroupDto.ServerToClient.ClientNotificationType;
+import boardify.group.dto.Notification;
 import boardify.group.service.GameGroupSearcher;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -55,7 +57,7 @@ public class WebsocketServer extends WebSocketServer {
 
         ObjectMapper mapper = new ObjectMapper();
         try {
-            MessageFromClient msg = mapper.readValue(message, MessageFromClient.class);
+            JoinGroupMessageFromClient msg = mapper.readValue(message, JoinGroupMessageFromClient.class);
 
             switch (msg.getType()) {
                 case SEARCH_GAME:
@@ -63,18 +65,31 @@ public class WebsocketServer extends WebSocketServer {
                     // add user to it's group
                     HashMap value = groups.get(groupId);
 
-                    if(value==null)
+                    if (value == null)
                         value = new HashMap();
 
                     value.put(conn, msg.getEmail());
 
                     groups.put(groupId, value);
-                    notifyGroupMembers(groupId);
+                    notifyPlayerJoinedGroup(groupId);
                     break;
             }
             logger.info("Message from user: " + msg.getEmail() + ", text: " + msg.getGameId() + ", type:" + msg.getType());
         } catch (IOException e) {
-            logger.info("Wrong message format.");
+            logger.info("This is not a valid join message");
+        }
+
+        try {
+            ChatClientToServerMessage chatClientToServerMessage = mapper.readValue(message, ChatClientToServerMessage.class);
+            switch (chatClientToServerMessage.getType()) {
+                case CHAT_MESSAGE:
+                    int targetGroup = chatClientToServerMessage.getTargetGroup();
+                    broadcastMessageToGroup(chatClientToServerMessage, targetGroup);
+                    break;
+            }
+        } catch (IOException e) {
+            logger.info(e.getMessage());
+            logger.info("This is not a valid chat message");
         }
     }
 
@@ -84,12 +99,12 @@ public class WebsocketServer extends WebSocketServer {
         assert conn != null;
     }
 
-    private void notifyGroupMembers(int groupId) throws JsonProcessingException {
+    private void notifyPlayerJoinedGroup(int groupId) throws JsonProcessingException {
 
         logger.info("+++++++++SUCCESSFUL LOGGING notifyGroupMembers+++++++++");
         HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
 
-        if(usersInCurrentGroup.size()>=gameGroupSearcher.getMinimumNumberOfPlayers(gameGroupSearcher.findGameForGroup(groupId)))// TODO: start game if enough users
+        if (usersInCurrentGroup.size() >= gameGroupSearcher.getMinimumNumberOfPlayers(gameGroupSearcher.findGameForGroup(groupId)))// TODO: start game if enough users
             broadcastGameStarts(groupId);
         else
             broadcastUserJoinedTheGroup(groupId);// TODO: other type; used this just for debug
@@ -99,8 +114,8 @@ public class WebsocketServer extends WebSocketServer {
 
     private void broadcastGameStarts(int groupId) {
 
-        broadcastMessageToGroup(new ClientNotification(ClientNotificationType.START_GAME), groupId);
-
+        HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
+        broadcastMessageToGroup(new ClientNotification(usersInCurrentGroup.size(),groupId,ClientNotificationType.START_GAME), groupId);
     }
 
     private void removeUser(WebSocket conn) throws JsonProcessingException {
@@ -111,12 +126,10 @@ public class WebsocketServer extends WebSocketServer {
     private void broadcastUserJoinedTheGroup(int groupId) throws JsonProcessingException {
 
         HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
-
-        broadcastMessageToGroup(new ClientNotification(String.valueOf(usersInCurrentGroup.size()), ClientNotificationType.JOINED), groupId);
-
+        broadcastMessageToGroup(new ClientNotification(usersInCurrentGroup.size(),groupId, ClientNotificationType.JOINED), groupId);
     }
 
-    private void broadcastMessageToGroup(ClientNotification clientNotification, int groupId) {
+    private void broadcastMessageToGroup(Notification clientNotification, int groupId) {
 
         HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
 
@@ -128,7 +141,7 @@ public class WebsocketServer extends WebSocketServer {
             e.printStackTrace();
         }
 
-        for (Map.Entry<WebSocket,String> entry : usersInCurrentGroup.entrySet()) {
+        for (Map.Entry<WebSocket, String> entry : usersInCurrentGroup.entrySet()) {
             WebSocket sock = entry.getKey();
             sock.send(messageJson);
         }
