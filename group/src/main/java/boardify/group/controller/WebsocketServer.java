@@ -81,6 +81,7 @@ public class WebsocketServer extends WebSocketServer {
 
         try {
             ChatClientToServerMessage chatClientToServerMessage = mapper.readValue(message, ChatClientToServerMessage.class);
+            chatClientToServerMessage.setTimestamp(System.currentTimeMillis());
             switch (chatClientToServerMessage.getType()) {
                 case CHAT_MESSAGE:
                     int targetGroup = chatClientToServerMessage.getTargetGroup();

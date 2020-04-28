@@ -14,4 +14,5 @@ public class ChatClientToServerMessage extends Notification {
     private String message;
     private int targetGroup;
     private ChatClientToServerMessageType type;
+    private long timestamp;
 }
