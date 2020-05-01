@@ -7,4 +7,5 @@ import java.util.List;
 public interface Service {
 
     List<Game> findAllGames();
+    int getMinimumNumberOfPlayers(int gameId);
 }

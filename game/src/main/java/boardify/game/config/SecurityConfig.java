@@ -17,9 +17,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private JwtTokenAuthenticationFilter jwtTokenAuthenticationFilter;
 
+
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
+        http.authorizeRequests().antMatchers("/").permitAll(); // TODO: this stupid line disables security
+        if(1==1)
+            return;
         http.csrf()
                 .disable()
                 .logout().disable()

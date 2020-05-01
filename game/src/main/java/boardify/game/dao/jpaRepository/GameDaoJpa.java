@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
@@ -27,6 +28,13 @@ public class GameDaoJpa implements GameDao {
                 .stream()
                 .map(this::convertGamePersistenceToGame)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public int getMinimumNumberOfPlayers(int gameId) {
+
+         Optional<GamePersistence> gamePersistence = jpaRepository.findById(gameId);
+         return gamePersistence.get().getMinimumNumberOfPlayers();
     }
 
 

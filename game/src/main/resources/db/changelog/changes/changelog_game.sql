@@ -1,6 +1,7 @@
--- changelog number: 2
+-- changelog number: 3
 -- Antinie Radu creates table 'GAME'
-CREATE TABLE IF NOT EXISTS GAME (
+show variables like 'lower_case_table_names';
+CREATE TABLE IF NOT EXISTS game (
   ID   INT(10) PRIMARY KEY AUTO_INCREMENT,
   name varchar(40),
   minimum_number_of_players int,

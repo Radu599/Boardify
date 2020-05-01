@@ -1,0 +1,68 @@
+version: '3'
+services:
+  # Database
+  game-mysql-db:
+    image: mysql:5.7
+    container_name: game-mysql-db
+    hostname: mysql-game
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'boardify_game_development'
+      MYSQL_USER: 'Boardify'
+      MYSQL_PASSWORD: 'boardify'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    networks:
+      - boardify-app-network
+
+  # Core services
+  service-discovery:
+    hostname: service-discovery
+    image: eureka-server
+    container_name: service-discovery
+    restart: always
+    ports:
+      - "8761:8761"
+    networks:
+      - boardify-app-network
+
+  boardify-zuul-api-gateway-server:
+    build:
+      context: ./gateway
+      args:
+        JAR_FILE: gateway-0.0.1-SNAPSHOT.jar
+      dockerfile: Dockerfile
+    image: gateway
+    container_name: boardify-zuul-api-gateway-server
+    hostname: boardify-zuul-api-gateway-server
+    ports:
+      - "8080:8080"
+    networks:
+      - boardify-app-network
+    environment:
+      - SERVER_PORT=8080
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
+
+  boardify-game-service:
+    build:
+      context: ./game
+      args:
+        JAR_FILE: game-0.0.1-SNAPSHOT.jar
+      dockerfile: Dockerfile
+    image: game
+    container_name: boardify-game-service
+    hostname: boardify-game-service
+    ports:
+      - "8083:8083"
+    networks:
+      - boardify-app-network
+    environment:
+      - SERVER_PORT=8083
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
+
+networks:
+  boardify-app-network:
+    driver: bridge

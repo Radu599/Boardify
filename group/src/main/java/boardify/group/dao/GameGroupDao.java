@@ -1,10 +1,14 @@
 package boardify.group.dao;
 
-import boardify.group.dto.UserDto;
-import boardify.group.model.GroupMembers;
+import boardify.group.model.GameGroup;
 
 import java.util.List;
 
 public interface GameGroupDao {
 
+    List<GameGroup> findAllGameGroups();
+
+    int save(int gameID);
+
+    int findGameForGroup(int groupID);
 }
