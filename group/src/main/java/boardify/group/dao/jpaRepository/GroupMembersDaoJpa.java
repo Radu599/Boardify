@@ -71,7 +71,10 @@ public class GroupMembersDaoJpa implements GroupMembersDao {
     @Override
     public int findGameGroupID(String email) {
 
-        return groupMembersJpaRepository.findById(email).get().getGameGroupID();
+        List<GroupMembersPersistance> groupMembersPersistanceList = groupMembersJpaRepository.findByUserEmail(email);
+        if(groupMembersPersistanceList==null)
+            return 0; // TODO: throw exception
+        return groupMembersPersistanceList.get(0).getGameGroupID();
     }
 
     @Override

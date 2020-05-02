@@ -1,18 +1,18 @@
 package boardify.auth.controller;
 
+import boardify.auth.dto.LoginResponse;
+import boardify.auth.dto.RegisterResponse;
 import boardify.auth.dto.UserDto;
-import boardify.auth.dto.AuthenticationResponse;
 import boardify.auth.service.Service;
-import boardify.auth.service.exception.AuthExceptionType;
-import boardify.auth.service.exception.AuthServiceException;
+import boardify.auth.service.exception.LoginExceptionType;
+import boardify.auth.service.exception.LoginServiceException;
+import boardify.auth.service.exception.RegisterExceptionType;
+import boardify.auth.service.exception.RegisterServiceException;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.json.JSONException;
-
-import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -35,19 +35,19 @@ public class Controller {
 
     @ApiOperation(value = "Login a specific user")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "SUCCESS", response = AuthenticationResponse.class),
-            @ApiResponse(code = 400, message = "INVALID_CREDENTIALS", response = AuthExceptionType.class),
-            @ApiResponse(code = 404, message = "INVALID_CREDENTIALS", response = AuthExceptionType.class)
+            @ApiResponse(code = 200, message = "SUCCESS", response = LoginResponse.class),
+            @ApiResponse(code = 400, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class),
+            @ApiResponse(code = 404, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class)
     })
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public ResponseEntity<AuthenticationResponse> login(@Valid UserDto user, BindingResult result){
+    public ResponseEntity<LoginResponse> login(@Valid UserDto user, BindingResult result){
 
         logger.info("+++++++++LOGGING login+++++++++");
         loggingUserDto(user);
         if (result.hasErrors())
-            throw new AuthServiceException("Username or password for user: "+ user+" can not be null!", AuthExceptionType.INVALID_CREDENTIALS,HttpStatus.BAD_REQUEST);
+            throw new LoginServiceException("Username or password for user: "+ user+" can not be null!", LoginExceptionType.INVALID_CREDENTIALS,HttpStatus.BAD_REQUEST);
 
-        AuthenticationResponse response = service.login(user.getUsername(),user.getPassword());
+        LoginResponse response = service.login(user.getUsername(),user.getPassword());
 //        logger.info("MyUser {} has role: {}",user.getUsername(),response.getRole());
         logger.info("+++++++++SUCCESSFUL LOGGING login+++++++++");
         return new ResponseEntity<>(response, HttpStatus.OK);
@@ -55,9 +55,9 @@ public class Controller {
 
     @ApiOperation(value = "test")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "SUCCESS", response = AuthenticationResponse.class),
-            @ApiResponse(code = 400, message = "INVALID_CREDENTIALS", response = AuthExceptionType.class),
-            @ApiResponse(code = 404, message = "INVALID_CREDENTIALS", response = AuthExceptionType.class)
+            @ApiResponse(code = 200, message = "SUCCESS", response = LoginResponse.class),
+            @ApiResponse(code = 400, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class),
+            @ApiResponse(code = 404, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class)
     })
 
     private void loggingUserDto(UserDto userDto){
@@ -66,13 +66,32 @@ public class Controller {
         logger.info("Password: {}", userDto.getPassword());
     }
 
-    @ExceptionHandler({AuthServiceException.class})
+    @ExceptionHandler({LoginServiceException.class})
     @ResponseBody
-    public ResponseEntity<AuthExceptionType> handleException(AuthServiceException exception) {
+    public ResponseEntity<LoginExceptionType> handleException(LoginServiceException exception) {
 
         logger.error("+++++++++LOGGING handleException+++++++++");
         logger.error(exception.getMessage());
         logger.error("+++++++++END LOGGING handleException+++++++++");
         return new ResponseEntity<>(exception.getType(), new HttpHeaders(), exception.getHttpStatus());
+    }
+
+    @ApiOperation(value = "Create an account")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "SUCCESS", response = RegisterResponse.class),
+            @ApiResponse(code = 400, message = "", response = RegisterExceptionType.class),
+            @ApiResponse(code = 404, message = "", response = RegisterExceptionType.class)
+    })
+    @RequestMapping(value = "/register", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public ResponseEntity<RegisterResponse> register(@Valid UserDto user, BindingResult result){
+
+        logger.info("+++++++++LOGGING register+++++++++");
+        loggingUserDto(user);
+        if (result.hasErrors())
+            throw new RegisterServiceException("Username or password for user: "+ user+" can not be null!", RegisterExceptionType.INVALID_CREDENTIALS,HttpStatus.BAD_REQUEST);
+
+        RegisterResponse registerResponse = service.registerUser(user.getUsername(),user.getPassword());
+        logger.info("+++++++++SUCCESSFUL LOGGING register+++++++++");
+        return new ResponseEntity<>(registerResponse, HttpStatus.OK);
     }
 }

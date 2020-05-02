@@ -1,10 +1,9 @@
 package boardify.auth.dao.impl.jpaRepository;
 
 import boardify.auth.dao.UserDao;
-import boardify.auth.model.MyUser;
+import boardify.auth.model.BoardifyUser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Component;
 
@@ -22,14 +21,14 @@ public class UserDaoJpa implements UserDao {
     }
 
     @Override
-    public MyUser findUser(String username) {
+    public BoardifyUser findUser(String username) {
 
         logger.info("+++++++++LOGGING findUser+++++++++");
         logger.info("username: {}", username);
         try {
-            UserPersistence userPersistence = userJpaRepository.findById(username).orElse(null);
+            BoardifyUserPersistance userPersistence = userJpaRepository.findById(username).orElse(null);
             logger.info("+++++++++SUCCESSFUL LOGGING findUser+++++++++");
-            return convertUserPersistenceToMyUser(userPersistence);
+            return convertBoardifyUserPersistenceToBoardifyUser(userPersistence);
         }
         catch (Exception e){
             logger.error("ERROR IN FIND USER BY USERNAME:{}",username);
@@ -38,12 +37,40 @@ public class UserDaoJpa implements UserDao {
         return null;
     }
 
-    private MyUser convertUserPersistenceToMyUser(UserPersistence userPersistence) {
+    @Override
+    public void saveUser(BoardifyUser boardifyUser) {
 
-        return userPersistence == null ? null : MyUser.builder()
-                .username(userPersistence.getUsername())
-                .password(userPersistence.getPassword())
-                .role(userPersistence.getRole().getType())
+        logger.info("+++++++++LOGGING saveUser+++++++++");
+        try {
+            BoardifyUserPersistance userPersistence = convertBoardifyUserToBoardifyUserPersistance(boardifyUser);
+            RolePersistence rolePersistence = new RolePersistence();
+            rolePersistence.setType("normal");
+            rolePersistence.setId(2);
+            userPersistence.setRole(rolePersistence);//TODO
+            userJpaRepository.save(userPersistence);
+            logger.info("+++++++++SUCCESSFUL LOGGING findUser+++++++++");
+        }
+        catch (Exception e){
+            logger.error("ERROR IN FIND USER BY USERNAME:{}",boardifyUser.getUsername());
+            logger.error("MESSAGE: {}",e.getMessage());
+        }
+    }
+
+    private BoardifyUser convertBoardifyUserPersistenceToBoardifyUser(BoardifyUserPersistance boardifyUserPersistance) {
+
+        return boardifyUserPersistance == null ? null : BoardifyUser.builder()
+                .username(boardifyUserPersistance.getUsername())
+                .password(boardifyUserPersistance.getPassword())
+                .role(boardifyUserPersistance.getRole().getType())
+                .build();
+    }
+
+    private BoardifyUserPersistance convertBoardifyUserToBoardifyUserPersistance(BoardifyUser boardifyUser) {
+
+        return boardifyUser == null ? null : BoardifyUserPersistance.builder()
+                .username(boardifyUser.getUsername())
+                .password(boardifyUser.getPassword())
+                //TODO: role
                 .build();
     }
 }
