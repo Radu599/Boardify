@@ -1,8 +1,9 @@
 package boardify.auth.dao;
 
-import boardify.auth.model.MyUser;
-
+import boardify.auth.model.BoardifyUser;
 public interface UserDao {
 
-    MyUser findUser(String username);
+    BoardifyUser findUser(String username);
+
+    void saveUser(BoardifyUser boardifyUser);
 }

@@ -1,11 +1,12 @@
 package boardify.auth.service.impl;
 
 import boardify.auth.dao.UserDao;
-import boardify.auth.dto.AuthenticationResponse;
-import boardify.auth.model.MyUser;
+import boardify.auth.dto.LoginResponse;
+import boardify.auth.dto.RegisterResponse;
+import boardify.auth.model.BoardifyUser;
 import boardify.auth.service.Service;
-import boardify.auth.service.exception.AuthExceptionType;
-import boardify.auth.service.exception.AuthServiceException;
+import boardify.auth.service.exception.LoginExceptionType;
+import boardify.auth.service.exception.LoginServiceException;
 import boardify.commonsecurity.filters.authMicroserviceFilters.util.AuthJwtUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -41,7 +42,7 @@ public class ServiceImpl implements Service, UserDetailsService {
     private AuthJwtUtil jwtUtil;
 
     @Override
-    public AuthenticationResponse login(String username, String password) {
+    public LoginResponse login(String username, String password) {
 
         logger.info("+++++++++++++++++++++++++++++++LOGGING login+++++++++++++++++++++++++++++++");
         loggingCredentials(username, password);
@@ -55,11 +56,35 @@ public class ServiceImpl implements Service, UserDetailsService {
             final String role = userDetails.getAuthorities().stream().map(GrantedAuthority::getAuthority).findFirst().orElse(null);
             logger.info("+++++++++++++++++++++++++++++++SUCCESSFUL LOGGING login+++++++++++++++++++++++++++++++");
 //            return new AuthenticationResponse(jwt, role);
-            return new AuthenticationResponse(jwt);
+            return new LoginResponse(jwt);
         } catch (BadCredentialsException e) {
             logger.error("ERROR IN LOGIN: {}",e.getMessage());
-            throw new AuthServiceException("Incorrect username or password", AuthExceptionType.INVALID_CREDENTIALS, HttpStatus.NOT_FOUND);
+            throw new LoginServiceException("Incorrect username or password", LoginExceptionType.INVALID_CREDENTIALS, HttpStatus.NOT_FOUND);
         }
+    }
+
+    @Override
+    public RegisterResponse registerUser(String username, String password) {
+        logger.info("+++++++++++++++++++++++++++++++LOGGING register+++++++++++++++++++++++++++++++");
+        loggingCredentials(username, password);
+
+        //TODO:
+        /*
+        if (userDao.existsByUserName(username)) {
+            throw new RegisterServiceException("Email address is already taken!", RegisterExceptionType.USERNAME_EXISTS, HttpStatus.BAD_REQUEST);
+        }*/
+
+        BoardifyUser boardifyUser = BoardifyUser.builder()
+                .username(username)
+                .password(password)
+                .role("normal")
+                .build();
+
+        userDao.saveUser(boardifyUser);
+
+        logger.info("+++++++++++++++++++++++++++++++SUCCESSFUL LOGGING register+++++++++++++++++++++++++++++++");
+        //TODO:
+        return new RegisterResponse(boardifyUser.getUsername());
     }
 
     private void loggingCredentials(String username, String password) {
@@ -72,7 +97,7 @@ public class ServiceImpl implements Service, UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         logger.info("+++++++++++++++++++++++++++++++LOGGING loadUserByUsername+++++++++++++++++++++++++++++++");
-        MyUser user = userDao.findUser(username);
+        BoardifyUser user = userDao.findUser(username);
         if (user == null)
             throw new UsernameNotFoundException("Doesn't exist an user with username " + username);
         List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority(user.getRole()));
