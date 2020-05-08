@@ -12,3 +12,13 @@ CREATE TABLE IF NOT EXISTS GROUP_MEMBERS (
   GAME_GROUP_ID INT,
   PRIMARY KEY (USER_EMAIL, GAME_GROUP_ID)
 );
+
+-- changelog number: 3
+-- Antinie Radu creates table 'STATS'
+CREATE TABLE IF NOT EXISTS STATS (
+    group_id INT,
+    email VARCHAR(50),
+    last_message long,
+    message_count int,
+    PRIMARY KEY (group_id, email)
+)

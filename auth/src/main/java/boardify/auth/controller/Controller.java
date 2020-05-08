@@ -39,6 +39,7 @@ public class Controller {
             @ApiResponse(code = 400, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class),
             @ApiResponse(code = 404, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class)
     })
+
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public ResponseEntity<LoginResponse> login(@Valid UserDto user, BindingResult result){
 

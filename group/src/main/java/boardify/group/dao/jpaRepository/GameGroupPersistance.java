@@ -3,7 +3,6 @@ package boardify.group.dao.jpaRepository;
 import lombok.*;
 import javax.persistence.*;
 
-
 @Getter
 @Setter
 @NoArgsConstructor
