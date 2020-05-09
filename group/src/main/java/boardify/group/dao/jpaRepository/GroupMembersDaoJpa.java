@@ -25,7 +25,7 @@ public class GroupMembersDaoJpa implements GroupMembersDao {
     @Override
     public List<UserDto> findGroupForUser(String email) {
 
-        // find game group of this user
+        // find user's game group
         int gameGroupID = findGameGroupID(email);
 
         // find all group members in his group

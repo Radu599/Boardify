@@ -15,4 +15,12 @@ public class Stats implements Serializable {
     private String email;
     private long lastMessage;
     private long messageCount;
+
+    public Stats(int groupId, String email, long lastMessage){
+
+        this.groupId = groupId;
+        this.email = email;
+        this.lastMessage = lastMessage;
+        messageCount = 1;
+    }
 }

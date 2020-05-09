@@ -10,7 +10,7 @@ import lombok.*;
 @Builder
 public class ChatClientToServerMessage extends Notification {
 
-    private String senderEmail;
+    private String senderEmail; //TODO: refact
     private String message;
     private int targetGroup;
     private ChatClientToServerMessageType type;

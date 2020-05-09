@@ -5,7 +5,9 @@ import boardify.group.dto.JoinGroupDto.ClientToServer.JoinGroupMessageFromClient
 import boardify.group.dto.JoinGroupDto.ServerToClient.ClientNotification;
 import boardify.group.dto.JoinGroupDto.ServerToClient.ClientNotificationType;
 import boardify.group.dto.Notification;
+import boardify.group.model.Stats;
 import boardify.group.service.GameGroupSearcher;
+import boardify.group.service.StatsService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
@@ -21,21 +23,22 @@ import java.net.InetSocketAddress;
 import java.util.HashMap;
 import java.util.Map;
 
-
+// TODO: refact this class
 @Component
 public class WebsocketServer extends WebSocketServer {
 
-    private final Logger logger = LogManager.getLogger();
-
     private GameGroupSearcher gameGroupSearcher;
+    private StatsService statsService;
     private HashMap<WebSocket, String> users;
     private HashMap<Integer, HashMap<WebSocket, String>> groups; // <groupId, users>
     private static final int PORT = 8081;
+    private final Logger logger = LogManager.getLogger();
 
     @Autowired
-    private WebsocketServer(GameGroupSearcher gameGroupSearcher) {
+    private WebsocketServer(GameGroupSearcher gameGroupSearcher, StatsService statsService) {
         super(new InetSocketAddress((PORT)));
         this.gameGroupSearcher = gameGroupSearcher;
+        this.statsService = statsService;
         users = new HashMap<>();
         groups = new HashMap<>();
         this.start();
@@ -50,6 +53,7 @@ public class WebsocketServer extends WebSocketServer {
     public void onClose(WebSocket conn, int code, String reason, boolean remote) {
     }
 
+    //TODO: refact onMessage!!!
     @Override
     public void onMessage(WebSocket conn, String message) {
 
@@ -86,6 +90,7 @@ public class WebsocketServer extends WebSocketServer {
                 case CHAT_MESSAGE:
                     int targetGroup = chatClientToServerMessage.getTargetGroup();
                     broadcastMessageToGroup(chatClientToServerMessage, targetGroup);
+                    statsService.saveStats(new Stats(targetGroup, chatClientToServerMessage.getSenderEmail(), chatClientToServerMessage.getTimestamp()));
                     break;
             }
         } catch (IOException e) {
@@ -116,7 +121,7 @@ public class WebsocketServer extends WebSocketServer {
     private void broadcastGameStarts(int groupId) {
 
         HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
-        broadcastMessageToGroup(new ClientNotification(usersInCurrentGroup.size(),groupId,ClientNotificationType.START_GAME), groupId);
+        broadcastMessageToGroup(new ClientNotification(usersInCurrentGroup.size(), groupId, ClientNotificationType.START_GAME), groupId);
     }
 
     private void removeUser(WebSocket conn) throws JsonProcessingException {
@@ -127,7 +132,7 @@ public class WebsocketServer extends WebSocketServer {
     private void broadcastUserJoinedTheGroup(int groupId) throws JsonProcessingException {
 
         HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
-        broadcastMessageToGroup(new ClientNotification(usersInCurrentGroup.size(),groupId, ClientNotificationType.JOINED), groupId);
+        broadcastMessageToGroup(new ClientNotification(usersInCurrentGroup.size(), groupId, ClientNotificationType.JOINED), groupId);
     }
 
     private void broadcastMessageToGroup(Notification clientNotification, int groupId) {

@@ -14,8 +14,6 @@ import java.util.stream.Collectors;
 public class GameGroupDaoJpa implements GameGroupDao {
 
     private GameGroupJpaRepository gameGroupJpaRepository;
-    private GroupMembersDaoJpa groupMembersDaoJpa;
-
     //private Logger logger = LogManager.getLogger(GameDaoJpa.class);
 
     public GameGroupDaoJpa(GameGroupJpaRepository jpaRepository) {
