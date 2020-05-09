@@ -20,5 +20,5 @@ CREATE TABLE IF NOT EXISTS STATS (
     email VARCHAR(50),
     last_message long,
     message_count int,
-    PRIMARY KEY (group_id, email)
+    PRIMARY KEY (email)
 )

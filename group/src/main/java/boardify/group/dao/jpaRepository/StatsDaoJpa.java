@@ -30,7 +30,7 @@ public class StatsDaoJpa implements StatsDao {
 
         StatsPersistance oldStats = statsJpaRepository.findStatsByGroupIdAndEmail(groupId, email);
         if (oldStats == null) {
-            return ;
+            return;
         }
         oldStats = StatsPersistance.builder()
                 .groupId(oldStats.getGroupId())
@@ -45,6 +45,8 @@ public class StatsDaoJpa implements StatsDao {
                 .lastMessage(lastMessage)
                 .messageCount(messageCount)
                 .build();
+        // TODO: update
+        statsJpaRepository.delete(oldStats);
         statsJpaRepository.save(stats);
     }
 

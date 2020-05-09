@@ -15,7 +15,6 @@ public class StatsServiceImpl implements StatsService {
     @Autowired
     private StatsDao statsDao;
 
-
     @Override
     public void saveStats(Stats stats) {
 
@@ -25,7 +24,7 @@ public class StatsServiceImpl implements StatsService {
                 statsDao.saveStats(stats);
         else { //update
             statsByGroupIdAndEmail.setMessageCount(statsByGroupIdAndEmail.getMessageCount() + 1);
-            statsDao.updateStats(stats.getGroupId(), stats.getEmail(), stats.getLastMessage(), stats.getMessageCount()+1);
+            statsDao.updateStats(stats.getGroupId(), stats.getEmail(), stats.getLastMessage(), statsByGroupIdAndEmail.getMessageCount());
         }
     }
 }
