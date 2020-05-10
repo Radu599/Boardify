@@ -1,6 +1,8 @@
 package boardify.group.controller;
 
 import boardify.group.dto.ChatDto.ClientToServer.ChatClientToServerMessage;
+import boardify.group.dto.ChatDto.ClientToServer.ChatClientToServerMessageType;
+import boardify.group.dto.ChatDto.ClientToServer.StatsDto;
 import boardify.group.dto.JoinGroupDto.ClientToServer.JoinGroupMessageFromClient;
 import boardify.group.dto.JoinGroupDto.ServerToClient.ClientNotification;
 import boardify.group.dto.JoinGroupDto.ServerToClient.ClientNotificationType;
@@ -91,12 +93,18 @@ public class WebsocketServer extends WebSocketServer {
                     int targetGroup = chatClientToServerMessage.getTargetGroup();
                     broadcastMessageToGroup(chatClientToServerMessage, targetGroup);
                     statsService.saveStats(new Stats(targetGroup, chatClientToServerMessage.getSenderEmail(), chatClientToServerMessage.getTimestamp()));
+                    Stats stats = statsService.findStatsByGroupIdAndEmail(targetGroup, chatClientToServerMessage.getSenderEmail());
+                    Notification statsDto = new StatsDto(stats.getEmail(), stats.getGroupId(), stats.getLastMessage(), stats.getMessageCount(), ChatClientToServerMessageType.STATS);
+                    broadcastMessageToGroup(statsDto, targetGroup);
                     break;
             }
         } catch (IOException e) {
             logger.info(e.getMessage());
             logger.info("This is not a valid chat message");
         }
+    }
+
+    private void broadcastStatsToGroup(int targetGroup) {
     }
 
     @Override

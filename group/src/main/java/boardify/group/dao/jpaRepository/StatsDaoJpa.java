@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 @EnableJpaRepositories(basePackageClasses = StatsJpaRepository.class)
 public class StatsDaoJpa implements StatsDao {
@@ -48,6 +51,14 @@ public class StatsDaoJpa implements StatsDao {
         // TODO: update
         statsJpaRepository.delete(oldStats);
         statsJpaRepository.save(stats);
+    }
+
+    @Override
+    public List<Stats> findStatsByGroupId(int groupId) {
+        return statsJpaRepository.findStatsByGroupId(groupId)
+                .stream()
+                .map(this::convertStatsPersistenceToStats)
+                .collect(Collectors.toList());
     }
 
     private Stats convertStatsPersistenceToStats(StatsPersistance statsPersistance) {
