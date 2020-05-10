@@ -22,4 +22,7 @@ class UserPersistance {
 
     @Column(name = "LOCATION")
     private String location;
+
+    @Column(name = "AVATAR_PATH")
+    private String avatarPath;
 }

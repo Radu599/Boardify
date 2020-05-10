@@ -4,6 +4,12 @@ import boardify.user.dao.UserDao;
 import boardify.user.model.User;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 @Component
 @EnableJpaRepositories(basePackageClasses = UserJpaRepository.class)
@@ -42,6 +48,36 @@ public class UserDaoJpa implements UserDao {
                 .build();
         jpaRepository.save(user);
         return convertUserPersistenceToUser(oldUser);
+    }
+
+    @Override
+    public void updateAvatar(MultipartFile imageFile, String email, String avatarPath) {
+
+        UserPersistance oldUser = jpaRepository.findById(email).orElse(null);
+        if (oldUser == null) {
+            return;
+        }
+        oldUser = UserPersistance.builder()
+                .email(oldUser.getEmail())
+                .location(oldUser.getLocation())
+                .password(oldUser.getPassword())
+                .avatarPath(oldUser.getAvatarPath())
+                .build();
+        UserPersistance user = UserPersistance.builder()
+                .email(email)
+                .location(oldUser.getLocation())
+                .password(oldUser.getPassword())
+                .avatarPath(avatarPath)
+                .build();
+        jpaRepository.save(user);
+    }
+
+    @Override
+    public void savePhotoImage(MultipartFile imageFile, String name, String picPath) throws IOException {
+
+        byte[] bytes = imageFile.getBytes();
+        Path path = Paths.get(picPath + name + ".jpg");
+        Files.write(path, bytes);
     }
 
     private User convertUserPersistenceToUser(UserPersistance userPersistence) {
