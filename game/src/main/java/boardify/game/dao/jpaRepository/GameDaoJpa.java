@@ -15,8 +15,6 @@ public class GameDaoJpa implements GameDao {
 
     private GameJpaRepository jpaRepository;
 
-    //private Logger logger = LogManager.getLogger(GameDaoJpa.class);
-
     public GameDaoJpa(GameJpaRepository jpaRepository) {
         this.jpaRepository = jpaRepository;
     }
