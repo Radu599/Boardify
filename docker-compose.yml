@@ -4,7 +4,7 @@ services:
   game-mysql-db:
     image: mysql:5.7
     container_name: game-mysql-db
-    hostname: mysql-game
+    hostname: mysql-game-db
     restart: always
     environment:
       MYSQL_DATABASE: 'boardify_game_development'
@@ -40,8 +40,7 @@ services:
     hostname: boardify-zuul-api-gateway-server
     ports:
       - "8080:8080"
-    networks:
-      - boardify-app-network
+
     environment:
       - SERVER_PORT=8080
       - SPRING_PROFILES_ACTIVE=production
@@ -64,6 +63,8 @@ services:
       - SERVER_PORT=8083
       - SPRING_PROFILES_ACTIVE=production
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
+    depends_on:
+      - game-mysql-db
 
 networks:
   boardify-app-network:
