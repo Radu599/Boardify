@@ -35,7 +35,7 @@ services:
       args:
         JAR_FILE: gateway-0.0.1-SNAPSHOT.jar
       dockerfile: Dockerfile
-    image: gateway
+    image: zuul
     container_name: boardify-zuul-api-gateway-server
     hostname: boardify-zuul-api-gateway-server
     ports:
@@ -44,6 +44,7 @@ services:
       - boardify-app-network
     environment:
       - SERVER_PORT=8080
+      - SPRING_PROFILES_ACTIVE=production
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
 
   boardify-game-service:
@@ -61,8 +62,8 @@ services:
       - boardify-app-network
     environment:
       - SERVER_PORT=8083
+      - SPRING_PROFILES_ACTIVE=production
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
 
 networks:
   boardify-app-network:
-    driver: bridge
