@@ -4,17 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <!--<module>entity</module>
-        <module>catalog</module>
-        <module>service-discovery</module>
-        <module>gateway</module>
-        <module>auth</module>
-        <module>user</module>
-        <module>student</module>
-        <module>subject</module>
-        <module>assignment</module>
-        <module>common-security</module>
-        -->
+
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
