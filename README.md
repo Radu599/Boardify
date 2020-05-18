@@ -11,5 +11,5 @@ To see logs use: docker logs [containerName] or run docker-compose without detac
   docker stop $(docker ps -aq) 
 #### Remove all running containers:
   docker rm $(docker ps -aq)
-Remove image by IMAGE ID
+#### Remove image by IMAGE ID
   docker rmi Image [IMAGE ID]
