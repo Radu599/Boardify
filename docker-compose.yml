@@ -31,7 +31,7 @@ services:
       MYSQL_PASSWORD: 'boardify'
       MYSQL_ROOT_PASSWORD: 'password'
     ports:
-      - "3307:3307"
+      - "3307:3306"
     expose:
       - "3307"
     networks:
@@ -52,7 +52,7 @@ services:
       MYSQL_PASSWORD: 'boardify'
       MYSQL_ROOT_PASSWORD: 'password'
     ports:
-      - "3308:3308"
+      - "3308:3306"
     expose:
       - "3308"
     networks:
@@ -128,8 +128,8 @@ services:
       - boardify-app-network
     environment:
       - SPRING_PROFILES_ACTIVE=production
-      - SPRING_DATASOURCE_URL=jdbc:mysql://auth-mysql-db:3307/boardify_user_development
-      - spring.liquibase.url=jdbc:mysql://auth-mysql-db:3307/boardify_user_development
+      - SPRING_DATASOURCE_URL=jdbc:mysql://auth-mysql-db:3306/boardify_user_development
+      - spring.liquibase.url=jdbc:mysql://auth-mysql-db:3306/boardify_user_development
       - spring.liquibase.user=Boardify
       - spring.liquibase.password=boardify
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
@@ -151,8 +151,8 @@ services:
       - boardify-app-network
     environment:
       - SPRING_PROFILES_ACTIVE=production
-      - SPRING_DATASOURCE_URL=jdbc:mysql://group-mysql-db:3308/boardify_group_development
-      - spring.liquibase.url=jdbc:mysql://group-mysql-db:3308/boardify_group_development
+      - SPRING_DATASOURCE_URL=jdbc:mysql://group-mysql-db:3306/boardify_group_development
+      - spring.liquibase.url=jdbc:mysql://group-mysql-db:3306/boardify_group_development
       - spring.liquibase.user=Boardify
       - spring.liquibase.password=boardify
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
