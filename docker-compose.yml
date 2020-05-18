@@ -85,6 +85,8 @@ services:
     hostname: boardify-zuul-api-gateway-server
     ports:
       - "8080:8080"
+    networks:
+      - boardify-app-network
     environment:
       - SERVER_PORT=8080
       - SPRING_PROFILES_ACTIVE=production
