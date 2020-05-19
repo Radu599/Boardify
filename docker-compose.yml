@@ -17,8 +17,8 @@ services:
       - "3306"
     networks:
       - boardify-app-network
-  #  volumes:
-   #   - boardify-db-volume:/var/lib/mysql
+#    volumes:
+#      - boardify-db-volume:/var/lib/mysql
 
 #  auth-mysql-db:
 #    image: mysql:5.7
@@ -116,6 +116,7 @@ services:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
     depends_on:
       - game-mysql-db
+      - service-discovery
 
 #  boardify-auth-service:
 #    build:
