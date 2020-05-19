@@ -1,6 +1,7 @@
 # Boardify
 
 # Deploy
+-1. "mvn clean install" each module
 0. Open terminal in root project
 1. run: docker network create boardify-app-network
 2. run: docker-compose up -d
@@ -13,3 +14,5 @@ To see logs use: docker logs [containerName] or run docker-compose without detac
   docker rm $(docker ps -aq)
 #### Remove image by IMAGE ID
   docker rmi Image [IMAGE ID]
+#### Remove all image
+  docker rmi $(docker images -a -q)
