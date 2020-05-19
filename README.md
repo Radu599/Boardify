@@ -16,3 +16,7 @@ To see logs use: docker logs [containerName] or run docker-compose without detac
   docker rmi Image [IMAGE ID]
 #### Remove all image
   docker rmi $(docker images -a -q)
+#### Remove all unused local volumes
+  docker volume prune
+  
+If db containers fail starting, try to stop those containers and remove all unused local volumes!
