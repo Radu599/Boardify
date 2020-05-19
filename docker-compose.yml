@@ -1,22 +1,22 @@
 version: '3'
 services:
   # Database
-#  game-mysql-db:
-#    image: mysql:5.7
-#    container_name: game-mysql-db
-#    hostname: game-mysql-db
-#    restart: always
-#    environment:
-#      MYSQL_DATABASE: 'boardify_game_development'
-#      MYSQL_USER: 'Boardify'
-#      MYSQL_PASSWORD: 'boardify'
-#      MYSQL_ROOT_PASSWORD: 'password'
-#    ports:
-#      - "3306:3306"
-#    expose:
-#      - "3306"
-#    networks:
-#      - boardify-app-network
+  game-mysql-db:
+    image: mysql:5.7
+    container_name: game-mysql-db
+    hostname: game-mysql-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'boardify_game_development'
+      MYSQL_USER: 'Boardify'
+      MYSQL_PASSWORD: 'boardify'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    networks:
+      - boardify-app-network
 #    volumes:
 #      - boardify-db-volume:/var/lib/mysql
 
@@ -31,15 +31,15 @@ services:
       MYSQL_PASSWORD: 'boardify'
       MYSQL_ROOT_PASSWORD: 'password'
     ports:
-      - "3306:3306"
+      - "3307:3306"
     expose:
-      - "3306"
+      - "3307"
     networks:
       - boardify-app-network
   #  volumes:
   #    - boardify-db-volume:/var/lib/mysql
-#    depends_on:
-#      - game-mysql-db
+    depends_on:
+      - game-mysql-db
 #
 #  group-mysql-db:
 #    image: mysql:5.7
@@ -92,31 +92,31 @@ services:
 #      - SPRING_PROFILES_ACTIVE=production
 #      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
 
-#  boardify-game-service:
-#    build:
-#      context: ./game
-#      args:
-#        JAR_FILE: game-0.0.1-SNAPSHOT.jar
-#      dockerfile: Dockerfile
-#    image: game
-#    container_name: boardify-game-service
-#    hostname: boardify-game-service
-#    ports:
-#      - "8083:8083"
-#    networks:
-#      - boardify-app-network
-#    environment:
-#      - SPRING_PROFILES_ACTIVE=production
-#      - SPRING_DATASOURCE_URL=jdbc:mysql://game-mysql-db:3306/boardify_game_development
-#      - spring.datasource.username=Boardify
-#      - spring.datasource.password=boardify
-#      - spring.liquibase.url=jdbc:mysql://game-mysql-db:3306/boardify_game_development
-#      - spring.liquibase.user=Boardify
-#      - spring.liquibase.password=boardify
-#      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
-#    depends_on:
-#      - game-mysql-db
-#      - service-discovery
+  boardify-game-service:
+    build:
+      context: ./game
+      args:
+        JAR_FILE: game-0.0.1-SNAPSHOT.jar
+      dockerfile: Dockerfile
+    image: game
+    container_name: boardify-game-service
+    hostname: boardify-game-service
+    ports:
+      - "8083:8083"
+    networks:
+      - boardify-app-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=production
+      - SPRING_DATASOURCE_URL=jdbc:mysql://game-mysql-db:3306/boardify_game_development
+      - spring.datasource.username=Boardify
+      - spring.datasource.password=boardify
+      - spring.liquibase.url=jdbc:mysql://game-mysql-db:3306/boardify_game_development
+      - spring.liquibase.user=Boardify
+      - spring.liquibase.password=boardify
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
+    depends_on:
+      - game-mysql-db
+      - service-discovery
 
   boardify-auth-service:
     build:
