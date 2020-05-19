@@ -47,9 +47,7 @@ public class Controller {
         loggingUserDto(user);
         if (result.hasErrors())
             throw new LoginServiceException("Username or password for user: "+ user+" can not be null!", LoginExceptionType.INVALID_CREDENTIALS,HttpStatus.BAD_REQUEST);
-
         LoginResponse response = service.login(user.getUsername(),user.getPassword());
-//        logger.info("MyUser {} has role: {}",user.getUsername(),response.getRole());
         logger.info("+++++++++SUCCESSFUL LOGGING login+++++++++");
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
