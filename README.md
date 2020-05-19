@@ -14,9 +14,11 @@ To see logs use: docker logs [containerName] or run docker-compose without detac
   docker rm $(docker ps -aq)
 #### Remove image by IMAGE ID
   docker rmi Image [IMAGE ID]
-#### Remove all image
+#### Remove all images
   docker rmi $(docker images -a -q)
 #### Remove all unused local volumes
   docker volume prune
   
-If db containers fail starting, try to stop those containers and remove all unused local volumes!
+#### If db containers fail starting, try to stop those containers and remove all unused local volumes!
+#### How to access mysql db from docker container:
+https://stackoverflow.com/questions/48105051/docker-how-to-take-a-look-at-the-tables-inside-mysql-volume
