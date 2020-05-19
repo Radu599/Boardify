@@ -56,6 +56,7 @@ public class GameGroupSearcherImpl implements GameGroupSearcher {
 
     @Override
     public int getMinimumNumberOfPlayers(int gameId) {
+        //TODO: this won't work on deploy use group container not localhost
         return restTemplate.getForObject("http://localhost:8083/games/minimumNumberOfPlayers/" + gameId, Integer.class);
     }
 

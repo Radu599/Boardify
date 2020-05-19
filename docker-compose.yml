@@ -91,6 +91,9 @@ services:
       - SERVER_PORT=8080
       - SPRING_PROFILES_ACTIVE=production
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
+      - zuul.routes.login.url=http://service-discovery:8082/authenticate/login
+      - zuul.routes.games.url=http://boardify-game-service:8083/games
+
     depends_on:
       - service-discovery
 
