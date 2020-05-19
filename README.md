@@ -1,10 +1,10 @@
 # Boardify
 
 # Deploy
--1. "mvn clean install" each module
-0. Open terminal in root project
-1. run: docker network create boardify-app-network
-2. run: docker-compose up -d
+0. "mvn clean install" each module
+1. Open terminal in root project
+2. run: docker network create boardify-app-network
+3. run: docker-compose up -d
 To see logs use: docker logs [containerName] or run docker-compose without detaching (-d)
 
 ## Docker comands:
