@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS game (
   image_link varchar(10000)
 );
 
+
 INSERT INTO `game` (`ID`, `name`, `minimum_number_of_players`, `maximum_number_of_players`, `suggested_age`, `average_playing_time`, `description`, `image_link`)
 VALUES (1, "COSMIC ENCOUNTER", 3, 5, 7, 60, ". COSMIC ENCOUNTER is a brilliant mix of genuine strategy and unpredictable hilarity", "https://cf.geekdo-images.com/opengraph/img/aSPoR14lqt1IWmeuSzgSpK6IQL8=/fit-in/1200x630/pic4243113.jpg");
 INSERT INTO `game` (`ID`, `name`, `minimum_number_of_players`, `maximum_number_of_players`, `suggested_age`, `average_playing_time`, `description`, `image_link`)
@@ -29,4 +30,5 @@ INSERT INTO `game` (`ID`, `name`, `minimum_number_of_players`, `maximum_number_o
 INSERT INTO `game` (`ID`, `name`, `minimum_number_of_players`, `maximum_number_of_players`, `suggested_age`, `average_playing_time`, `description`, `image_link`)VALUES (9, "Through the Ages: A New Story of Civilization (2015)",2,4,14,120,"Through the Ages: A New Story of Civilization is the new edition of Through the Ages: A Story of Civilization, with many changes small and large to the game's cards over its three ages and extensive changes to how military works.","https://cf.geekdo-images.com/itemrep/img/32e-PrFMZ0-P_KsnZHApZazlPqc=/fit-in/246x300/pic2663291.jpg");
 INSERT INTO `game` (`ID`, `name`, `minimum_number_of_players`, `maximum_number_of_players`, `suggested_age`, `average_playing_time`, `description`, `image_link`)VALUES (10, "Twilight Imperium (Fourth Edition) (2017)",3,6,14,360,"Twilight Imperium (Fourth Edition) is a game of galactic conquest in which three to six players take on the role of one of seventeen factions vying for galactic domination through military might, political maneuvering, and economic bargaining.","https://cf.geekdo-images.com/itemrep/img/UxsyZBpFiBNPOppOQ7ILJde_YhY=/fit-in/246x300/pic3727516.jpg");
 INSERT INTO `game` (`ID`, `name`, `minimum_number_of_players`, `maximum_number_of_players`, `suggested_age`, `average_playing_time`, `description`, `image_link`)VALUES (11, "Twilight Struggle (2005)",2,2,13,150,"Twilight Struggle inherits its fundamental s from the card-driven classics We the People and Hannibal: Rome vs. Carthage. It is a quick-playing, low-complexity game in that tradition. ","https://cf.geekdo-images.com/itemrep/img/0_gpX_v9CeKcm60nSkDzi47PVOA=/fit-in/246x300/pic361592.jpg");
+
 

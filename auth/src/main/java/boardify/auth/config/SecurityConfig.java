@@ -38,11 +38,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable()
                 .authorizeRequests().antMatchers(config.getLoginUrl()).permitAll()
+                .anyRequest().authenticated()
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .addFilterBefore(authJwtFilter, UsernamePasswordAuthenticationFilter.class); //execute this filter before verifying if user is authenticated
+                .addFilterBefore(authJwtFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
     @Bean

@@ -41,27 +41,27 @@ services:
     depends_on:
       - game-mysql-db
 
-#  group-mysql-db:
-#    image: mysql:5.7
-#    container_name: group-mysql-db
-#    hostname: group-mysql-db
-#    restart: always
-#    environment:
-#      MYSQL_DATABASE: 'boardify_group_development'
-#      MYSQL_USER: 'Boardify'
-#      MYSQL_PASSWORD: 'boardify'
-#      MYSQL_ROOT_PASSWORD: 'password'
-#    ports:
-#      - "3308:3306"
-#    expose:
-#      - "3308"
-#    networks:
-#      - boardify-app-network
-#   # volumes:
-#   #   - boardify-db-volume:/var/lib/mysql
-#    depends_on:
-#      - auth-mysql-db
-#      - game-mysql-db
+  group-mysql-db:
+    image: mysql:5.7
+    container_name: group-mysql-db
+    hostname: group-mysql-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'boardify_group_development'
+      MYSQL_USER: 'Boardify'
+      MYSQL_PASSWORD: 'boardify'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - "3308:3306"
+    expose:
+      - "3308"
+    networks:
+      - boardify-app-network
+   # volumes:
+   #   - boardify-db-volume:/var/lib/mysql
+    depends_on:
+      - auth-mysql-db
+      - game-mysql-db
 
   # Core services
   service-discovery:
@@ -149,29 +149,32 @@ services:
       - service-discovery
       - auth-mysql-db
 
-#  boardify-group-service:
-#    build:
-#      context: ./group
-#      args:
-#        JAR_FILE: group-0.0.1-SNAPSHOT.jar
-#      dockerfile: Dockerfile
-#    image: group
-#    container_name: boardify-group-service
-#    hostname: boardify-group-service
-#    ports:
-#      - "8085:8085"
-#    networks:
-#      - boardify-app-network
-#    environment:
-#      - SPRING_PROFILES_ACTIVE=production
-#      - SPRING_DATASOURCE_URL=jdbc:mysql://group-mysql-db:3306/boardify_group_development
-#      - spring.liquibase.url=jdbc:mysql://group-mysql-db:3306/boardify_group_development
-#      - spring.liquibase.user=Boardify
-#      - spring.liquibase.password=boardify
-#      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
-#    depends_on:
-#      - group-mysql-db
-#
+  boardify-group-service:
+    build:
+      context: ./group
+      args:
+        JAR_FILE: group-0.0.1-SNAPSHOT.jar
+      dockerfile: Dockerfile
+    image: group
+    container_name: boardify-group-service
+    hostname: boardify-group-service
+    ports:
+      - "8085:8085"
+    networks:
+      - boardify-app-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=production
+      - SPRING_DATASOURCE_URL=jdbc:mysql://group-mysql-db:3306/boardify_group_development
+      - spring.datasource.username=Boardify
+      - spring.datasource.password=boardify
+      - spring.liquibase.url=jdbc:mysql://group-mysql-db:3306/boardify_group_development
+      - spring.liquibase.user=Boardify
+      - spring.liquibase.password=boardify
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
+    depends_on:
+      - group-mysql-db
+      - service-discovery
+
 #  boardify-user-service:
 #    build:
 #      context: ./user
@@ -194,6 +197,7 @@ services:
 #      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
 #    depends_on:
 #      - auth-mysql-db
+#      - service-discovery
 
 #volumes:
 #  boardify-db-volume:

@@ -17,7 +17,6 @@ CREATE TABLE IF NOT EXISTS users (
   FOREIGN KEY (ROLE_ID) REFERENCES roles (ID)
 );
 
-
 INSERT INTO `roles` (`ID`, `TYPE`) VALUES ('1', 'admin');
 INSERT INTO `roles` (`ID`, `TYPE`) VALUES ('2', 'normal');
 
