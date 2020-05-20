@@ -33,7 +33,7 @@ public class WebsocketServer extends WebSocketServer {
     private StatsService statsService;
     private HashMap<WebSocket, String> users;
     private HashMap<Integer, HashMap<WebSocket, String>> groups; // <groupId, users>
-    private static final int PORT = 8081;
+    private static final int PORT = 8089;
     private final Logger logger = LogManager.getLogger();
 
     @Autowired
@@ -43,6 +43,7 @@ public class WebsocketServer extends WebSocketServer {
         this.statsService = statsService;
         users = new HashMap<>();
         groups = new HashMap<>();
+        logger.info("WebSocket before start");
         this.start();
     }
 
