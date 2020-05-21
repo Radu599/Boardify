@@ -12,3 +12,4 @@ CREATE TABLE IF NOT EXISTS game (
   image_link varchar(10000)
 );
 
+

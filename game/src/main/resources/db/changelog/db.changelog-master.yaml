@@ -1,6 +1,6 @@
 databaseChangeLog:
 - changeSet:
-    id: 6
+    id: 71
     author: Antinie Radu
     changes:
     - sqlFile:

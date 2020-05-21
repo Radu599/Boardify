@@ -33,7 +33,7 @@ public class WebsocketServer extends WebSocketServer {
     private StatsService statsService;
     private HashMap<WebSocket, String> users;
     private HashMap<Integer, HashMap<WebSocket, String>> groups; // <groupId, users>
-    private static final int PORT = 8089;
+    private static final int PORT = 8085;
     private final Logger logger = LogManager.getLogger();
 
     @Autowired
@@ -119,10 +119,10 @@ public class WebsocketServer extends WebSocketServer {
         logger.info("+++++++++SUCCESSFUL LOGGING notifyGroupMembers+++++++++");
         HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
 
-        if (usersInCurrentGroup.size() >= gameGroupSearcher.getMinimumNumberOfPlayers(gameGroupSearcher.findGameForGroup(groupId)))// TODO: start game if enough users
+        if (usersInCurrentGroup.size() >= gameGroupSearcher.getMinimumNumberOfPlayers(gameGroupSearcher.findGameForGroup(groupId)))
             broadcastGameStarts(groupId);
         else
-            broadcastUserJoinedTheGroup(groupId);// TODO: other type; used this just for debug
+            broadcastUserJoinedTheGroup(groupId);
 
         logger.info("+++++++++SUCCESSFUL LOGGING notifyGroupMembers+++++++++" + groupId);
     }
