@@ -22,3 +22,6 @@ To see logs use: docker logs [containerName] or run docker-compose without detac
 #### If db containers fail starting, try to stop those containers and remove all unused local volumes!
 #### How to access mysql db from docker container:
 https://stackoverflow.com/questions/48105051/docker-how-to-take-a-look-at-the-tables-inside-mysql-volume
+
+#### How do I kill the process currently using a port on localhost in Windows?
+https://stackoverflow.com/questions/39632667/how-do-i-kill-the-process-currently-using-a-port-on-localhost-in-windows
