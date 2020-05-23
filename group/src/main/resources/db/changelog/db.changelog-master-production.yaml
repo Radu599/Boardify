@@ -1,0 +1,9 @@
+databaseChangeLog:
+- changeSet:
+    id: 9
+    author: Antinie Radu
+    changes:
+    - sqlFile:
+        path: changes/changelog_group_production.sql
+        relativeToChangelogFile: true
+        stripComments: true
