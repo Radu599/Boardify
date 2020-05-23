@@ -33,7 +33,7 @@ public class WebsocketServer extends WebSocketServer {
     private StatsService statsService;
     private HashMap<WebSocket, String> users;
     private HashMap<Integer, HashMap<WebSocket, String>> groups; // <groupId, users>
-    private static final int PORT = 8085;
+    private static final int PORT = 8090;
     private final Logger logger = LogManager.getLogger();
 
     @Autowired
