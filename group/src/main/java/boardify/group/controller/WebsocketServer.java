@@ -1,5 +1,6 @@
 package boardify.group.controller;
 
+import boardify.group.config.WebsocketConstants;
 import boardify.group.dto.ChatDto.ClientToServer.ChatClientToServerMessage;
 import boardify.group.dto.ChatDto.ClientToServer.ChatClientToServerMessageType;
 import boardify.group.dto.ChatDto.ClientToServer.StatsDto;
@@ -33,7 +34,7 @@ public class WebsocketServer extends WebSocketServer {
     private StatsService statsService;
     private HashMap<WebSocket, String> users;
     private HashMap<Integer, HashMap<WebSocket, String>> groups; // <groupId, users>
-    private static final int PORT = 8090;
+    private static final int PORT = WebsocketConstants.PORT;
     private final Logger logger = LogManager.getLogger();
 
     @Autowired
@@ -132,11 +133,6 @@ public class WebsocketServer extends WebSocketServer {
         HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
         broadcastMessageToGroup(new ClientNotification(usersInCurrentGroup.size(), groupId, ClientNotificationType.START_GAME), groupId);
     }
-
-    private void removeUser(WebSocket conn) throws JsonProcessingException {
-        users.remove(conn);
-    }
-
 
     private void broadcastUserJoinedTheGroup(int groupId) throws JsonProcessingException {
 
