@@ -2,7 +2,6 @@ package boardify.auth.service.impl;
 
 import boardify.auth.dao.UserDao;
 import boardify.auth.dto.LoginResponse;
-import boardify.auth.dto.RegisterResponse;
 import boardify.auth.model.BoardifyUser;
 import boardify.auth.service.Service;
 import boardify.auth.service.exception.LoginExceptionType;
@@ -60,30 +59,6 @@ public class ServiceImpl implements Service, UserDetailsService {
             logger.error("ERROR IN LOGIN: {}",e.getMessage());
             throw new LoginServiceException("Incorrect username or password", LoginExceptionType.INVALID_CREDENTIALS, HttpStatus.NOT_FOUND);
         }
-    }
-
-    @Override
-    public RegisterResponse registerUser(String username, String password) {
-        logger.info("+++++++++++++++++++++++++++++++LOGGING register+++++++++++++++++++++++++++++++");
-        loggingCredentials(username, password);
-
-        //TODO:
-        /*
-        if (userDao.existsByUserName(username)) {
-            throw new RegisterServiceException("Email address is already taken!", RegisterExceptionType.USERNAME_EXISTS, HttpStatus.BAD_REQUEST);
-        }*/
-
-        BoardifyUser boardifyUser = BoardifyUser.builder()
-                .username(username)
-                .password(password)
-                .role("normal")
-                .build();
-
-        userDao.saveUser(boardifyUser);
-
-        logger.info("+++++++++++++++++++++++++++++++SUCCESSFUL LOGGING register+++++++++++++++++++++++++++++++");
-        //TODO:
-        return new RegisterResponse(boardifyUser.getUsername());
     }
 
     private void loggingCredentials(String username, String password) {

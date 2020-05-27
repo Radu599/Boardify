@@ -1,13 +1,10 @@
 package boardify.auth.controller;
 
 import boardify.auth.dto.LoginResponse;
-import boardify.auth.dto.RegisterResponse;
 import boardify.auth.dto.UserDto;
 import boardify.auth.service.Service;
 import boardify.auth.service.exception.LoginExceptionType;
 import boardify.auth.service.exception.LoginServiceException;
-import boardify.auth.service.exception.RegisterExceptionType;
-import boardify.auth.service.exception.RegisterServiceException;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -73,24 +70,5 @@ public class Controller {
         logger.error(exception.getMessage());
         logger.error("+++++++++END LOGGING handleException+++++++++");
         return new ResponseEntity<>(exception.getType(), new HttpHeaders(), exception.getHttpStatus());
-    }
-
-    @ApiOperation(value = "Create an account")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "SUCCESS", response = RegisterResponse.class),
-            @ApiResponse(code = 400, message = "", response = RegisterExceptionType.class),
-            @ApiResponse(code = 404, message = "", response = RegisterExceptionType.class)
-    })
-    @RequestMapping(value = "/register", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public ResponseEntity<RegisterResponse> register(@Valid UserDto user, BindingResult result){
-
-        logger.info("+++++++++LOGGING register+++++++++");
-        loggingUserDto(user);
-        if (result.hasErrors())
-            throw new RegisterServiceException("Username or password for user: "+ user+" can not be null!", RegisterExceptionType.INVALID_CREDENTIALS,HttpStatus.BAD_REQUEST);
-
-        RegisterResponse registerResponse = service.registerUser(user.getUsername(),user.getPassword());
-        logger.info("+++++++++SUCCESSFUL LOGGING register+++++++++");
-        return new ResponseEntity<>(registerResponse, HttpStatus.OK);
     }
 }
