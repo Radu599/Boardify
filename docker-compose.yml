@@ -74,28 +74,27 @@ services:
     networks:
       - boardify-app-network
 
-  boardify-zuul-api-gateway-server:
-    build:
-      context: ./gateway
-      args:
-        JAR_FILE: gateway-0.0.1-SNAPSHOT.jar
-      dockerfile: Dockerfile
-    image: zuul
-    container_name: boardify-zuul-api-gateway-server
-    hostname: boardify-zuul-api-gateway-server
-    ports:
-      - "8080:8080"
-    networks:
-      - boardify-app-network
-    environment:
-      - SERVER_PORT=8080
-      - SPRING_PROFILES_ACTIVE=production
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
-      - zuul.routes.login.url=http://service-discovery:8082/authenticate/login
-      - zuul.routes.games.url=http://boardify-game-service:8083/games
-
-    depends_on:
-      - service-discovery
+#  boardify-zuul-api-gateway-server:
+#    build:
+#      context: ./gateway
+#      args:
+#        JAR_FILE: gateway-0.0.1-SNAPSHOT.jar
+#      dockerfile: Dockerfile
+#    image: zuul
+#    container_name: boardify-zuul-api-gateway-server
+#    hostname: boardify-zuul-api-gateway-server
+#    ports:
+#      - "8080:8080"
+#    networks:
+#      - boardify-app-network
+#    environment:
+#      - SERVER_PORT=8080
+#      - SPRING_PROFILES_ACTIVE=production
+#      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
+#      - zuul.routes.login.url=http://service-discovery:8082/authenticate/login
+#      - zuul.routes.games.url=http://boardify-game-service:8083/games
+#    depends_on:
+#      - service-discovery
 
   boardify-game-service:
     build:
@@ -181,29 +180,31 @@ services:
       - group-mysql-db
       - service-discovery
 
-#  boardify-user-service:
-#    build:
-#      context: ./user
-#      args:
-#        JAR_FILE: user-0.0.1-SNAPSHOT.jar
-#      dockerfile: Dockerfile
-#    image: user
-#    container_name: boardify-user-service
-#    hostname: boardify-user-service
-#    ports:
-#      - "8084:8084"
-#    networks:
-#      - boardify-app-network
-#    environment:
-#      - SPRING_PROFILES_ACTIVE=production
-#      - SPRING_DATASOURCE_URL=jdbc:mysql://auth-mysql-db:3306/boardify_group_development
-#      - spring.liquibase.url=jdbc:mysql://auth-mysql-db:3306/boardify_group_development
-#      - spring.liquibase.user=Boardify
-#      - spring.liquibase.password=boardify
-#      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
-#    depends_on:
-#      - auth-mysql-db
-#      - service-discovery
+  boardify-user-service:
+    build:
+      context: ./user
+      args:
+        JAR_FILE: user-0.0.1-SNAPSHOT.jar
+      dockerfile: Dockerfile
+    image: user
+    container_name: boardify-user-service
+    hostname: boardify-user-service
+    ports:
+      - "8084:8084"
+    networks:
+      - boardify-app-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=production
+      - SPRING_DATASOURCE_URL=jdbc:mysql://auth-mysql-db:3306/boardify_user_development
+      - spring.datasource.username=Boardify
+      - spring.datasource.password=boardify
+      - spring.liquibase.url=jdbc:mysql://auth-mysql-db:3306/boardify_user_development
+      - spring.liquibase.user=Boardify
+      - spring.liquibase.password=boardify
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
+    depends_on:
+      - auth-mysql-db
+      - service-discovery
 
 #volumes:
 #  boardify-db-volume:

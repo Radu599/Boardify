@@ -12,7 +12,7 @@ import java.util.List;
 @org.springframework.stereotype.Service
 @Primary
 @Component
-public class StatsServiceImpl implements StatsService {
+public class    StatsServiceImpl implements StatsService {
 
     @Autowired
     private StatsDao statsDao;
