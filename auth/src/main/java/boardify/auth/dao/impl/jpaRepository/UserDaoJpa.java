@@ -4,8 +4,10 @@ import boardify.auth.dao.UserDao;
 import boardify.auth.model.BoardifyUser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
 @Component
 @EnableJpaRepositories(basePackageClasses = UserJpaRepository.class)
@@ -15,6 +17,9 @@ public class UserDaoJpa implements UserDao {
 
     private UserJpaRepository userJpaRepository;
 
+    @Autowired
+    private RestTemplate restTemplate;
+
     public UserDaoJpa(UserJpaRepository userJpaRepository) {
 
         this.userJpaRepository = userJpaRepository;
@@ -23,18 +28,12 @@ public class UserDaoJpa implements UserDao {
     @Override
     public BoardifyUser findUser(String username) {
 
-        logger.info("+++++++++LOGGING findUser+++++++++");
-        logger.info("username: {}", username);
-        try {
-            BoardifyUserPersistance userPersistence = userJpaRepository.findById(username).orElse(null);
-            logger.info("+++++++++SUCCESSFUL LOGGING findUser+++++++++");
-            return convertBoardifyUserPersistenceToBoardifyUser(userPersistence);
-        }
-        catch (Exception e){
-            logger.error("ERROR IN FIND USER BY USERNAME:{}",username);
-            logger.error("MESSAGE: {}",e.getMessage());
-        }
-        return null;
+        logger.info("++++LOGGING findUser Dao");
+        BoardifyUser boardifyUser = restTemplate.getForObject("http://localhost:8084/users/" + username, BoardifyUser.class);
+        logger.info("User is:");
+        logger.info(boardifyUser.toString());
+        logger.info("++++SUCCESSFULLY LOGGING findUser Dao");
+        return boardifyUser;
     }
 
     @Override
@@ -49,10 +48,9 @@ public class UserDaoJpa implements UserDao {
             userPersistence.setRole(rolePersistence);//TODO
             userJpaRepository.save(userPersistence);
             logger.info("+++++++++SUCCESSFUL LOGGING findUser+++++++++");
-        }
-        catch (Exception e){
-            logger.error("ERROR IN FIND USER BY USERNAME:{}",boardifyUser.getUsername());
-            logger.error("MESSAGE: {}",e.getMessage());
+        } catch (Exception e) {
+            logger.error("ERROR IN FIND USER BY USERNAME:{}", boardifyUser.getUsername());
+            logger.error("MESSAGE: {}", e.getMessage());
         }
     }
 

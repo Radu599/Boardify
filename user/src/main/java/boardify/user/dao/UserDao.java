@@ -14,4 +14,8 @@ public interface UserDao {
     void updateAvatar(MultipartFile imageFile, String email, String avatarPath);
 
     void savePhotoImage(MultipartFile imageFile, String email, String path) throws IOException;
+
+    User findUser(String username);
+
+    void saveUser(User boardifyUser);
 }

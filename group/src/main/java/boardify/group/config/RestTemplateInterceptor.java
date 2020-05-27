@@ -17,7 +17,6 @@ public class RestTemplateInterceptor implements ClientHttpRequestInterceptor {
         request.getHeaders().add(RequestContext.REQUEST_HEADER_NAME, token);
 
         return execution.execute(request, body);
-
     }
 
 }

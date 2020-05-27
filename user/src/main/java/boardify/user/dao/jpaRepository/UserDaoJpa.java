@@ -84,7 +84,7 @@ public class UserDaoJpa implements UserDao {
 
         return userPersistence == null ? null : User
                 .builder()
-                .email(userPersistence.getEmail())
+                .username(userPersistence.getEmail())
                 .location(userPersistence.getLocation())
                 .password(userPersistence.getPassword()) //TODO:
                 .build();
@@ -94,9 +94,45 @@ public class UserDaoJpa implements UserDao {
 
         return user == null ? null : UserPersistance
                 .builder()
-                .email(user.getEmail())
+                .email(user.getUsername())
                 .password(user.getPassword())//TODO:???
                 .location(user.getLocation())
                 .build();
+    }
+
+    @Override
+    public User findUser(String username) {
+
+       /* logger.info("+++++++++LOGGING findUser+++++++++");
+        logger.info("username: {}", username);*/
+        try {
+            UserPersistance userPersistence = jpaRepository.findById(username).orElse(null);
+            //logger.info("+++++++++SUCCESSFUL LOGGING findUser+++++++++");
+            return convertUserPersistenceToUser(userPersistence);
+        }
+        catch (Exception e){
+            /*logger.error("ERROR IN FIND USER BY USERNAME:{}",username);
+            logger.error("MESSAGE: {}",e.getMessage());*/
+        }
+        return null;
+    }
+
+    @Override
+    public void saveUser(User boardifyUser) {
+
+//        logger.info("+++++++++LOGGING saveUser+++++++++");
+        try {
+            UserPersistance userPersistence = convertUserToUserPersistence(boardifyUser);
+            // TODO:
+            //RolePersistence rolePersistence = new RolePersistence();
+            //rolePersistence.setType("normal");
+            //rolePersistence.setId(2);
+           // userPersistence.setRole(rolePersistence);//TODO
+            jpaRepository.save(userPersistence);
+//            logger.info("+++++++++SUCCESSFUL LOGGING findUser+++++++++");
+        } catch (Exception e) {
+//            logger.error("ERROR IN FIND USER BY USERNAME:{}", boardifyUser.getUsername());
+//            logger.error("MESSAGE: {}", e.getMessage());
+        }
     }
 }

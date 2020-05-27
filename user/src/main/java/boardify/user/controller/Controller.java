@@ -1,5 +1,8 @@
 package boardify.user.controller;
 
+import boardify.user.dto.RegisterResponse;
+import boardify.user.dto.UserDto;
+import boardify.user.model.User;
 import boardify.user.service.Service;
 import boardify.user.service.exception.UserExceptionType;
 import io.swagger.annotations.ApiOperation;
@@ -16,6 +19,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.Valid;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -95,5 +99,34 @@ public class Controller {
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)
                 .contentLength(file.length())
                 .body(resource);
+    }
+
+    @ApiOperation(value = "Find user by email")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "SUCCESS", response = List.class),
+    })
+    @RequestMapping(value = "/{email}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User> findUser(@PathVariable("email") String email) {//TODO: email validation
+
+        logger.info("+++++++++LOGGING findUserByEmail+++++++++");
+        User user = service.findUser(email);
+        logger.info("+++++++++SUCCESSFUL LOGGING findUserByEmail+++++++++");
+        return new ResponseEntity<User>(user, HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "Create an account")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "SUCCESS", response = RegisterResponse.class)
+            //@ApiResponse(code = 400, message = "", response = RegisterExceptionType.class),
+            //@ApiResponse(code = 404, message = "", response = RegisterExceptionType.class)
+    })
+    @RequestMapping(value = "/register", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public ResponseEntity<RegisterResponse> register(@Valid UserDto user){
+
+        logger.info("+++++++++LOGGING register+++++++++");
+
+        RegisterResponse registerResponse = service.registerUser(user.getUsername(),user.getPassword());
+        logger.info("+++++++++SUCCESSFUL LOGGING register+++++++++");
+        return new ResponseEntity<>(registerResponse, HttpStatus.OK);
     }
 }
