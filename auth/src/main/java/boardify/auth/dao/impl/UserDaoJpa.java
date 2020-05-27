@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import static boardify.auth.config.ApiConstants.FIND_USER;
+
 @Component
 public class UserDaoJpa implements UserDao {
 
@@ -24,7 +26,7 @@ public class UserDaoJpa implements UserDao {
     public BoardifyUser findUser(String username) {
 
         logger.info("++++LOGGING findUser Dao");
-        BoardifyUser boardifyUser = restTemplate.getForObject("http://localhost:8084/users/" + username, BoardifyUser.class);
+        BoardifyUser boardifyUser = restTemplate.getForObject(FIND_USER + username, BoardifyUser.class);
         logger.info("User is:");
         logger.info(boardifyUser.toString());
         logger.info("++++SUCCESSFULLY LOGGING findUser Dao");

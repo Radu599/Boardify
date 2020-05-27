@@ -4,6 +4,7 @@ package boardify.group.controller;
 import boardify.group.dto.UserDto;
 import boardify.group.model.GameGroup;
 import boardify.group.model.GroupMember;
+import boardify.group.service.GameGroupSearcher;
 import boardify.group.service.Service;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -33,6 +34,9 @@ public class Controller {
     private WebClient.Builder webClientBuilder;
     @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private GameGroupSearcher gameGroupSearcher;
 
     @Autowired
     private Service service;
@@ -78,13 +82,7 @@ public class Controller {
         return service.findAllGameGroups()
                 .stream()
                 .filter(gameGroup -> gameGroup.getGameId() == gameId
-                        && service.findSizeForGroup(gameGroup.getId()) < getMinimumNumberOfPlayers(gameGroup.getGameId()))
+                        && service.findSizeForGroup(gameGroup.getId()) < gameGroupSearcher.getMinimumNumberOfPlayers(gameGroup.getGameId()))
                 .collect(Collectors.toList());
     }
-
-    private int getMinimumNumberOfPlayers(int gameId) {
-
-        return restTemplate.getForObject("http://localhost:8083/games/minimumNumberOfPlayers/" + gameId, Integer.class);
-    }
-
 }

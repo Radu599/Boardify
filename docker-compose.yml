@@ -138,18 +138,9 @@ services:
       - boardify-app-network
     environment:
       - SPRING_PROFILES_ACTIVE=production
-      - SPRING_DATASOURCE_URL=jdbc:mysql://auth-mysql-db:3306/boardify_user_development
-      - spring.datasource.username=Boardify
-      - spring.datasource.password=boardify
-      - spring.liquibase.url=jdbc:mysql://auth-mysql-db:3306/boardify_user_development
-      - spring.liquibase.user=Boardify
-      - spring.liquibase.password=boardify
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
-      - spring.liquibase.change-log=classpath:db/changelog/db.changelog-master-production.yaml
-
     depends_on:
       - service-discovery
-      - auth-mysql-db
 
   boardify-group-service:
     build:
@@ -202,6 +193,7 @@ services:
       - spring.liquibase.user=Boardify
       - spring.liquibase.password=boardify
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
+      - spring.liquibase.change-log=classpath:db/changelog/db.changelog-master-production.yaml
     depends_on:
       - auth-mysql-db
       - service-discovery

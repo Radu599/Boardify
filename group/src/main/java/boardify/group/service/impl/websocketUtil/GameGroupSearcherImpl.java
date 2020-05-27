@@ -66,8 +66,9 @@ public class GameGroupSearcherImpl implements GameGroupSearcher {
         String localHost = "localhost";
         String dockerIp = "192.168.99.100";
         String development = "development";
+        String gamePort = ":8083";
         String ip = (environment.getActiveProfiles().equals(development))? localHost :(dockerIp);
-        String gameApiUrl = "http://" + ip + ":8080/games/minimumNumberOfPlayers/" + gameId;
+        String gameApiUrl = "http://" + ip + gamePort + "/games/minimumNumberOfPlayers/" + gameId;
         logger.info("Requesting minimum number of players at url:" + gameApiUrl);
         logger.info("++++++++SUCCESSFULLY LOGGED getMinimumNumberOfPlayers+++++++++++");
         return restTemplate.getForObject(gameApiUrl, Integer.class); // TODO: also make port easily configurable if zuul fails
