@@ -18,6 +18,8 @@ To see logs use: docker logs [containerName] or run docker-compose without detac
   docker rmi $(docker images -a -q)
 #### Remove all unused local volumes
   docker volume prune
+#### Display containers stats
+docker stats $(docker ps --format={{.Names}})
   
 #### If db containers fail starting, try to stop those containers and remove all unused local volumes!
 #### How to access mysql db from docker container:
@@ -25,3 +27,4 @@ https://stackoverflow.com/questions/48105051/docker-how-to-take-a-look-at-the-ta
 
 #### How do I kill the process currently using a port on localhost in Windows?
 https://stackoverflow.com/questions/39632667/how-do-i-kill-the-process-currently-using-a-port-on-localhost-in-windows
+
