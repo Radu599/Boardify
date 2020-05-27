@@ -65,8 +65,8 @@ public class GameGroupSearcherImpl implements GameGroupSearcher {
         // TODO: create config file or extract this from somewhere
         String localHost = "localhost";
         String dockerIp = "192.168.99.100";
-        String production = "production";
-        String ip = (environment.getActiveProfiles().equals(production))? dockerIp :(localHost);
+        String development = "development";
+        String ip = (environment.getActiveProfiles().equals(development))? localHost :(dockerIp);
         String gameApiUrl = "http://" + ip + ":8080/games/minimumNumberOfPlayers/" + gameId;
         logger.info("Requesting minimum number of players at url:" + gameApiUrl);
         logger.info("++++++++SUCCESSFULLY LOGGED getMinimumNumberOfPlayers+++++++++++");

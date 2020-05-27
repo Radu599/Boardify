@@ -163,6 +163,7 @@ services:
     hostname: boardify-group-service
     ports:
       - "8085:8085"
+      - "8095:8095"
     networks:
       - boardify-app-network
     environment:
