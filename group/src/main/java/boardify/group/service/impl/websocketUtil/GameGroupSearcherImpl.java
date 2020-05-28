@@ -6,10 +6,12 @@ import boardify.group.service.GameGroupSearcher;
 import boardify.group.service.Service;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-
+import org.springframework.core.env.Environment;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,8 +26,10 @@ public class GameGroupSearcherImpl implements GameGroupSearcher {
     @Autowired
     private RestTemplate restTemplate;
 
-    private String email;
-    private int gameId;
+    @Autowired
+    private Environment environment;
+
+    private final Logger logger = LogManager.getLogger();
 
     @Override
     public List<GameGroup> joinGame(String email, int gameId) {
@@ -56,7 +60,18 @@ public class GameGroupSearcherImpl implements GameGroupSearcher {
 
     @Override
     public int getMinimumNumberOfPlayers(int gameId) {
-        return restTemplate.getForObject("http://localhost:8083/games/minimumNumberOfPlayers/" + gameId, Integer.class);
+
+        logger.info("++++++++LOGGING getMinimumNumberOfPlayers+++++++++++");
+        // TODO: create config file or extract this from somewhere
+        String localHost = "localhost";
+        String dockerIp = "192.168.99.100";
+        String development = "development";
+        String gamePort = ":8083";
+        String ip = (environment.getActiveProfiles().equals(development))? localHost :(dockerIp);
+        String gameApiUrl = "http://" + ip + gamePort + "/games/minimumNumberOfPlayers/" + gameId;
+        logger.info("Requesting minimum number of players at url:" + gameApiUrl);
+        logger.info("++++++++SUCCESSFULLY LOGGED getMinimumNumberOfPlayers+++++++++++");
+        return restTemplate.getForObject(gameApiUrl, Integer.class); // TODO: also make port easily configurable if zuul fails
     }
 
     @Override

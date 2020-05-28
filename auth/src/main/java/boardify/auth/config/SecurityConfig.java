@@ -36,13 +36,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
+        http.csrf().disable();
+        if(1==1)
+            return;
         http.csrf().disable()
                 .authorizeRequests().antMatchers(config.getLoginUrl()).permitAll()
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .addFilterBefore(authJwtFilter, UsernamePasswordAuthenticationFilter.class); //execute this filter before verifying if user is authenticated
+                .addFilterBefore(authJwtFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
     @Bean

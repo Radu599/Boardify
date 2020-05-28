@@ -4,7 +4,7 @@ services:
   game-mysql-db:
     image: mysql:5.7
     container_name: game-mysql-db
-    hostname: mysql-game
+    hostname: game-mysql-db
     restart: always
     environment:
       MYSQL_DATABASE: 'boardify_game_development'
@@ -17,6 +17,51 @@ services:
       - "3306"
     networks:
       - boardify-app-network
+#    volumes:
+#      - boardify-db-volume:/var/lib/mysql
+
+  auth-mysql-db:
+    image: mysql:5.7
+    container_name: auth-mysql-db
+    hostname: auth-mysql-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'boardify_user_development'
+      MYSQL_USER: 'Boardify'
+      MYSQL_PASSWORD: 'boardify'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - "3307:3306"
+    expose:
+      - "3307"
+    networks:
+      - boardify-app-network
+  #  volumes:
+  #    - boardify-db-volume:/var/lib/mysql
+    depends_on:
+      - game-mysql-db
+
+  group-mysql-db:
+    image: mysql:5.7
+    container_name: group-mysql-db
+    hostname: group-mysql-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'boardify_group_development'
+      MYSQL_USER: 'Boardify'
+      MYSQL_PASSWORD: 'boardify'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - "3308:3306"
+    expose:
+      - "3308"
+    networks:
+      - boardify-app-network
+   # volumes:
+   #   - boardify-db-volume:/var/lib/mysql
+    depends_on:
+      - auth-mysql-db
+      - game-mysql-db
 
   # Core services
   service-discovery:
@@ -29,22 +74,27 @@ services:
     networks:
       - boardify-app-network
 
-  boardify-zuul-api-gateway-server:
-    build:
-      context: ./gateway
-      args:
-        JAR_FILE: gateway-0.0.1-SNAPSHOT.jar
-      dockerfile: Dockerfile
-    image: gateway
-    container_name: boardify-zuul-api-gateway-server
-    hostname: boardify-zuul-api-gateway-server
-    ports:
-      - "8080:8080"
-    networks:
-      - boardify-app-network
-    environment:
-      - SERVER_PORT=8080
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
+#  boardify-zuul-api-gateway-server:
+#    build:
+#      context: ./gateway
+#      args:
+#        JAR_FILE: gateway-0.0.1-SNAPSHOT.jar
+#      dockerfile: Dockerfile
+#    image: zuul
+#    container_name: boardify-zuul-api-gateway-server
+#    hostname: boardify-zuul-api-gateway-server
+#    ports:
+#      - "8080:8080"
+#    networks:
+#      - boardify-app-network
+#    environment:
+#      - SERVER_PORT=8080
+#      - SPRING_PROFILES_ACTIVE=production
+#      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
+#      - zuul.routes.login.url=http://service-discovery:8082/authenticate/login
+#      - zuul.routes.games.url=http://boardify-game-service:8083/games
+#    depends_on:
+#      - service-discovery
 
   boardify-game-service:
     build:
@@ -60,8 +110,96 @@ services:
     networks:
       - boardify-app-network
     environment:
-      - SERVER_PORT=8083
+      - SPRING_PROFILES_ACTIVE=production
+      - SPRING_DATASOURCE_URL=jdbc:mysql://game-mysql-db:3306/boardify_game_development
+      - spring.datasource.username=Boardify
+      - spring.datasource.password=boardify
+      - spring.liquibase.url=jdbc:mysql://game-mysql-db:3306/boardify_game_development
+      - spring.liquibase.user=Boardify
+      - spring.liquibase.password=boardify
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
+      - spring.liquibase.change-log=classpath:db/changelog/db.changelog-master-production.yaml
+    depends_on:
+      - game-mysql-db
+      - service-discovery
+
+  boardify-auth-service:
+    build:
+      context: ./auth
+      args:
+        JAR_FILE: auth-0.0.1-SNAPSHOT.jar
+      dockerfile: Dockerfile
+    image: auth
+    container_name: boardify-auth-service
+    hostname: boardify-auth-service
+    ports:
+      - "8082:8082"
+    networks:
+      - boardify-app-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=production
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
+    depends_on:
+      - service-discovery
+
+  boardify-group-service:
+    build:
+      context: ./group
+      args:
+        JAR_FILE: group-0.0.1-SNAPSHOT.jar
+      dockerfile: Dockerfile
+    image: group
+    container_name: boardify-group-service
+    hostname: boardify-group-service
+    ports:
+      - "8085:8085"
+      - "8095:8095"
+    networks:
+      - boardify-app-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=production
+      - SPRING_DATASOURCE_URL=jdbc:mysql://group-mysql-db:3306/boardify_group_development
+      - spring.datasource.username=Boardify
+      - spring.datasource.password=boardify
+      - spring.liquibase.url=jdbc:mysql://group-mysql-db:3306/boardify_group_development
+      - spring.liquibase.user=Boardify
+      - spring.liquibase.password=boardify
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
+      - spring.liquibase.change-log=classpath:db/changelog/db.changelog-master-production.yaml
+
+    depends_on:
+      - group-mysql-db
+      - service-discovery
+
+  boardify-user-service:
+    build:
+      context: ./user
+      args:
+        JAR_FILE: user-0.0.1-SNAPSHOT.jar
+      dockerfile: Dockerfile
+    image: user
+    container_name: boardify-user-service
+    hostname: boardify-user-service
+    ports:
+      - "8084:8084"
+    networks:
+      - boardify-app-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=production
+      - SPRING_DATASOURCE_URL=jdbc:mysql://auth-mysql-db:3306/boardify_user_development
+      - spring.datasource.username=Boardify
+      - spring.datasource.password=boardify
+      - spring.liquibase.url=jdbc:mysql://auth-mysql-db:3306/boardify_user_development
+      - spring.liquibase.user=Boardify
+      - spring.liquibase.password=boardify
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-discovery:8761/eureka
+      - spring.liquibase.change-log=classpath:db/changelog/db.changelog-master-production.yaml
+    depends_on:
+      - auth-mysql-db
+      - service-discovery
+
+#volumes:
+#  boardify-db-volume:
 
 networks:
   boardify-app-network:

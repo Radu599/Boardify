@@ -43,7 +43,6 @@ public class GroupConfiguration {
         return restTemplate;
     }
 
-
     public void addInterceptors(RestTemplate restTemplate) {
         List<ClientHttpRequestInterceptor> interceptors = restTemplate.getInterceptors();
         interceptors.add(new RestTemplateInterceptor());

@@ -34,7 +34,6 @@ public class Controller {
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Game>> findAllGames(Principal principal) {
 
-        //logger.info(principal.getName() +  " called findAllGames()");
         logger.info("+++++++++LOGGING findAllGames+++++++++");
         List<Game> entities = service.findAllGames();
         logger.info("+++++++++SUCCESSFUL LOGGING findAllGames+++++++++");

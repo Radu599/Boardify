@@ -2,7 +2,10 @@ package boardify.auth.service.impl;
 
 import boardify.auth.dao.UserDao;
 import boardify.auth.dto.LoginResponse;
+<<<<<<< HEAD
 import boardify.auth.dto.RegisterResponse;
+=======
+>>>>>>> develop
 import boardify.auth.model.BoardifyUser;
 import boardify.auth.service.Service;
 import boardify.auth.service.exception.LoginExceptionType;
@@ -55,7 +58,10 @@ public class ServiceImpl implements Service, UserDetailsService {
             final String jwt = jwtUtil.generateToken(userDetails);
             final String role = userDetails.getAuthorities().stream().map(GrantedAuthority::getAuthority).findFirst().orElse(null);
             logger.info("+++++++++++++++++++++++++++++++SUCCESSFUL LOGGING login+++++++++++++++++++++++++++++++");
+<<<<<<< HEAD
 //            return new AuthenticationResponse(jwt, role);
+=======
+>>>>>>> develop
             return new LoginResponse(jwt);
         } catch (BadCredentialsException e) {
             logger.error("ERROR IN LOGIN: {}",e.getMessage());
@@ -100,6 +106,7 @@ public class ServiceImpl implements Service, UserDetailsService {
         BoardifyUser user = userDao.findUser(username);
         if (user == null)
             throw new UsernameNotFoundException("Doesn't exist an user with username " + username);
+        user.setRole("NORMAL");//TODO: user microservice
         List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority(user.getRole()));
         logger.info("+++++++++++++++++++++++++++++++SUCCESSFUL LOGGING loadUserByUsername+++++++++++++++++++++++++++++++");
         return new User(user.getUsername(), user.getPassword(), authorities);

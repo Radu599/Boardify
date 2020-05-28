@@ -20,6 +20,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
+        http.authorizeRequests().antMatchers("/").permitAll(); // TODO: this stupid line disables security
+        http.cors().and().csrf().disable(); // https://stackoverflow.com/questions/50486314/how-to-solve-403-error-in-spring-boot-post-request
+        if(1==1)
+            return;
         http.csrf()
                 .disable()
                 .logout().disable()

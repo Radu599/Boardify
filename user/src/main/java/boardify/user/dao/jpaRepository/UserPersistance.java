@@ -2,7 +2,9 @@ package boardify.user.dao.jpaRepository;
 
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Getter
 @Setter
@@ -22,4 +24,7 @@ class UserPersistance {
 
     @Column(name = "LOCATION")
     private String location;
+
+    @Column(name = "AVATAR_PATH")
+    private String avatarPath;
 }

@@ -1,13 +1,19 @@
 package boardify.auth.controller;
 
 import boardify.auth.dto.LoginResponse;
+<<<<<<< HEAD
 import boardify.auth.dto.RegisterResponse;
+=======
+>>>>>>> develop
 import boardify.auth.dto.UserDto;
 import boardify.auth.service.Service;
 import boardify.auth.service.exception.LoginExceptionType;
 import boardify.auth.service.exception.LoginServiceException;
+<<<<<<< HEAD
 import boardify.auth.service.exception.RegisterExceptionType;
 import boardify.auth.service.exception.RegisterServiceException;
+=======
+>>>>>>> develop
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -39,6 +45,7 @@ public class Controller {
             @ApiResponse(code = 400, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class),
             @ApiResponse(code = 404, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class)
     })
+
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public ResponseEntity<LoginResponse> login(@Valid UserDto user, BindingResult result){
 
@@ -46,9 +53,13 @@ public class Controller {
         loggingUserDto(user);
         if (result.hasErrors())
             throw new LoginServiceException("Username or password for user: "+ user+" can not be null!", LoginExceptionType.INVALID_CREDENTIALS,HttpStatus.BAD_REQUEST);
+<<<<<<< HEAD
 
         LoginResponse response = service.login(user.getUsername(),user.getPassword());
 //        logger.info("MyUser {} has role: {}",user.getUsername(),response.getRole());
+=======
+        LoginResponse response = service.login(user.getUsername(),user.getPassword());
+>>>>>>> develop
         logger.info("+++++++++SUCCESSFUL LOGGING login+++++++++");
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
