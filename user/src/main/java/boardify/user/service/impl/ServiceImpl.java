@@ -34,7 +34,7 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public void updateLocation(String email, String location) {
+    public String updateLocation(String email, String location) {
 
         if (email == null) {
             throw new UserServiceException("Given user has null id!", UserExceptionType.USER_NOT_FOUND, HttpStatus.NOT_FOUND);
@@ -43,7 +43,8 @@ public class ServiceImpl implements Service {
         if (userDao.updateLocation(email, location) == null) {
             throw new UserServiceException("Doesn't exist a user with id = " + email, UserExceptionType.USER_NOT_FOUND, HttpStatus.NOT_FOUND);
         }
-        assert(userDao.findLocationByEmail(email).equals(location));
+        //assert(userDao.findLocationByEmail(email).equals(location));
+        return location;
     }
 
     @Override

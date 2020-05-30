@@ -60,7 +60,7 @@ public class Controller {
 
         String email = principal.getName();
 
-        assert(email!=null);
+        //  assert(email!=null);
 
         logger.info("+++++++++LOGGING updateLocation+++++++++");
         //loggingEntity(user);
