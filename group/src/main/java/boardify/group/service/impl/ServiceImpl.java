@@ -40,9 +40,9 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public int saveGroup(int gameID) {
+    public int saveGroup(GameGroup gameGroup) {
 
-        return groupDao.save(gameID);
+        return groupDao.save(gameGroup);
     }
 
     @Override

@@ -8,7 +8,7 @@ public interface GameGroupDao {
 
     List<GameGroup> findAllGameGroups();
 
-    int save(int gameID);
+    int save(GameGroup gameID);
 
     int findGameForGroup(int groupID);
 }

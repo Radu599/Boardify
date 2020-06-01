@@ -3,7 +3,8 @@
 show variables like 'lower_case_table_names';
 CREATE TABLE IF NOT EXISTS game_groups (
     ID INT(10) PRIMARY KEY AUTO_INCREMENT,
-    GAME_ID INT
+    GAME_ID INT,
+    CITY VARCHAR(50)
 );
 
 -- changelog number: 2

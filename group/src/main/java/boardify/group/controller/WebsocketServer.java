@@ -69,7 +69,7 @@ public class WebsocketServer extends WebSocketServer {
 
             switch (msg.getType()) {
                 case SEARCH_GAME:
-                    int groupId = gameGroupSearcher.joinGame(msg.getEmail(), msg.getGameId()).get(0).getId(); // TODO: research on how to use principal
+                    int groupId = gameGroupSearcher.joinGame(msg.getEmail(), msg.getGameId(), msg.getCity()).get(0).getId(); // TODO: research on how to use principal
                     // add user to it's group
                     HashMap value = groups.get(groupId);
 
