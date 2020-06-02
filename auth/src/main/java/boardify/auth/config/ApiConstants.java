@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ApiConstants {
 
-    private static final String development = "development";
+    private static final String development = "{development}";
     private static final String HTTP = "http://";
     private static final String localhost = "localhost";
     private static final String dockerIp = "192.168.99.100";

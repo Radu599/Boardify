@@ -32,7 +32,7 @@ public class WebsocketServer extends WebSocketServer {
 
     private GameGroupSearcher gameGroupSearcher;
     private StatsService statsService;
-    private HashMap<WebSocket, String> users;
+    //private HashMap<WebSocket, String> users;
     private HashMap<Integer, HashMap<WebSocket, String>> groups; // <groupId, users>
     private static final int PORT = WebsocketConstants.PORT;
     private final Logger logger = LogManager.getLogger();
@@ -42,7 +42,7 @@ public class WebsocketServer extends WebSocketServer {
         super(new InetSocketAddress((PORT)));
         this.gameGroupSearcher = gameGroupSearcher;
         this.statsService = statsService;
-        users = new HashMap<>();
+        //users = new HashMap<>();
         groups = new HashMap<>();
         logger.info("WebSocket before start");
         this.start();
@@ -55,6 +55,22 @@ public class WebsocketServer extends WebSocketServer {
 
     @Override
     public void onClose(WebSocket conn, int code, String reason, boolean remote) {
+
+        conn.close();
+    }
+
+    private void disbandGroup(int groupId) {
+
+        notifyGroupDisbanded(groupId);
+        groups.remove(groups.get(groupId));
+    }
+
+    private void notifyGroupDisbanded(int groupId) {
+
+        logger.info("+++++++++SUCCESSFUL LOGGING notifyGroupDisbaned+++++++++");
+        Notification notification = new ClientNotification(ClientNotificationType.DISBAND);
+        broadcastMessageToGroup(notification, groupId);
+        logger.info("+++++++++SUCCESSFUL LOGGING notifyGroupDisbaned+++++++++" + groupId);
     }
 
     //TODO: refact onMessage!!!
@@ -98,6 +114,11 @@ public class WebsocketServer extends WebSocketServer {
                     Stats stats = statsService.findStatsByGroupIdAndEmail(targetGroup, chatClientToServerMessage.getSenderEmail());
                     Notification statsDto = new StatsDto(stats.getEmail(), stats.getGroupId(), stats.getLastMessage(), stats.getMessageCount(), ChatClientToServerMessageType.STATS);
                     broadcastMessageToGroup(statsDto, targetGroup);
+                    break;
+                case USER_LEFT:
+                    logger.info("Removing a user");
+                    targetGroup = chatClientToServerMessage.getTargetGroup();
+                    disbandGroup(targetGroup);
                     break;
             }
         } catch (IOException e) {
