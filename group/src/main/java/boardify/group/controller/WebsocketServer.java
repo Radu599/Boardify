@@ -32,8 +32,7 @@ public class WebsocketServer extends WebSocketServer {
 
     private GameGroupSearcher gameGroupSearcher;
     private StatsService statsService;
-    //private HashMap<WebSocket, String> users;
-    private HashMap<Integer, HashMap<WebSocket, String>> groups; // <groupId, users>
+    private HashMap<Integer, HashMap<WebSocket, String>> groups; // <groupId, user>
     private static final int PORT = WebsocketConstants.PORT;
     private final Logger logger = LogManager.getLogger();
 
@@ -44,7 +43,6 @@ public class WebsocketServer extends WebSocketServer {
         this.statsService = statsService;
         //users = new HashMap<>();
         groups = new HashMap<>();
-        logger.info("WebSocket before start");
         this.start();
     }
 
@@ -55,7 +53,6 @@ public class WebsocketServer extends WebSocketServer {
 
     @Override
     public void onClose(WebSocket conn, int code, String reason, boolean remote) {
-
         conn.close();
     }
 
@@ -71,6 +68,17 @@ public class WebsocketServer extends WebSocketServer {
         Notification notification = new ClientNotification(ClientNotificationType.DISBAND);
         broadcastMessageToGroup(notification, groupId);
         logger.info("+++++++++SUCCESSFUL LOGGING notifyGroupDisbaned+++++++++" + groupId);
+    }
+
+    private void notifyUserLeftQueue(int groupId) {
+
+        logger.info("+++++++++LOGGING notifyUserLeftQueue+++++++++");
+        int count = groups.get(groupId).size()-1;
+        logger.info("1");
+        Notification notification = new ClientNotification(count, groupId, ClientNotificationType.LEAVE_QUEUE);
+        logger.info("2");
+        broadcastMessageToGroup(notification, groupId);
+        logger.info("+++++++++SUCCESSFUL LOGGING notifyUserLeftQueue+++++++++");
     }
 
     //TODO: refact onMessage!!!
@@ -120,6 +128,11 @@ public class WebsocketServer extends WebSocketServer {
                     targetGroup = chatClientToServerMessage.getTargetGroup();
                     disbandGroup(targetGroup);
                     break;
+                case LEAVE_QUEUE:
+                    logger.info("User leaves queue");
+                    targetGroup = chatClientToServerMessage.getTargetGroup();
+                    leaveGroup(conn, targetGroup);
+                    break;
             }
         } catch (IOException e) {
             logger.info(e.getMessage());
@@ -127,7 +140,20 @@ public class WebsocketServer extends WebSocketServer {
         }
     }
 
-    private void broadcastStatsToGroup(int targetGroup) {
+    private void leaveGroup(WebSocket conn, int groupId) {
+
+        notifyUserLeftQueue(groupId);
+        removeUserFromGroup(conn, groupId);
+    }
+
+    private void removeUserFromGroup(WebSocket conn, int groupId) {
+
+        logger.info("+++++++++LOGGING removeUserFromGroup+++++++++");
+        HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
+        logger.info("size=" + usersInCurrentGroup.size());
+        logger.info("conn=" + conn);
+        usersInCurrentGroup.remove(conn);
+        logger.info("+++++++++SUCCESSFUL LOGGING removeUserFromGroup+++++++++");
     }
 
     @Override
@@ -138,7 +164,7 @@ public class WebsocketServer extends WebSocketServer {
 
     private void notifyPlayerJoinedGroup(int groupId) throws JsonProcessingException {
 
-        logger.info("+++++++++SUCCESSFUL LOGGING notifyGroupMembers+++++++++");
+        logger.info("+++++++++LOGGING notifyPlayerJoinedGroup+++++++++");
         HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
 
         if (usersInCurrentGroup.size() >= gameGroupSearcher.getMinimumNumberOfPlayers(gameGroupSearcher.findGameForGroup(groupId)))
@@ -146,7 +172,7 @@ public class WebsocketServer extends WebSocketServer {
         else
             broadcastUserJoinedTheGroup(groupId);
 
-        logger.info("+++++++++SUCCESSFUL LOGGING notifyGroupMembers+++++++++" + groupId);
+        logger.info("+++++++++SUCCESSFUL LOGGING notifyPlayerJoinedGroup+++++++++" + groupId);
     }
 
     private void broadcastGameStarts(int groupId) {

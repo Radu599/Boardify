@@ -4,5 +4,6 @@ public enum ClientNotificationType {
 
     JOINED,
     START_GAME,
-    DISBAND
+    DISBAND,
+    LEAVE_QUEUE
 }

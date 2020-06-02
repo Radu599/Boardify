@@ -4,5 +4,6 @@ public enum ChatClientToServerMessageType {
 
     CHAT_MESSAGE,
     STATS,
-    USER_LEFT
+    USER_LEFT,
+    LEAVE_QUEUE,
 }
