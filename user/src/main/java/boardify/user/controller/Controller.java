@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
 
-
+@CrossOrigin
 @RestController
 @RequestMapping("/users")
 public class Controller {

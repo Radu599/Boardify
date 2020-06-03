@@ -2,15 +2,14 @@ package boardify.user.dao.jpaRepository;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@ToString
 @javax.persistence.Entity
 @Table(name = "USERS")
 class UserPersistance {
@@ -24,6 +23,9 @@ class UserPersistance {
 
     @Column(name = "LOCATION")
     private String location;
+
+    @Column(name = "ROLE_ID")
+    private String roleId = "2";
 
     @Column(name = "AVATAR_PATH")
     private String avatarPath;

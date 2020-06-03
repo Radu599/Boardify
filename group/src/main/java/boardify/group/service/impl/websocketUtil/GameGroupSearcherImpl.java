@@ -83,8 +83,8 @@ public class GameGroupSearcherImpl implements GameGroupSearcher {
         String development = "development";
         String gamePort = ":8083";
 
-        boolean runProduction = Arrays.stream(environment.getActiveProfiles()).anyMatch(profile -> profile.equals("{production}"));
-        String ip = !runProduction ? localHost : (dockerIp);
+        boolean runInDevelopment = Arrays.stream(environment.getActiveProfiles()).anyMatch(profile -> profile.equals("{development}"));
+        String ip = runInDevelopment ? localHost : (dockerIp);
         String gameApiUrl = "http://" + ip + gamePort + "/games/minimumNumberOfPlayers/" + gameId;
         logger.info("Requesting minimum number of players at url:" + gameApiUrl);
         logger.info("++++++++SUCCESSFULLY LOGGED getMinimumNumberOfPlayers+++++++++++");

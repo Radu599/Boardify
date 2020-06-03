@@ -2,6 +2,8 @@ package boardify.user.dao.jpaRepository;
 
 import boardify.user.dao.UserDao;
 import boardify.user.model.User;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,7 +19,7 @@ public class UserDaoJpa implements UserDao {
 
     private UserJpaRepository jpaRepository;
 
-    //private Logger logger = LogManager.getLogger(GameDaoJpa.class);
+    private Logger logger = LogManager.getLogger(UserDaoJpa.class);
 
     public UserDaoJpa(UserJpaRepository jpaRepository) {
         this.jpaRepository = jpaRepository;
@@ -103,16 +105,15 @@ public class UserDaoJpa implements UserDao {
     @Override
     public User findUser(String username) {
 
-       /* logger.info("+++++++++LOGGING findUser+++++++++");
-        logger.info("username: {}", username);*/
+        logger.info("+++++++++LOGGING findUser+++++++++");
+        logger.info("username: {}", username);
         try {
             UserPersistance userPersistence = jpaRepository.findById(username).orElse(null);
             //logger.info("+++++++++SUCCESSFUL LOGGING findUser+++++++++");
             return convertUserPersistenceToUser(userPersistence);
         }
         catch (Exception e){
-            /*logger.error("ERROR IN FIND USER BY USERNAME:{}",username);
-            logger.error("MESSAGE: {}",e.getMessage());*/
+            logger.info("+++++++++LOGGING FAILED findUser+++++++++");
         }
         return null;
     }
@@ -120,19 +121,16 @@ public class UserDaoJpa implements UserDao {
     @Override
     public void saveUser(User boardifyUser) {
 
-//        logger.info("+++++++++LOGGING saveUser+++++++++");
+        logger.info("+++++++LOGGING saveUser+++++++");
         try {
             UserPersistance userPersistence = convertUserToUserPersistence(boardifyUser);
-            // TODO:
-            //RolePersistence rolePersistence = new RolePersistence();
-            //rolePersistence.setType("normal");
-            //rolePersistence.setId(2);
-           // userPersistence.setRole(rolePersistence);//TODO
+            userPersistence.setRoleId("2");
+            logger.info("User is " + userPersistence.toString());
             jpaRepository.save(userPersistence);
-//            logger.info("+++++++++SUCCESSFUL LOGGING findUser+++++++++");
+            logger.info("++++++SUCCESSFUL LOGGING saveUser+++++++");
+
         } catch (Exception e) {
-//            logger.error("ERROR IN FIND USER BY USERNAME:{}", boardifyUser.getUsername());
-//            logger.error("MESSAGE: {}", e.getMessage());
+            logger.info("+++++++LOGGING failed saveUser+++++++" + e);
         }
     }
 }
