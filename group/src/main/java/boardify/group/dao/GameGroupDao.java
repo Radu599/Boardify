@@ -11,4 +11,6 @@ public interface GameGroupDao {
     int save(GameGroup gameID);
 
     int findGameForGroup(int groupID);
+
+    void deleteById(int gameGroup);
 }

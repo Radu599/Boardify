@@ -8,8 +8,11 @@ import boardify.group.dto.JoinGroupDto.ClientToServer.JoinGroupMessageFromClient
 import boardify.group.dto.JoinGroupDto.ServerToClient.ClientNotification;
 import boardify.group.dto.JoinGroupDto.ServerToClient.ClientNotificationType;
 import boardify.group.dto.Notification;
+import boardify.group.model.GameGroup;
+import boardify.group.model.GroupMember;
 import boardify.group.model.Stats;
 import boardify.group.service.GameGroupSearcher;
+import boardify.group.service.Service;
 import boardify.group.service.StatsService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -35,13 +38,14 @@ public class WebsocketServer extends WebSocketServer {
     private HashMap<Integer, HashMap<WebSocket, String>> groups; // <groupId, user>
     private static final int PORT = WebsocketConstants.PORT;
     private final Logger logger = LogManager.getLogger();
+    private Service service;
 
     @Autowired
-    private WebsocketServer(GameGroupSearcher gameGroupSearcher, StatsService statsService) {
+    private WebsocketServer(GameGroupSearcher gameGroupSearcher, StatsService statsService, Service service) {
         super(new InetSocketAddress((PORT)));
         this.gameGroupSearcher = gameGroupSearcher;
         this.statsService = statsService;
-        //users = new HashMap<>();
+        this.service = service;
         groups = new HashMap<>();
         this.start();
     }
@@ -60,6 +64,8 @@ public class WebsocketServer extends WebSocketServer {
 
         notifyGroupDisbanded(groupId);
         groups.remove(groups.get(groupId));
+        service.deleteGroupMember(groupId);
+        service.deleteGameGroup(groupId);
     }
 
     private void notifyGroupDisbanded(int groupId) {
@@ -142,8 +148,12 @@ public class WebsocketServer extends WebSocketServer {
 
     private void leaveGroup(WebSocket conn, int groupId) {
 
+        Map<WebSocket, String> usersInGroup = groups.get(groupId);
+        String email =  usersInGroup.get(conn);
+
         notifyUserLeftQueue(groupId);
         removeUserFromGroup(conn, groupId);
+        service.deleteGroupMember(new GroupMember(email, groupId));
     }
 
     private void removeUserFromGroup(WebSocket conn, int groupId) {

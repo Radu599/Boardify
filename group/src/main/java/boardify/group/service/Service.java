@@ -18,4 +18,9 @@ public interface Service {
     int saveGroup(GameGroup gameID);
 
     int findGameForGroup(int groupID);
+
+    void deleteGameGroup(int groupId);
+    void deleteGroupMember(int groupMember);
+
+    void deleteGroupMember(GroupMember groupMember);
 }

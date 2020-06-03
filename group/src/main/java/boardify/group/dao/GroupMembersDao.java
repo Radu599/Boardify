@@ -12,4 +12,7 @@ public interface GroupMembersDao {
     int findSizeForGroup(int gameGroupID);
     int findGameGroupID(String email);
     void save(GroupMember groupMember);
+    void deleteByGroupId(int groupId);
+
+    void deleteByGroupId(GroupMember groupMember);
 }

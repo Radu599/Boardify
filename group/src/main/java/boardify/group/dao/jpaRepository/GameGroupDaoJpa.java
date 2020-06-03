@@ -43,6 +43,11 @@ public class GameGroupDaoJpa implements GameGroupDao {
         return gameGroupPersistanceOptional.get().getGameId();
     }
 
+    @Override
+    public void deleteById(int gameGroup) {
+        gameGroupJpaRepository.deleteById(gameGroup);
+    }
+
     private GameGroup convertGameGroupPersistenceToGameGroup(GameGroupPersistance gameGroupPersistance) {
 
         return gameGroupPersistance == null ? null : GameGroup

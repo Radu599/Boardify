@@ -10,11 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @org.springframework.stereotype.Service
 @Primary
 @Component
+@Transactional // TODO: I used this because of custom deleteBy in dao: https://stackoverflow.com/questions/32269192/spring-no-entitymanager-with-actual-transaction-available-for-current-thread
 public class ServiceImpl implements Service {
 
     @Autowired
@@ -51,8 +53,22 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public void saveGroupMember(GroupMember groupMember) {
+    public void deleteGameGroup(int groupId) {
+        groupDao.deleteById(groupId);
+    }
 
+    @Override
+    public void deleteGroupMember(int groupMember) {
+        groupMembersDao.deleteByGroupId(groupMember);
+    }
+
+    @Override
+    public void deleteGroupMember(GroupMember groupMember) {
+        groupMembersDao.deleteByGroupId(groupMember);
+    }
+
+    @Override
+    public void saveGroupMember(GroupMember groupMember) {
         groupMembersDao.save(groupMember);
     }
 }
