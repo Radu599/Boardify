@@ -23,4 +23,6 @@ public interface Service {
     void deleteGroupMember(int groupMember);
 
     void deleteGroupMember(GroupMember groupMember);
+
+    boolean groupIsPlaying(int groupId);
 }

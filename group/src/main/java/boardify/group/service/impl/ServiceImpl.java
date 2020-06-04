@@ -5,6 +5,7 @@ import boardify.group.dao.GroupMembersDao;
 import boardify.group.dto.UserDto;
 import boardify.group.model.GameGroup;
 import boardify.group.model.GroupMember;
+import boardify.group.service.GameGroupSearcher;
 import boardify.group.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
@@ -23,6 +24,8 @@ public class ServiceImpl implements Service {
     private GameGroupDao groupDao;
     @Autowired
     private GroupMembersDao groupMembersDao;
+    @Autowired
+    private GameGroupSearcher gameGroupSearcher;
 
     @Override
     public List<UserDto> findGroupForUser(String email) {
@@ -65,6 +68,15 @@ public class ServiceImpl implements Service {
     @Override
     public void deleteGroupMember(GroupMember groupMember) {
         groupMembersDao.deleteByGroupId(groupMember);
+    }
+
+    @Override
+    public boolean groupIsPlaying(int groupId) {
+        int groupSize = groupMembersDao.findSizeForGroup(groupId);
+        int gameId = groupDao.findGameForGroup(groupId);
+        int groupCapacity = gameGroupSearcher.getMinimumNumberOfPlayers(gameId);
+
+        return groupSize>=groupCapacity;
     }
 
     @Override
