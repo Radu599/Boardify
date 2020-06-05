@@ -7,6 +7,8 @@ import boardify.group.model.GameGroup;
 import boardify.group.model.GroupMember;
 import boardify.group.service.GameGroupSearcher;
 import boardify.group.service.Service;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
@@ -26,6 +28,8 @@ public class ServiceImpl implements Service {
     private GroupMembersDao groupMembersDao;
     @Autowired
     private GameGroupSearcher gameGroupSearcher;
+
+    private final Logger logger = LogManager.getLogger();
 
     @Override
     public List<UserDto> findGroupForUser(String email) {
@@ -72,10 +76,13 @@ public class ServiceImpl implements Service {
 
     @Override
     public boolean groupIsPlaying(int groupId) {
+        logger.info("Logging START groupIsPlaying");
         int groupSize = groupMembersDao.findSizeForGroup(groupId);
+        logger.info("groupSize=" + groupSize);
         int gameId = groupDao.findGameForGroup(groupId);
+        logger.info("gameId=" + gameId);
         int groupCapacity = gameGroupSearcher.getMinimumNumberOfPlayers(gameId);
-
+        logger.info("groupCapacity=" + groupCapacity);
         return groupSize>=groupCapacity;
     }
 
