@@ -1,8 +1,8 @@
 package boardify.auth.service;
 
-import boardify.auth.dto.LoginResponse;
+import boardify.auth.dto.AuthenticationResponse;
 
 public interface Service {
 
-    LoginResponse login(String username, String password);
+    AuthenticationResponse login(String username, String password);
 }
