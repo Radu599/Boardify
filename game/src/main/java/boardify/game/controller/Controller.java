@@ -40,7 +40,7 @@ public class Controller {
         return new ResponseEntity<>(entities, HttpStatus.OK);
     }
 
-        @ApiOperation(value = "Find all games")
+        @ApiOperation(value = "Get minimum number of players")
         @ApiResponses(value = {
                 @ApiResponse(code = 200, message = "SUCCESS", response = List.class),
         })
