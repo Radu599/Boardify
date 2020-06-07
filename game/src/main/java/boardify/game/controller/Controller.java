@@ -40,16 +40,16 @@ public class Controller {
         return new ResponseEntity<>(entities, HttpStatus.OK);
     }
 
-        @ApiOperation(value = "Get minimum number of players")
-        @ApiResponses(value = {
-                @ApiResponse(code = 200, message = "SUCCESS", response = List.class),
-        })
-        @RequestMapping(value = "/minimumNumberOfPlayers/{gameId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-        public ResponseEntity<Integer> getMinimumNumberOfPlayers(@PathVariable("gameId") String gameId) {
+    @ApiOperation(value = "Get minimum number of players")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "SUCCESS", response = List.class),
+    })
+    @RequestMapping(value = "/minimumNumberOfPlayers/{gameId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Integer> getMinimumNumberOfPlayers(@PathVariable("gameId") String gameId) {
 
-            logger.info("+++++++++LOGGING getMinimumNumberOfPlayers+++++++++");
-            int minimumNumberOfPlayers= service.getMinimumNumberOfPlayers(Integer.valueOf(gameId));
-            logger.info("+++++++++SUCCESSFUL LOGGING getMinimumNumberOfPlayers+++++++++");
-            return new ResponseEntity<Integer>(minimumNumberOfPlayers, HttpStatus.OK);
-        }
+        logger.info("+++++++++LOGGING getMinimumNumberOfPlayers+++++++++");
+        int minimumNumberOfPlayers = service.getMinimumNumberOfPlayers(Integer.valueOf(gameId));
+        logger.info("+++++++++SUCCESSFUL LOGGING getMinimumNumberOfPlayers+++++++++");
+        return new ResponseEntity<Integer>(minimumNumberOfPlayers, HttpStatus.OK);
+    }
 }
