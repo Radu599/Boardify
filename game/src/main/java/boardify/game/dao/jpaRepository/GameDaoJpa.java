@@ -13,16 +13,16 @@ import java.util.stream.Collectors;
 @EnableJpaRepositories(basePackageClasses = GameJpaRepository.class)
 public class GameDaoJpa implements GameDao {
 
-    private GameJpaRepository jpaRepository;
+    private GameJpaRepository gameJpaRepository;
 
     public GameDaoJpa(GameJpaRepository jpaRepository) {
-        this.jpaRepository = jpaRepository;
+        this.gameJpaRepository = jpaRepository;
     }
 
     @Override
     public List<Game> findAllGames() {
 
-        return jpaRepository.findAll()
+        return gameJpaRepository.findAll()
                 .stream()
                 .map(this::convertGamePersistenceToGame)
                 .collect(Collectors.toList());
@@ -31,7 +31,7 @@ public class GameDaoJpa implements GameDao {
     @Override
     public int getMinimumNumberOfPlayers(int gameId) {
 
-         Optional<GamePersistence> gamePersistence = jpaRepository.findById(gameId);
+         Optional<GamePersistence> gamePersistence = gameJpaRepository.findById(gameId);
          return gamePersistence.get().getMinimumNumberOfPlayers();
     }
 

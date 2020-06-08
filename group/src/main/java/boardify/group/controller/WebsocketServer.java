@@ -8,8 +8,10 @@ import boardify.group.dto.JoinGroupDto.ClientToServer.JoinGroupMessageFromClient
 import boardify.group.dto.JoinGroupDto.ServerToClient.ClientNotification;
 import boardify.group.dto.JoinGroupDto.ServerToClient.ClientNotificationType;
 import boardify.group.dto.Notification;
+import boardify.group.model.GroupMember;
 import boardify.group.model.Stats;
 import boardify.group.service.GameGroupSearcher;
+import boardify.group.service.Service;
 import boardify.group.service.StatsService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -32,19 +34,18 @@ public class WebsocketServer extends WebSocketServer {
 
     private GameGroupSearcher gameGroupSearcher;
     private StatsService statsService;
-    private HashMap<WebSocket, String> users;
-    private HashMap<Integer, HashMap<WebSocket, String>> groups; // <groupId, users>
+    private HashMap<Integer, HashMap<WebSocket, String>> groups; // <groupId, user>
     private static final int PORT = WebsocketConstants.PORT;
     private final Logger logger = LogManager.getLogger();
+    private Service service;
 
     @Autowired
-    private WebsocketServer(GameGroupSearcher gameGroupSearcher, StatsService statsService) {
+    private WebsocketServer(GameGroupSearcher gameGroupSearcher, StatsService statsService, Service service) {
         super(new InetSocketAddress((PORT)));
         this.gameGroupSearcher = gameGroupSearcher;
         this.statsService = statsService;
-        users = new HashMap<>();
+        this.service = service;
         groups = new HashMap<>();
-        logger.info("WebSocket before start");
         this.start();
     }
 
@@ -55,6 +56,78 @@ public class WebsocketServer extends WebSocketServer {
 
     @Override
     public void onClose(WebSocket conn, int code, String reason, boolean remote) {
+
+        logger.info("++++Logging onClose++++++");
+        String email = findEmailByWebSocket(conn);
+        logger.info(String.format("We must clear data for %s", email));
+        int groupId = findGroupIdByWebSocket(conn); // TODO: use service.findGroupForUser(email) instead
+        if (groupId != -1) {
+            logger.info(String.format("The player was in a group %s", email));
+            if(!service.groupIsPlaying(groupId)){
+                logger.info(String.format("Leave group %s", email));
+                leaveGroup(conn, groupId);
+            }else{
+                logger.info(String.format("Disband group %s", groupId));
+                disbandGroup(groupId);
+            }
+        }
+        if(!conn.isClosed())
+            conn.close();
+        logger.info("++++Logging SUCCESSFUL onClose++++++");
+    }
+
+    private String findEmailByWebSocket(WebSocket conn) {
+
+        for (Integer groupId : groups.keySet()) {
+            Map<WebSocket, String> groupMap = groups.get(groupId);
+            for (Map.Entry<WebSocket, String> userMap : groupMap.entrySet()) {
+                WebSocket webSocket = userMap.getKey();
+                if (conn.equals(webSocket)) {
+                    return userMap.getValue();
+                }
+            }
+        }
+        return null;
+    }
+
+    private int findGroupIdByWebSocket(WebSocket conn) {
+
+        for (Integer groupId : groups.keySet()) {
+            Map<WebSocket, String> groupMap = groups.get(groupId);
+            for (Map.Entry<WebSocket, String> userMap : groupMap.entrySet()) {
+                WebSocket webSocket = userMap.getKey();
+                if (conn.equals(webSocket)) {
+                    return groupId;
+                }
+            }
+        }
+        return -1;
+    }
+
+    private void disbandGroup(int groupId) {
+
+        notifyGroupDisbanded(groupId);
+        groups.remove(groups.get(groupId));
+        service.deleteGroupMember(groupId);
+        service.deleteGameGroup(groupId);
+    }
+
+    private void notifyGroupDisbanded(int groupId) {
+
+        logger.info("+++++++++SUCCESSFUL LOGGING notifyGroupDisbaned+++++++++");
+        Notification notification = new ClientNotification(ClientNotificationType.DISBAND);
+        broadcastMessageToGroup(notification, groupId);
+        logger.info("+++++++++SUCCESSFUL LOGGING notifyGroupDisbaned+++++++++" + groupId);
+    }
+
+    private void notifyUserLeftQueue(int groupId) {
+
+        logger.info("+++++++++LOGGING notifyUserLeftQueue+++++++++");
+        int count = groups.get(groupId).size() - 1;
+        Notification notification = new ClientNotification(count, groupId, ClientNotificationType.LEAVE_QUEUE);
+        logger.info("Trying to broadcast message to group " + groupId);
+        broadcastMessageToGroup(notification, groupId);
+        logger.info("+++++++++SUCCESSFUL LOGGING notifyUserLeftQueue+++++++++");
     }
 
     //TODO: refact onMessage!!!
@@ -69,12 +142,12 @@ public class WebsocketServer extends WebSocketServer {
 
             switch (msg.getType()) {
                 case SEARCH_GAME:
-                    int groupId = gameGroupSearcher.joinGame(msg.getEmail(), msg.getGameId()).get(0).getId(); // TODO: research on how to use principal
+                    int groupId = gameGroupSearcher.joinGame(msg.getEmail(), msg.getGameId(), msg.getCity()).get(0).getId(); // TODO: research on how to use principal
                     // add user to it's group
-                    HashMap value = groups.get(groupId);
+                    HashMap<WebSocket, String> value = groups.get(groupId);
 
                     if (value == null)
-                        value = new HashMap();
+                        value = new HashMap<WebSocket, String>();
 
                     value.put(conn, msg.getEmail());
 
@@ -99,6 +172,16 @@ public class WebsocketServer extends WebSocketServer {
                     Notification statsDto = new StatsDto(stats.getEmail(), stats.getGroupId(), stats.getLastMessage(), stats.getMessageCount(), ChatClientToServerMessageType.STATS);
                     broadcastMessageToGroup(statsDto, targetGroup);
                     break;
+                case USER_LEFT:
+                    logger.info("Removing a user");
+                    targetGroup = chatClientToServerMessage.getTargetGroup();
+                    disbandGroup(targetGroup);
+                    break;
+                case LEAVE_QUEUE:
+                    logger.info("User leaves queue");
+                    targetGroup = chatClientToServerMessage.getTargetGroup();
+                    leaveGroup(conn, targetGroup);
+                    break;
             }
         } catch (IOException e) {
             logger.info(e.getMessage());
@@ -106,7 +189,24 @@ public class WebsocketServer extends WebSocketServer {
         }
     }
 
-    private void broadcastStatsToGroup(int targetGroup) {
+    private void leaveGroup(WebSocket conn, int groupId) {
+
+        Map<WebSocket, String> usersInGroup = groups.get(groupId);
+        String email = usersInGroup.get(conn);
+
+        notifyUserLeftQueue(groupId);
+        removeUserFromGroup(conn, groupId);
+        service.deleteGroupMember(new GroupMember(email, groupId));
+    }
+
+    private void removeUserFromGroup(WebSocket conn, int groupId) {
+
+        logger.info("+++++++++LOGGING removeUserFromGroup+++++++++");
+        HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
+        logger.info("size=" + usersInCurrentGroup.size());
+        logger.info("conn=" + conn);
+        usersInCurrentGroup.remove(conn);
+        logger.info("+++++++++SUCCESSFUL LOGGING removeUserFromGroup+++++++++");
     }
 
     @Override
@@ -117,7 +217,7 @@ public class WebsocketServer extends WebSocketServer {
 
     private void notifyPlayerJoinedGroup(int groupId) throws JsonProcessingException {
 
-        logger.info("+++++++++SUCCESSFUL LOGGING notifyGroupMembers+++++++++");
+        logger.info("+++++++++LOGGING notifyPlayerJoinedGroup+++++++++");
         HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
 
         if (usersInCurrentGroup.size() >= gameGroupSearcher.getMinimumNumberOfPlayers(gameGroupSearcher.findGameForGroup(groupId)))
@@ -125,7 +225,7 @@ public class WebsocketServer extends WebSocketServer {
         else
             broadcastUserJoinedTheGroup(groupId);
 
-        logger.info("+++++++++SUCCESSFUL LOGGING notifyGroupMembers+++++++++" + groupId);
+        logger.info("+++++++++SUCCESSFUL LOGGING notifyPlayerJoinedGroup+++++++++" + groupId);
     }
 
     private void broadcastGameStarts(int groupId) {
@@ -142,8 +242,9 @@ public class WebsocketServer extends WebSocketServer {
 
     private void broadcastMessageToGroup(Notification clientNotification, int groupId) {
 
+        logger.info("+++++++++LOGGING START broadcastMessageToGroup+++++++++");
         HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
-
+        logger.info("1");
         ObjectMapper mapper = new ObjectMapper();
         String messageJson = null;
         try {
@@ -151,10 +252,16 @@ public class WebsocketServer extends WebSocketServer {
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-
         for (Map.Entry<WebSocket, String> entry : usersInCurrentGroup.entrySet()) {
             WebSocket sock = entry.getKey();
-            sock.send(messageJson);
+            try {
+                //TODO: this doesnt work, exception is thrown
+                if (!sock.isClosed()) // when websocket connection ends this method is called before removing the connection
+                    sock.send(messageJson);
+            }catch(Exception e){
+                logger.info("Sending message to user failed! This is probably due to user closing websocket connection. It happens while player is in queue and we lose connection (ex.: tab is closed)");
+            }
         }
+        logger.info("+++++++++LOGGING FINISH broadcastMessageToGroup+++++++++");
     }
 }

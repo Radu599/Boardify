@@ -17,4 +17,5 @@ public class ClientNotification extends Notification {
     public ClientNotification(ClientNotificationType type){
         this.type = type;
     }
+
 }

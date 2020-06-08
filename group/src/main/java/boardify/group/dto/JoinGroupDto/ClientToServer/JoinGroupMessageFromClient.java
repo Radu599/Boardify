@@ -13,4 +13,5 @@ public class JoinGroupMessageFromClient extends Notification {
     private String email;
     private int gameId;
     private JoinGroupFromClientType type;
+    private String city;
 }

@@ -1,10 +1,14 @@
 package boardify.auth.service.impl;
 
 import boardify.auth.dao.UserDao;
+<<<<<<< HEAD
 import boardify.auth.dto.LoginResponse;
 <<<<<<< HEAD
 import boardify.auth.dto.RegisterResponse;
 =======
+>>>>>>> develop
+=======
+import boardify.auth.dto.AuthenticationResponse;
 >>>>>>> develop
 import boardify.auth.model.BoardifyUser;
 import boardify.auth.service.Service;
@@ -42,18 +46,19 @@ public class ServiceImpl implements Service, UserDetailsService {
     @Autowired
     private AuthenticationManager authenticationManager;
     @Autowired
-    private AuthJwtUtil jwtUtil;
+    private AuthJwtUtil authJwtUtil;
 
     @Override
-    public LoginResponse login(String username, String password) {
+    public AuthenticationResponse login(String username, String password) {
 
-        logger.info("+++++++++++++++++++++++++++++++LOGGING login+++++++++++++++++++++++++++++++");
-        loggingCredentials(username, password);
+        logger.info("+++++++++++++LOGGING login++++++++++++++++++++");
+        logCredentials(username, password);
         try {
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(username, password)
             );
             final UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+<<<<<<< HEAD
 
             final String jwt = jwtUtil.generateToken(userDetails);
             final String role = userDetails.getAuthorities().stream().map(GrantedAuthority::getAuthority).findFirst().orElse(null);
@@ -63,12 +68,18 @@ public class ServiceImpl implements Service, UserDetailsService {
 =======
 >>>>>>> develop
             return new LoginResponse(jwt);
+=======
+            final String jwt = authJwtUtil.generateToken(userDetails);
+            logger.info("++++++++++++++++++SUCCESSFUL LOGGING login++++++++++");
+            return new AuthenticationResponse(jwt);
+>>>>>>> develop
         } catch (BadCredentialsException e) {
-            logger.error("ERROR IN LOGIN: {}",e.getMessage());
+            logger.error("Login failed " + e.getMessage());
             throw new LoginServiceException("Incorrect username or password", LoginExceptionType.INVALID_CREDENTIALS, HttpStatus.NOT_FOUND);
         }
     }
 
+<<<<<<< HEAD
     @Override
     public RegisterResponse registerUser(String username, String password) {
         logger.info("+++++++++++++++++++++++++++++++LOGGING register+++++++++++++++++++++++++++++++");
@@ -94,15 +105,17 @@ public class ServiceImpl implements Service, UserDetailsService {
     }
 
     private void loggingCredentials(String username, String password) {
+=======
+    private void logCredentials(String username, String password) {
+>>>>>>> develop
 
-        logger.info("username: {}",username);
-        logger.info("password: {}",password);
+        logger.info("username=" + username + " password=" + password);
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        logger.info("+++++++++++++++++++++++++++++++LOGGING loadUserByUsername+++++++++++++++++++++++++++++++");
+        logger.info("++++++++++++LOGGING loadUserByUsername+++++++++++++++++++");
         BoardifyUser user = userDao.findUser(username);
         if (user == null)
             throw new UsernameNotFoundException("Doesn't exist an user with username " + username);
