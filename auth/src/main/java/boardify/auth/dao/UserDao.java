@@ -4,9 +4,4 @@ import boardify.auth.model.BoardifyUser;
 public interface UserDao {
 
     BoardifyUser findUser(String username);
-<<<<<<< HEAD
-
-    void saveUser(BoardifyUser boardifyUser);
-=======
->>>>>>> develop
 }

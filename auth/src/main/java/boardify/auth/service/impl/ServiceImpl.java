@@ -1,15 +1,7 @@
 package boardify.auth.service.impl;
 
 import boardify.auth.dao.UserDao;
-<<<<<<< HEAD
-import boardify.auth.dto.LoginResponse;
-<<<<<<< HEAD
-import boardify.auth.dto.RegisterResponse;
-=======
->>>>>>> develop
-=======
 import boardify.auth.dto.AuthenticationResponse;
->>>>>>> develop
 import boardify.auth.model.BoardifyUser;
 import boardify.auth.service.Service;
 import boardify.auth.service.exception.LoginExceptionType;
@@ -58,56 +50,16 @@ public class ServiceImpl implements Service, UserDetailsService {
                     new UsernamePasswordAuthenticationToken(username, password)
             );
             final UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-<<<<<<< HEAD
-
-            final String jwt = jwtUtil.generateToken(userDetails);
-            final String role = userDetails.getAuthorities().stream().map(GrantedAuthority::getAuthority).findFirst().orElse(null);
-            logger.info("+++++++++++++++++++++++++++++++SUCCESSFUL LOGGING login+++++++++++++++++++++++++++++++");
-<<<<<<< HEAD
-//            return new AuthenticationResponse(jwt, role);
-=======
->>>>>>> develop
-            return new LoginResponse(jwt);
-=======
             final String jwt = authJwtUtil.generateToken(userDetails);
             logger.info("++++++++++++++++++SUCCESSFUL LOGGING login++++++++++");
             return new AuthenticationResponse(jwt);
->>>>>>> develop
         } catch (BadCredentialsException e) {
             logger.error("Login failed " + e.getMessage());
             throw new LoginServiceException("Incorrect username or password", LoginExceptionType.INVALID_CREDENTIALS, HttpStatus.NOT_FOUND);
         }
     }
 
-<<<<<<< HEAD
-    @Override
-    public RegisterResponse registerUser(String username, String password) {
-        logger.info("+++++++++++++++++++++++++++++++LOGGING register+++++++++++++++++++++++++++++++");
-        loggingCredentials(username, password);
-
-        //TODO:
-        /*
-        if (userDao.existsByUserName(username)) {
-            throw new RegisterServiceException("Email address is already taken!", RegisterExceptionType.USERNAME_EXISTS, HttpStatus.BAD_REQUEST);
-        }*/
-
-        BoardifyUser boardifyUser = BoardifyUser.builder()
-                .username(username)
-                .password(password)
-                .role("normal")
-                .build();
-
-        userDao.saveUser(boardifyUser);
-
-        logger.info("+++++++++++++++++++++++++++++++SUCCESSFUL LOGGING register+++++++++++++++++++++++++++++++");
-        //TODO:
-        return new RegisterResponse(boardifyUser.getUsername());
-    }
-
-    private void loggingCredentials(String username, String password) {
-=======
     private void logCredentials(String username, String password) {
->>>>>>> develop
 
         logger.info("username=" + username + " password=" + password);
     }
