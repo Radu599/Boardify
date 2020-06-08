@@ -30,10 +30,11 @@ public class GameGroupDaoJpa implements GameGroupDao {
     }
 
     @Override
-    public int save(int gameID) {
+    public int save(GameGroup gameGroup) {
 
-        GameGroupPersistance gameGroupPersistance = gameGroupJpaRepository.save(this.convertGameGroupToGameGroupPersistance(new GameGroup(gameID)));
-        return gameGroupPersistance.getId();
+        GameGroupPersistance gameGroupPersistance = this.convertGameGroupToGameGroupPersistance(gameGroup);
+        return gameGroupJpaRepository.save(gameGroupPersistance).getId();
+        //return gameGroupPersistance.getId();
     }
 
     @Override
@@ -42,12 +43,18 @@ public class GameGroupDaoJpa implements GameGroupDao {
         return gameGroupPersistanceOptional.get().getGameId();
     }
 
+    @Override
+    public void deleteById(int gameGroup) {
+        gameGroupJpaRepository.deleteById(gameGroup);
+    }
+
     private GameGroup convertGameGroupPersistenceToGameGroup(GameGroupPersistance gameGroupPersistance) {
 
         return gameGroupPersistance == null ? null : GameGroup
                 .builder()
                 .id(gameGroupPersistance.getId())
                 .gameId(gameGroupPersistance.getGameId())
+                .city(gameGroupPersistance.getCity())
                 .build();
     }
 
@@ -56,6 +63,7 @@ public class GameGroupDaoJpa implements GameGroupDao {
         return gameGroup == null ? null : GameGroupPersistance.builder()
                 .gameId(gameGroup.getGameId())
                 .id(gameGroup.getId())
+                .city(gameGroup.getCity())
                 .build();
     }
 }

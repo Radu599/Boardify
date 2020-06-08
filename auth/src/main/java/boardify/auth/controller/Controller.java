@@ -1,9 +1,13 @@
 package boardify.auth.controller;
 
+<<<<<<< HEAD
 import boardify.auth.dto.LoginResponse;
 <<<<<<< HEAD
 import boardify.auth.dto.RegisterResponse;
 =======
+>>>>>>> develop
+=======
+import boardify.auth.dto.AuthenticationResponse;
 >>>>>>> develop
 import boardify.auth.dto.UserDto;
 import boardify.auth.service.Service;
@@ -41,18 +45,19 @@ public class Controller {
 
     @ApiOperation(value = "Login a specific user")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "SUCCESS", response = LoginResponse.class),
+            @ApiResponse(code = 200, message = "SUCCESS", response = AuthenticationResponse.class),
             @ApiResponse(code = 400, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class),
             @ApiResponse(code = 404, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class)
     })
 
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public ResponseEntity<LoginResponse> login(@Valid UserDto user, BindingResult result){
+    public ResponseEntity<AuthenticationResponse> login(@Valid UserDto user, BindingResult result){
 
         logger.info("+++++++++LOGGING login+++++++++");
         loggingUserDto(user);
         if (result.hasErrors())
             throw new LoginServiceException("Username or password for user: "+ user+" can not be null!", LoginExceptionType.INVALID_CREDENTIALS,HttpStatus.BAD_REQUEST);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         LoginResponse response = service.login(user.getUsername(),user.getPassword());
@@ -60,13 +65,16 @@ public class Controller {
 =======
         LoginResponse response = service.login(user.getUsername(),user.getPassword());
 >>>>>>> develop
+=======
+        AuthenticationResponse response = service.login(user.getUsername(),user.getPassword());
+>>>>>>> develop
         logger.info("+++++++++SUCCESSFUL LOGGING login+++++++++");
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @ApiOperation(value = "test")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "SUCCESS", response = LoginResponse.class),
+            @ApiResponse(code = 200, message = "SUCCESS", response = AuthenticationResponse.class),
             @ApiResponse(code = 400, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class),
             @ApiResponse(code = 404, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class)
     })

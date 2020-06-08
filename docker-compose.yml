@@ -36,8 +36,8 @@ services:
       - "3307"
     networks:
       - boardify-app-network
-  #  volumes:
-  #    - boardify-db-volume:/var/lib/mysql
+    volumes:
+      - boardify-db-volume:/var/lib/user-mysql-db
     depends_on:
       - game-mysql-db
 
@@ -153,7 +153,7 @@ services:
     hostname: boardify-group-service
     ports:
       - "8085:8085"
-      - "8095:8095"
+      - "8099:8099"
     networks:
       - boardify-app-network
     environment:
@@ -198,8 +198,8 @@ services:
       - auth-mysql-db
       - service-discovery
 
-#volumes:
-#  boardify-db-volume:
+volumes:
+  boardify-db-volume:
 
 networks:
   boardify-app-network:

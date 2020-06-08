@@ -15,7 +15,14 @@ public interface Service {
     int findSizeForGroup(int gameGroupID);
     List<UserDto> findGroupForUser(String email);
     List<GameGroup> findAllGameGroups();
-    int saveGroup(int gameID);
+    int saveGroup(GameGroup gameID);
 
     int findGameForGroup(int groupID);
+
+    void deleteGameGroup(int groupId);
+    void deleteGroupMember(int groupMember);
+
+    void deleteGroupMember(GroupMember groupMember);
+
+    boolean groupIsPlaying(int groupId);
 }

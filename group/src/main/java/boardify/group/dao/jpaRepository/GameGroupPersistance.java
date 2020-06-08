@@ -18,4 +18,6 @@ class GameGroupPersistance {
     private Integer id;
     @Column(name = "GAME_ID")
     private int gameId;
+    @Column(name = "CITY")
+    private String city;
 }

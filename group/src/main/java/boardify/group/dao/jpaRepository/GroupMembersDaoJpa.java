@@ -80,10 +80,20 @@ public class GroupMembersDaoJpa implements GroupMembersDao {
     @Override
     public void save(GroupMember groupMember) {
 
-        groupMembersJpaRepository.save(this.convertGroupMemberToGroupMemberPersistance(groupMember));
+        groupMembersJpaRepository.save(this.convertGroupMemberToGroupMemberPersistence(groupMember));
     }
 
-    private GroupMembersPersistance convertGroupMemberToGroupMemberPersistance(GroupMember groupMember) {
+    @Override
+    public void deleteByGroupId(int groupId) {
+        groupMembersJpaRepository.deleteByGameGroupID(groupId);
+    }
+
+    @Override
+    public void deleteByGroupId(GroupMember groupMember) {
+        groupMembersJpaRepository.delete(convertGroupMemberToGroupMemberPersistence(groupMember));
+    }
+
+    private GroupMembersPersistance convertGroupMemberToGroupMemberPersistence(GroupMember groupMember) {
 
         return groupMember == null ? null : GroupMembersPersistance.builder()
                 .gameGroupID(groupMember.getGameGroupID())

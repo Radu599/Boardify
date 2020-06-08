@@ -12,6 +12,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,6 +28,8 @@ public class ServiceImpl implements Service {
     private final Logger logger = LogManager.getLogger(ServiceImpl.class);
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public String findLocationByEmail(String email) {
@@ -34,7 +37,7 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public void updateLocation(String email, String location) {
+    public String updateLocation(String email, String location) {
 
         if (email == null) {
             throw new UserServiceException("Given user has null id!", UserExceptionType.USER_NOT_FOUND, HttpStatus.NOT_FOUND);
@@ -43,7 +46,8 @@ public class ServiceImpl implements Service {
         if (userDao.updateLocation(email, location) == null) {
             throw new UserServiceException("Doesn't exist a user with id = " + email, UserExceptionType.USER_NOT_FOUND, HttpStatus.NOT_FOUND);
         }
-        assert(userDao.findLocationByEmail(email).equals(location));
+        //assert(userDao.findLocationByEmail(email).equals(location));
+        return location;
     }
 
     @Override
@@ -64,17 +68,17 @@ public class ServiceImpl implements Service {
 
     @Override
     public RegisterResponse registerUser(String username, String password) {
-        logger.info("+++++++++++++++++++++++++++++++LOGGING register+++++++++++++++++++++++++++++++");
+        logger.info("+++++++++++++++++LOGGING register++++++++++++++++++");
 
         User boardifyUser = User.builder()
                 .username(username)
-                .password(password)
+                .password(passwordEncoder.encode(password))
                 .role("normal")
                 .build();
 
         userDao.saveUser(boardifyUser);
 
-        logger.info("+++++++++++++++++++++++++++++++SUCCESSFUL LOGGING register+++++++++++++++++++++++++++++++");
+        logger.info("+++++++++++++SUCCESSFUL LOGGING register+++++++++");
         return new RegisterResponse(boardifyUser.getUsername());
     }
 }

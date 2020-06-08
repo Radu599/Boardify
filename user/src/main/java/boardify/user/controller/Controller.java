@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
 
-
+@CrossOrigin
 @RestController
 @RequestMapping("/users")
 public class Controller {
@@ -60,7 +60,7 @@ public class Controller {
 
         String email = principal.getName();
 
-        assert(email!=null);
+        //  assert(email!=null);
 
         logger.info("+++++++++LOGGING updateLocation+++++++++");
         //loggingEntity(user);

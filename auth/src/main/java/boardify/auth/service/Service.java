@@ -1,5 +1,6 @@
 package boardify.auth.service;
 
+<<<<<<< HEAD
 import boardify.auth.dto.LoginResponse;
 <<<<<<< HEAD
 import boardify.auth.dto.RegisterResponse;
@@ -13,5 +14,12 @@ public interface Service {
 
     RegisterResponse registerUser(String username, String password);
 =======
+>>>>>>> develop
+=======
+import boardify.auth.dto.AuthenticationResponse;
+
+public interface Service {
+
+    AuthenticationResponse login(String username, String password);
 >>>>>>> develop
 }

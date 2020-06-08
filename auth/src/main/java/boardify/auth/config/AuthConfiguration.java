@@ -23,6 +23,7 @@ public class AuthConfiguration {
 
     @Bean
     public RestTemplate getRestTemplate() {
+
         System.out.println("INTERCEPTOR ADDED!!!!!!!!!!!!!!!!!!!!");
 
         RestTemplate restTemplate = new RestTemplate();

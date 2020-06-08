@@ -9,4 +9,6 @@ public interface GroupMembersJpaRepository extends JpaRepository<GroupMembersPer
     List<GroupMembersPersistance> findByGameGroupID(int gameGroupID);
 
     List<GroupMembersPersistance> findByUserEmail(String email);
+
+    void deleteByGameGroupID(int gameGroupId);
 }
