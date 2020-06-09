@@ -6,18 +6,24 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 @Service
 public class AuthJwtUtil extends JwtUtil {
 
     private final JwtAuthenticationConfig config;
+
+    @Value("${jwt.secret}")
+    private String secret;
+
+    public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
 
     @Autowired
     public AuthJwtUtil(JwtAuthenticationConfig config) {
@@ -30,28 +36,39 @@ public class AuthJwtUtil extends JwtUtil {
         return config;
     }
 
+    private String doGenerateToken(Map<String, Object> claims, String subject) {
+        return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY * 1000))
+                .signWith(SignatureAlgorithm.HS512, secret).compact();
+    }
+
     public String generateToken(UserDetails userDetails) {
 
         Map<String, Object> claims = new HashMap<>();
-        List<String> generate = generateAuthoritiesList(userDetails);
-        claims.put("authorities",generate);
-        return createToken(claims, userDetails.getUsername());
+        return doGenerateToken(claims, userDetails.getUsername());
     }
 
-    public boolean validateToken(String token, UserDetails userDetails) {
+    private Claims getAllClaimsFromToken(String token) {
+        return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
+    }
 
-        final String username = extractUsername(token);
-        return !isTokenExpired(token) && username != null && username.equals(userDetails.getUsername());
+    public <T> T getClaimFromToken(String token, Function<Claims, T> claimsResolver) {
+        final Claims claims = getAllClaimsFromToken(token);
+        return claimsResolver.apply(claims);
+    }
+
+    public String getUsernameFromToken(String token) {
+        return getClaimFromToken(token, Claims::getSubject);
+    }
+
+    public Boolean validateToken(String token, UserDetails userDetails) {
+        final String username = getUsernameFromToken(token);
+        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 
     public String extractUsername(String token) {
 
         return extractClaim(token, Claims::getSubject);
-    }
-
-    private Date extractExpiration(String token) {
-
-        return extractClaim(token, Claims::getExpiration);
     }
 
     private <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
@@ -60,30 +77,13 @@ public class AuthJwtUtil extends JwtUtil {
         return claimsResolver.apply(claims);
     }
 
-    private String createToken(Map<String, Object> claims, String username) {
 
-        final long currentTimestamp = System.currentTimeMillis();
-        return Jwts.builder()
-                .setClaims(claims)
-                .setSubject(username)
-                .setIssuedAt(new Date(currentTimestamp))
-                .setExpiration(new Date(currentTimestamp + config.getExpiration()))
-                .signWith(SignatureAlgorithm.HS256, config.getSecretSignIn())
-                .compact();
+    public Date getExpirationDateFromToken(String token) {
+        return getClaimFromToken(token, Claims::getExpiration);
     }
 
-    private boolean isTokenExpired(String token) {
-
-        return extractExpiration(token).before(new Date());
-    }
-
-    private List<String> generateAuthoritiesList(UserDetails userDetails) {
-
-        return userDetails
-                .getAuthorities()
-                .stream()
-                .filter(Objects::nonNull)
-                .map(GrantedAuthority::getAuthority)
-                .collect(Collectors.toList());
+    private Boolean isTokenExpired(String token) {
+        final Date expiration = getExpirationDateFromToken(token);
+        return expiration.before(new Date());
     }
 }
