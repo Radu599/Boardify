@@ -1,12 +1,10 @@
 package boardify.commonsecurity.filters.authMicroserviceFilters.util;
 
 import boardify.commonsecurity.config.JwtAuthenticationConfig;
-import boardify.commonsecurity.util.JwtUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -16,14 +14,9 @@ import java.util.Map;
 import java.util.function.Function;
 
 @Service
-public class AuthJwtUtil extends JwtUtil {
+public class AuthJwtUtil {
 
     private final JwtAuthenticationConfig config;
-
-    @Value("${jwt.secret}")
-    private String secret;
-
-    public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
 
     @Autowired
     public AuthJwtUtil(JwtAuthenticationConfig config) {
@@ -38,8 +31,8 @@ public class AuthJwtUtil extends JwtUtil {
 
     private String doGenerateToken(Map<String, Object> claims, String subject) {
         return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY * 1000))
-                .signWith(SignatureAlgorithm.HS512, secret).compact();
+                .setExpiration(new Date(System.currentTimeMillis() + config.getExpiration() * 1000))
+                .signWith(SignatureAlgorithm.HS512, config.getSecretSignIn()).compact();
     }
 
     public String generateToken(UserDetails userDetails) {
@@ -49,7 +42,7 @@ public class AuthJwtUtil extends JwtUtil {
     }
 
     private Claims getAllClaimsFromToken(String token) {
-        return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
+        return Jwts.parser().setSigningKey(config.getSecretSignIn()).parseClaimsJws(token).getBody();
     }
 
     public <T> T getClaimFromToken(String token, Function<Claims, T> claimsResolver) {
@@ -66,18 +59,6 @@ public class AuthJwtUtil extends JwtUtil {
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 
-    public String extractUsername(String token) {
-
-        return extractClaim(token, Claims::getSubject);
-    }
-
-    private <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
-
-        final Claims claims = extractAllClaims(token,config.getSecretSignIn());
-        return claimsResolver.apply(claims);
-    }
-
-
     public Date getExpirationDateFromToken(String token) {
         return getClaimFromToken(token, Claims::getExpiration);
     }
@@ -86,4 +67,5 @@ public class AuthJwtUtil extends JwtUtil {
         final Date expiration = getExpirationDateFromToken(token);
         return expiration.before(new Date());
     }
+
 }

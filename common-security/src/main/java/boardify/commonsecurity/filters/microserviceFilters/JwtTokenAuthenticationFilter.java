@@ -1,10 +1,9 @@
 package boardify.commonsecurity.filters.microserviceFilters;
 
-import boardify.commonsecurity.config.BasicJwtConfig;
-import boardify.commonsecurity.util.JwtUtil;
+import boardify.commonsecurity.config.JwtAuthenticationConfig;
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -24,26 +23,24 @@ import java.util.stream.Collectors;
 @Component
 public class JwtTokenAuthenticationFilter extends OncePerRequestFilter {
 
-    private final BasicJwtConfig config;
-    private final JwtUtil jwtUtil;
+    private final JwtAuthenticationConfig jwtAuthenticationConfig;
 
     @Autowired
-    public JwtTokenAuthenticationFilter(BasicJwtConfig config, JwtUtil jwtUtil) {
+    public JwtTokenAuthenticationFilter(JwtAuthenticationConfig jwtAuthenticationConfig) {
 
-        this.config = config;
-        this.jwtUtil = jwtUtil;
+        this.jwtAuthenticationConfig = jwtAuthenticationConfig;
     }
 
     @Override
-    protected void doFilterInternal(@NonNull HttpServletRequest httpServletRequest, @NonNull HttpServletResponse httpServletResponse, @NonNull FilterChain filterChain)
+    protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain)
             throws ServletException, IOException {
 
-        String token = httpServletRequest.getHeader(config.getHeader());
+        String token = httpServletRequest.getHeader(jwtAuthenticationConfig.getHeader());
 
         if (token != null) {
-            token = token.replace(config.getPrefixHeader() + " ", "");
+            token = token.replace(jwtAuthenticationConfig.getPrefixHeader() + " ", "");
             try {
-                Claims claims = jwtUtil.extractAllClaims(token, config.getSecretSignIn());
+                Claims claims = extractAllClaims(token, jwtAuthenticationConfig.getSecretSignIn());
                 String username = claims.getSubject();
                 List<String> authorities = claims.get("authorities", List.class);
                 if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
@@ -71,5 +68,13 @@ public class JwtTokenAuthenticationFilter extends OncePerRequestFilter {
                 .filter(Objects::nonNull)
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
+    }
+
+    public Claims extractAllClaims(String token, String secret) {
+
+        return Jwts.parser()
+                .setSigningKey(secret)
+                .parseClaimsJws(token)
+                .getBody();
     }
 }
