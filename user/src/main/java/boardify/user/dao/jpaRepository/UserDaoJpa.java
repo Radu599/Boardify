@@ -105,15 +105,15 @@ public class UserDaoJpa implements UserDao {
     @Override
     public User findUser(String username) {
 
-        logger.info("+++++++++LOGGING findUser+++++++++");
+        logger.info("LOG START - findUser");
         logger.info("username: {}", username);
         try {
             UserPersistance userPersistence = jpaRepository.findById(username).orElse(null);
-            //logger.info("+++++++++SUCCESSFUL LOGGING findUser+++++++++");
+            logger.info("LOG FINISH - findUser");
             return parseToUser(userPersistence);
         }
         catch (Exception e){
-            logger.info("+++++++++LOGGING FAILED findUser+++++++++");
+            logger.info("LOG START - findUser");
         }
         return null;
     }
@@ -121,16 +121,16 @@ public class UserDaoJpa implements UserDao {
     @Override
     public void saveUser(User boardifyUser) {
 
-        logger.info("+++++++LOGGING saveUser+++++++");
+        logger.info("LOG START - saveUser");
         try {
             UserPersistance userPersistence = parseToUserPersistence(boardifyUser);
             userPersistence.setRoleId("2");
             logger.info("User is " + userPersistence.toString());
             jpaRepository.save(userPersistence);
-            logger.info("++++++SUCCESSFUL LOGGING saveUser+++++++");
+            logger.info("LOG START - saveUser");
 
         } catch (Exception e) {
-            logger.info("+++++++LOGGING failed saveUser+++++++" + e);
+            logger.error("LOG FINISH - saveUser" + e);
         }
     }
 }

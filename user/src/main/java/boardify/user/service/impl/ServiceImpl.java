@@ -68,7 +68,7 @@ public class ServiceImpl implements Service {
 
     @Override
     public RegisterResponse registerUser(String username, String password) {
-        logger.info("+++++++++++++++++LOGGING register++++++++++++++++++");
+        logger.info("LOG FINISH - register");
 
         User boardifyUser = User.builder()
                 .username(username)
@@ -78,7 +78,7 @@ public class ServiceImpl implements Service {
 
         userDao.saveUser(boardifyUser);
 
-        logger.info("+++++++++++++SUCCESSFUL LOGGING register+++++++++");
+        logger.info("LOG FINISH - register");
         return new RegisterResponse(boardifyUser.getUsername());
     }
 }

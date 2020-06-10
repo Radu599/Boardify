@@ -36,7 +36,7 @@ public class PreFilter extends ZuulFilter {
     @Override
     public Object run() throws ZuulException {
 
-        logger.info("++++++++NEW REQUEST IN PREFILTER++++++++");
+        logger.info("NEW REQUEST IN PREFILTER");
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
 
@@ -49,7 +49,7 @@ public class PreFilter extends ZuulFilter {
                 map.put("content-type", "application/json");
             }
         }
-        logger.info("++++++++FINAL PREFILTER++++++++");
+        logger.info("FINAL PREFILTER");
         return null;
     }
 }

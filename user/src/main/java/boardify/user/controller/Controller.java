@@ -44,9 +44,9 @@ public class Controller {
     @RequestMapping(value = "/location/{email}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> findLocationByEmail(@PathVariable("email") String email) {//TODO: email validation
 
-        logger.info("+++++++++LOGGING findLocationByEmail+++++++++");
+        logger.info("LOG START - findLocationByEmail");
         String location = service.findLocationByEmail(email);
-        logger.info("+++++++++SUCCESSFUL LOGGING findLocationByEmail+++++++++");
+        logger.info("LOG FINISH - findLocationByEmail");
         return new ResponseEntity<>(location, HttpStatus.OK);
     }
 
@@ -62,10 +62,10 @@ public class Controller {
 
         //  assert(email!=null);
 
-        logger.info("+++++++++LOGGING updateLocation+++++++++");
+        logger.info("LOG START - updateLocation");
         //loggingEntity(user);
         service.updateLocation(email, location);
-        logger.info("+++++++++SUCCESSFUL LOGGING updateLocation+++++++++");
+        logger.info("LOG FINISH - updateLocation");
         return new ResponseEntity<UserExceptionType>(UserExceptionType.SUCCESS, HttpStatus.OK);
     }
 
@@ -73,7 +73,7 @@ public class Controller {
     @PostMapping("/uploadAvatar")
     public ResponseEntity<UserExceptionType> uploadAvatar(Principal principal, @RequestParam("imageFile") MultipartFile imageFile) {
 
-        logger.info("+++++++++LOGGING uploadAvatar+++++++++");
+        logger.info("LOG START - uploadAvatar");
         String email = principal.getName();
 
         try {
@@ -82,7 +82,7 @@ public class Controller {
             e.printStackTrace();
             logger.error("Error saving photo", e);
         }
-        logger.info("+++++++++SUCCESSFUL LOGGING uploadAvatar+++++++++");
+        logger.info("LOG FINISH - uploadAvatar");
         return new ResponseEntity<>(UserExceptionType.SUCCESS, HttpStatus.OK);
     }
 
@@ -108,9 +108,9 @@ public class Controller {
     @RequestMapping(value = "/{email}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<User> findUser(@PathVariable("email") String email) {//TODO: email validation
 
-        logger.info("+++++++++LOGGING findUserByEmail+++++++++");
+        logger.info("LOG START - findUserByEmail");
         User user = service.findUser(email);
-        logger.info("+++++++++SUCCESSFUL LOGGING findUserByEmail+++++++++");
+        logger.info("LOG FINISH - findUserByEmail");
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
 
@@ -123,10 +123,10 @@ public class Controller {
     @RequestMapping(value = "/register", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public ResponseEntity<RegisterResponse> register(@Valid UserDto user){
 
-        logger.info("+++++++++LOGGING register+++++++++");
+        logger.info("LOG START - register");
 
         RegisterResponse registerResponse = service.registerUser(user.getUsername(),user.getPassword());
-        logger.info("+++++++++SUCCESSFUL LOGGING register+++++++++");
+        logger.info("LOG FINISH - register");
         return new ResponseEntity<>(registerResponse, HttpStatus.OK);
     }
 }

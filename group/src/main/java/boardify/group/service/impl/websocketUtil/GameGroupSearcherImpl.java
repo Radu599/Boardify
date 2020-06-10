@@ -44,7 +44,7 @@ public class GameGroupSearcherImpl implements GameGroupSearcher {
     @Override
     public List<GameGroup> joinGame(String email, int gameId, String city) {
 
-        logger.info("+++++++++ LOGGING joinGame ++++++");
+        logger.info("LOG START - joinGame");
         logger.info(String.format("Searching game for email=%s gameId=%2d city=%s", email, gameId, city));
 
         int gameGroupId;
@@ -60,7 +60,7 @@ public class GameGroupSearcherImpl implements GameGroupSearcher {
         }
 
         service.saveGroupMember(new GroupMember(email, gameGroupId));
-        logger.info("+++++++++ LOGGING SUCCESSFULLY joinGame ++++++");
+        logger.info("LOG FINISH - joinGame");
         return groupsInCity;
     }
 
@@ -76,7 +76,7 @@ public class GameGroupSearcherImpl implements GameGroupSearcher {
     @Override
     public int getMinimumNumberOfPlayers(int gameId) {
 
-        logger.info("++++++++LOGGING getMinimumNumberOfPlayers+++++++++++");
+        logger.info("LOG START - getMinimumNumberOfPlayers");
         // TODO: create config file or extract this from it
         String localHost = "localhost";
         String dockerIp = "192.168.99.100";
@@ -87,7 +87,7 @@ public class GameGroupSearcherImpl implements GameGroupSearcher {
         String ip = runInDevelopment ? localHost : (dockerIp);
         String gameApiUrl = "http://" + ip + gamePort + "/games/minimumNumberOfPlayers/" + gameId;
         logger.info("Requesting minimum number of players at url:" + gameApiUrl);
-        logger.info("++++++++SUCCESSFULLY LOGGED getMinimumNumberOfPlayers+++++++++++");
+        logger.info("LOG FINISH - getMinimumNumberOfPlayers");
         return restTemplate.getForObject(gameApiUrl, Integer.class); // TODO: also make port easily configurable if zuul fails
     }
 

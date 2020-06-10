@@ -57,7 +57,7 @@ public class WebsocketServer extends WebSocketServer {
     @Override
     public void onClose(WebSocket conn, int code, String reason, boolean remote) {
 
-        logger.info("++++Logging onClose++++++");
+        logger.info("LOG FINISH - onClose");
         String email = findEmailByWebSocket(conn);
         logger.info(String.format("We must clear data for %s", email));
         int groupId = findGroupIdByWebSocket(conn); // TODO: use service.findGroupForUser(email) instead
@@ -73,7 +73,7 @@ public class WebsocketServer extends WebSocketServer {
         }
         if(!conn.isClosed())
             conn.close();
-        logger.info("++++Logging SUCCESSFUL onClose++++++");
+        logger.info("LOG FINISH - onClose");
     }
 
     private String findEmailByWebSocket(WebSocket conn) {
@@ -114,20 +114,20 @@ public class WebsocketServer extends WebSocketServer {
 
     private void notifyGroupDisbanded(int groupId) {
 
-        logger.info("+++++++++SUCCESSFUL LOGGING notifyGroupDisbaned+++++++++");
+        logger.info("LOG START - notifyGroupDisbaned");
         Notification notification = new ClientNotification(ClientNotificationType.DISBAND);
         broadcastMessageToGroup(notification, groupId);
-        logger.info("+++++++++SUCCESSFUL LOGGING notifyGroupDisbaned+++++++++" + groupId);
+        logger.info("LOG START - notifyGroupDisbaned" + groupId);
     }
 
     private void notifyUserLeftQueue(int groupId) {
 
-        logger.info("+++++++++LOGGING notifyUserLeftQueue+++++++++");
+        logger.info("LOG START - notifyUserLeftQueue");
         int count = groups.get(groupId).size() - 1;
         Notification notification = new ClientNotification(count, groupId, ClientNotificationType.LEAVE_QUEUE);
         logger.info("Trying to broadcast message to group " + groupId);
         broadcastMessageToGroup(notification, groupId);
-        logger.info("+++++++++SUCCESSFUL LOGGING notifyUserLeftQueue+++++++++");
+        logger.info("LOG FINISH - notifyUserLeftQueue");
     }
 
     //TODO: refact onMessage!!!
@@ -201,12 +201,12 @@ public class WebsocketServer extends WebSocketServer {
 
     private void removeUserFromGroup(WebSocket conn, int groupId) {
 
-        logger.info("+++++++++LOGGING removeUserFromGroup+++++++++");
+        logger.info("LOG START - removeUserFromGroup");
         HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
         logger.info("size=" + usersInCurrentGroup.size());
         logger.info("conn=" + conn);
         usersInCurrentGroup.remove(conn);
-        logger.info("+++++++++SUCCESSFUL LOGGING removeUserFromGroup+++++++++");
+        logger.info("LOG FINISH - removeUserFromGroup");
     }
 
     @Override
@@ -217,7 +217,7 @@ public class WebsocketServer extends WebSocketServer {
 
     private void notifyPlayerJoinedGroup(int groupId) throws JsonProcessingException {
 
-        logger.info("+++++++++LOGGING notifyPlayerJoinedGroup+++++++++");
+        logger.info("LOG START - notifyPlayerJoinedGroup");
         HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
 
         if (usersInCurrentGroup.size() >= gameGroupSearcher.getMinimumNumberOfPlayers(gameGroupSearcher.findGameForGroup(groupId)))
@@ -225,7 +225,7 @@ public class WebsocketServer extends WebSocketServer {
         else
             broadcastUserJoinedTheGroup(groupId);
 
-        logger.info("+++++++++SUCCESSFUL LOGGING notifyPlayerJoinedGroup+++++++++" + groupId);
+        logger.info("LOG FINISH - notifyPlayerJoinedGroup" + groupId);
     }
 
     private void broadcastGameStarts(int groupId) {
@@ -242,7 +242,7 @@ public class WebsocketServer extends WebSocketServer {
 
     private void broadcastMessageToGroup(Notification clientNotification, int groupId) {
 
-        logger.info("+++++++++LOGGING START broadcastMessageToGroup+++++++++");
+        logger.info("LOG START - broadcastMessageToGroup");
         HashMap<WebSocket, String> usersInCurrentGroup = groups.get(groupId);
         logger.info("1");
         ObjectMapper mapper = new ObjectMapper();
@@ -262,6 +262,6 @@ public class WebsocketServer extends WebSocketServer {
                 logger.info("Sending message to user failed! This is probably due to user closing websocket connection. It happens while player is in queue and we lose connection (ex.: tab is closed)");
             }
         }
-        logger.info("+++++++++LOGGING FINISH broadcastMessageToGroup+++++++++");
+        logger.info("LOG FINISH - broadcastMessageToGroup");
     }
 }
