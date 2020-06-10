@@ -16,8 +16,10 @@ class GameGroupPersistance {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Integer id;
+
     @Column(name = "GAME_ID")
     private int gameId;
+
     @Column(name = "CITY")
     private String city;
 }

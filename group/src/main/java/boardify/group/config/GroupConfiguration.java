@@ -35,6 +35,7 @@ public class GroupConfiguration {
 
     @Bean
     public RestTemplate getRestTemplate() {
+
         System.out.println("INTERCEPTOR ADDED!!!!!!!!!!!!!!!!!!!!");
 
         RestTemplate restTemplate = new RestTemplate();
@@ -44,6 +45,7 @@ public class GroupConfiguration {
     }
 
     public void addInterceptors(RestTemplate restTemplate) {
+
         List<ClientHttpRequestInterceptor> interceptors = restTemplate.getInterceptors();
         interceptors.add(new RestTemplateInterceptor());
         restTemplate.setInterceptors(interceptors);

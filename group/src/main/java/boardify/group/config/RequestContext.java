@@ -16,6 +16,7 @@ public class RequestContext {
     private String token;
 
     public static RequestContext getContext() {
+
         RequestContext result = CONTEXT.get();
 
         if (result == null) {

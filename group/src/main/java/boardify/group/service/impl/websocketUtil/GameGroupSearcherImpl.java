@@ -4,34 +4,34 @@ import boardify.group.model.GameGroup;
 import boardify.group.model.GroupMember;
 import boardify.group.service.GameGroupSearcher;
 import boardify.group.service.Service;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.core.env.Environment;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@AllArgsConstructor
 @NoArgsConstructor
 @Component
 public class GameGroupSearcherImpl implements GameGroupSearcher {
 
-    @Autowired
+    private final Logger logger = LogManager.getLogger();
+
     private Service service;
-
-    @Autowired
     private RestTemplate restTemplate;
-
-    @Autowired
     private Environment environment;
 
-    private final Logger logger = LogManager.getLogger();
+    @Autowired
+    public GameGroupSearcherImpl(Service service, RestTemplate restTemplate, Environment environment) {
+        this.service = service;
+        this.restTemplate = restTemplate;
+        this.environment = environment;
+    }
 
     private List<GameGroup> filterGameGroupsByCity(List<GameGroup> gameGroups, String city) {
 

@@ -19,6 +19,7 @@ public class GroupMembersPersistance implements Serializable {
     @Id
     @Column(name = "USER_EMAIL")
     private String userEmail;
+
     @Id
     @Column(name = "GAME_GROUP_ID")
     private int gameGroupID;

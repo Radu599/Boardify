@@ -3,7 +3,6 @@ package boardify.group.service.impl;
 import boardify.group.dao.StatsDao;
 import boardify.group.model.Stats;
 import boardify.group.service.StatsService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
@@ -12,10 +11,13 @@ import java.util.List;
 @org.springframework.stereotype.Service
 @Primary
 @Component
-public class    StatsServiceImpl implements StatsService {
+public class StatsServiceImpl implements StatsService {
 
-    @Autowired
-    private StatsDao statsDao;
+    private final StatsDao statsDao;
+
+    public StatsServiceImpl(StatsDao statsDao) {
+        this.statsDao = statsDao;
+    }
 
     @Override
     public void saveStats(Stats stats) {

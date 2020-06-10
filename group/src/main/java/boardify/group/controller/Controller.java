@@ -11,13 +11,10 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.reactive.function.client.WebClient;
 
 import java.security.Principal;
 import java.util.List;
@@ -30,16 +27,13 @@ public class Controller {
 
     private final Logger logger = LogManager.getLogger();
 
-    @Autowired
-    private WebClient.Builder webClientBuilder;
-    @Autowired
-    private RestTemplate restTemplate;
+    private final GameGroupSearcher gameGroupSearcher;
+    private final Service service;
 
-    @Autowired
-    private GameGroupSearcher gameGroupSearcher;
-
-    @Autowired
-    private Service service;
+    public Controller(GameGroupSearcher gameGroupSearcher, Service service) {
+        this.gameGroupSearcher = gameGroupSearcher;
+        this.service = service;
+    }
 
     @ApiOperation(value = "Find group for user")
     @ApiResponses(value = {
@@ -48,10 +42,10 @@ public class Controller {
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<UserDto>> findGroupForUser(Principal principal) {
 
-        logger.info("+++++++++LOGGING findGroupForUser+++++++++");
+        logger.info("LOG START - findGroupForUser");
         String email = principal.getName();
         List<UserDto> userDtos = service.findGroupForUser(email);
-        logger.info("+++++++++SUCCESSFUL LOGGING findGroupForUser+++++++++");
+        logger.info("LOG FINISH - findGroupForUser");
         return new ResponseEntity<>(userDtos, HttpStatus.OK);
     }
 
@@ -62,7 +56,7 @@ public class Controller {
     @RequestMapping(value = "/joinGame/{gameId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<GameGroup>> joinGame(Principal principal, @PathVariable("gameId") String gameId) {
 
-        logger.info("+++++++++LOGGING joinGame+++++++++");
+        logger.info("LOG START - joinGame");
         String email = principal.getName();
         List<GameGroup> openGroups = findOpenGroups(Integer.valueOf(gameId));
         if(openGroups.size()>0){
@@ -73,7 +67,7 @@ public class Controller {
         else{
 
         }
-        logger.info("+++++++++SUCCESSFUL LOGGING joinGame+++++++++");
+        logger.info("LOG FINISH - joinGame");
         return new ResponseEntity<>(openGroups, HttpStatus.OK);
     }
 

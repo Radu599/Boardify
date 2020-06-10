@@ -14,9 +14,9 @@ import java.util.stream.Collectors;
 @EnableJpaRepositories(basePackageClasses = GroupMembersJpaRepository.class)
 public class GroupMembersDaoJpa implements GroupMembersDao {
 
-    private GroupMembersJpaRepository groupMembersJpaRepository;
-
     //private Logger logger = LogManager.getLogger(GameDaoJpa.class);
+
+    private GroupMembersJpaRepository groupMembersJpaRepository;
 
     public GroupMembersDaoJpa(GroupMembersJpaRepository jpaRepository) {
         this.groupMembersJpaRepository = jpaRepository;

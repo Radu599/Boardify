@@ -22,14 +22,26 @@ import java.util.List;
 @Transactional // TODO: I used this because of custom deleteBy in dao: https://stackoverflow.com/questions/32269192/spring-no-entitymanager-with-actual-transaction-available-for-current-thread
 public class ServiceImpl implements Service {
 
-    @Autowired
     private GameGroupDao groupDao;
-    @Autowired
     private GroupMembersDao groupMembersDao;
-    @Autowired
     private GameGroupSearcher gameGroupSearcher;
 
     private final Logger logger = LogManager.getLogger();
+
+    @Autowired
+    public GameGroupDao getGroupDao() {
+        return groupDao;
+    }
+
+    @Autowired
+    public GameGroupSearcher getGameGroupSearcher() {
+        return gameGroupSearcher;
+    }
+
+    @Autowired
+    public GroupMembersDao getGroupMembersDao() {
+        return groupMembersDao;
+    }
 
     @Override
     public List<UserDto> findGroupForUser(String email) {

@@ -2,7 +2,6 @@ package boardify.group.config;
 
 import boardify.commonsecurity.filters.microserviceFilters.JwtTokenAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -62,16 +61,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
-    }
-
-    @Bean
-    public FilterRegistrationBean getPeticionFilter() {
-
-        FilterRegistrationBean registration = new FilterRegistrationBean();
-        registration.setFilter(new RequestFilter());
-        registration.addUrlPatterns("/*");
-        registration.setName("requestFilter");
-
-        return registration;
     }
 }
