@@ -28,7 +28,7 @@ public class UserDaoJpa implements UserDao {
     @Override
     public String findLocationByEmail(String email) {
 
-        return convertUserPersistenceToUser(jpaRepository.findById(email).get()).getLocation();
+        return parseToUser(jpaRepository.findById(email).get()).getLocation();
     }
 
     @Override
@@ -49,7 +49,7 @@ public class UserDaoJpa implements UserDao {
                 .password(oldUser.getPassword())
                 .build();
         jpaRepository.save(user);
-        return convertUserPersistenceToUser(oldUser);
+        return parseToUser(oldUser);
     }
 
     @Override
@@ -82,7 +82,7 @@ public class UserDaoJpa implements UserDao {
         Files.write(path, bytes);
     }
 
-    private User convertUserPersistenceToUser(UserPersistance userPersistence) {
+    private User parseToUser(UserPersistance userPersistence) {
 
         return userPersistence == null ? null : User
                 .builder()
@@ -92,7 +92,7 @@ public class UserDaoJpa implements UserDao {
                 .build();
     }
 
-    private UserPersistance convertUserToUserPersistence(User user) {
+    private UserPersistance parseToUserPersistence(User user) {
 
         return user == null ? null : UserPersistance
                 .builder()
@@ -110,7 +110,7 @@ public class UserDaoJpa implements UserDao {
         try {
             UserPersistance userPersistence = jpaRepository.findById(username).orElse(null);
             //logger.info("+++++++++SUCCESSFUL LOGGING findUser+++++++++");
-            return convertUserPersistenceToUser(userPersistence);
+            return parseToUser(userPersistence);
         }
         catch (Exception e){
             logger.info("+++++++++LOGGING FAILED findUser+++++++++");
@@ -123,7 +123,7 @@ public class UserDaoJpa implements UserDao {
 
         logger.info("+++++++LOGGING saveUser+++++++");
         try {
-            UserPersistance userPersistence = convertUserToUserPersistence(boardifyUser);
+            UserPersistance userPersistence = parseToUserPersistence(boardifyUser);
             userPersistence.setRoleId("2");
             logger.info("User is " + userPersistence.toString());
             jpaRepository.save(userPersistence);

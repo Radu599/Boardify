@@ -48,7 +48,7 @@ public class GroupMembersDaoJpa implements GroupMembersDao {
 
         return groupMembersJpaRepository.findByGameGroupID(gameGroupID)
                 .stream()
-                .map(this::convertGroupMembersPersitanceToGroupMembers)
+                .map(this::parseToGroupMembers)
                 .collect(Collectors.toList());
     }
 
@@ -59,7 +59,7 @@ public class GroupMembersDaoJpa implements GroupMembersDao {
     }
 
 
-    private GroupMember convertGroupMembersPersitanceToGroupMembers(GroupMembersPersistance groupMembersPersistance) {
+    private GroupMember parseToGroupMembers(GroupMembersPersistance groupMembersPersistance) {
 
         return groupMembersPersistance == null ? null : GroupMember
                 .builder()
@@ -80,7 +80,7 @@ public class GroupMembersDaoJpa implements GroupMembersDao {
     @Override
     public void save(GroupMember groupMember) {
 
-        groupMembersJpaRepository.save(this.convertGroupMemberToGroupMemberPersistence(groupMember));
+        groupMembersJpaRepository.save(this.parseToGroupMemberPersistence(groupMember));
     }
 
     @Override
@@ -90,10 +90,10 @@ public class GroupMembersDaoJpa implements GroupMembersDao {
 
     @Override
     public void deleteByGroupId(GroupMember groupMember) {
-        groupMembersJpaRepository.delete(convertGroupMemberToGroupMemberPersistence(groupMember));
+        groupMembersJpaRepository.delete(parseToGroupMemberPersistence(groupMember));
     }
 
-    private GroupMembersPersistance convertGroupMemberToGroupMemberPersistence(GroupMember groupMember) {
+    private GroupMembersPersistance parseToGroupMemberPersistence(GroupMember groupMember) {
 
         return groupMember == null ? null : GroupMembersPersistance.builder()
                 .gameGroupID(groupMember.getGameGroupID())

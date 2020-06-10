@@ -19,13 +19,13 @@ public class StatsDaoJpa implements StatsDao {
     @Override
     public Stats findStatsByGroupIdAndEmail(int groupId, String email) {
 
-        return convertStatsPersistenceToStats(statsJpaRepository.findStatsByGroupIdAndEmail(groupId, email));
+        return parseToStats(statsJpaRepository.findStatsByGroupIdAndEmail(groupId, email));
     }
 
     @Override
     public void saveStats(Stats stats) {
 
-        statsJpaRepository.save(convertStatsToStatePersistence(stats));
+        statsJpaRepository.save(parseToStatePersistence(stats));
     }
 
     @Override
@@ -57,11 +57,11 @@ public class StatsDaoJpa implements StatsDao {
     public List<Stats> findStatsByGroupId(int groupId) {
         return statsJpaRepository.findStatsByGroupId(groupId)
                 .stream()
-                .map(this::convertStatsPersistenceToStats)
+                .map(this::parseToStats)
                 .collect(Collectors.toList());
     }
 
-    private Stats convertStatsPersistenceToStats(StatsPersistance statsPersistance) {
+    private Stats parseToStats(StatsPersistance statsPersistance) {
 
         return statsPersistance == null ? null : Stats
                 .builder()
@@ -72,7 +72,7 @@ public class StatsDaoJpa implements StatsDao {
                 .build();
     }
 
-    private StatsPersistance convertStatsToStatePersistence(Stats stats) {
+    private StatsPersistance parseToStatePersistence(Stats stats) {
 
         return stats == null ? null : StatsPersistance.builder()
                 .email(stats.getEmail())

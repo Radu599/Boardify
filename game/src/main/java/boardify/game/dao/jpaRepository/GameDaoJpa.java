@@ -2,6 +2,7 @@ package boardify.game.dao.jpaRepository;
 
 import boardify.game.dao.GameDao;
 import boardify.game.model.Game;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +16,7 @@ public class GameDaoJpa implements GameDao {
 
     private GameJpaRepository gameJpaRepository;
 
+    @Autowired
     public GameDaoJpa(GameJpaRepository jpaRepository) {
         this.gameJpaRepository = jpaRepository;
     }
@@ -24,7 +26,7 @@ public class GameDaoJpa implements GameDao {
 
         return gameJpaRepository.findAll()
                 .stream()
-                .map(this::convertGamePersistenceToGame)
+                .map(this::parseToGame)
                 .collect(Collectors.toList());
     }
 
@@ -35,8 +37,7 @@ public class GameDaoJpa implements GameDao {
          return gamePersistence.get().getMinimumNumberOfPlayers();
     }
 
-
-    private Game convertGamePersistenceToGame(GamePersistence gamePersistence) {
+    private Game parseToGame(GamePersistence gamePersistence) {
 
         return gamePersistence == null ? null : Game
                 .builder()

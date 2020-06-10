@@ -41,7 +41,6 @@ public class ServiceImpl implements Service, UserDetailsService {
         this.userDao = userDao;
         this.authJwtUtil = authJwtUtil;
     }
-
     @Autowired
     public void setAuthenticationManager(AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;

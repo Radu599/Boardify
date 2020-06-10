@@ -25,14 +25,14 @@ public class GameGroupDaoJpa implements GameGroupDao {
 
         return gameGroupJpaRepository.findAll()
                 .stream()
-                .map(this::convertGameGroupPersistenceToGameGroup)
+                .map(this::parseToGameGroup)
                 .collect(Collectors.toList());
     }
 
     @Override
     public int save(GameGroup gameGroup) {
 
-        GameGroupPersistance gameGroupPersistance = this.convertGameGroupToGameGroupPersistance(gameGroup);
+        GameGroupPersistance gameGroupPersistance = this.parseToGameGroupPersistence(gameGroup);
         return gameGroupJpaRepository.save(gameGroupPersistance).getId();
         //return gameGroupPersistance.getId();
     }
@@ -48,7 +48,7 @@ public class GameGroupDaoJpa implements GameGroupDao {
         gameGroupJpaRepository.deleteById(gameGroup);
     }
 
-    private GameGroup convertGameGroupPersistenceToGameGroup(GameGroupPersistance gameGroupPersistance) {
+    private GameGroup parseToGameGroup(GameGroupPersistance gameGroupPersistance) {
 
         return gameGroupPersistance == null ? null : GameGroup
                 .builder()
@@ -58,7 +58,7 @@ public class GameGroupDaoJpa implements GameGroupDao {
                 .build();
     }
 
-    private GameGroupPersistance convertGameGroupToGameGroupPersistance(GameGroup gameGroup) {
+    private GameGroupPersistance parseToGameGroupPersistence(GameGroup gameGroup) {
 
         return gameGroup == null ? null : GameGroupPersistance.builder()
                 .gameId(gameGroup.getGameId())

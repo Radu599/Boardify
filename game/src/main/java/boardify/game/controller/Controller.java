@@ -8,7 +8,6 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -24,8 +23,11 @@ public class Controller {
 
     private final Logger logger = LogManager.getLogger();
 
-    @Autowired
-    private Service service;
+    private final Service service;
+
+    public Controller(Service service) {
+        this.service = service;
+    }
 
     @ApiOperation(value = "Find all games")
     @ApiResponses(value = {
@@ -34,9 +36,9 @@ public class Controller {
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Game>> findAllGames(Principal principal) {
 
-        logger.info("+++++++++LOGGING findAllGames+++++++++");
+        logger.info("LOG START - findAllGames");
         List<Game> entities = service.findAllGames();
-        logger.info("+++++++++SUCCESSFUL LOGGING findAllGames+++++++++");
+        logger.info("LOG FINISH - findAllGames");
         return new ResponseEntity<>(entities, HttpStatus.OK);
     }
 
@@ -47,9 +49,9 @@ public class Controller {
     @RequestMapping(value = "/minimumNumberOfPlayers/{gameId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Integer> getMinimumNumberOfPlayers(@PathVariable("gameId") String gameId) {
 
-        logger.info("+++++++++LOGGING getMinimumNumberOfPlayers+++++++++");
+        logger.info("LOG START - getMinimumNumberOfPlayers");
         int minimumNumberOfPlayers = service.getMinimumNumberOfPlayers(Integer.valueOf(gameId));
-        logger.info("+++++++++SUCCESSFUL LOGGING getMinimumNumberOfPlayers+++++++++");
+        logger.info("LOG FINISH - LOGGING getMinimumNumberOfPlayers");
         return new ResponseEntity<Integer>(minimumNumberOfPlayers, HttpStatus.OK);
     }
 }
