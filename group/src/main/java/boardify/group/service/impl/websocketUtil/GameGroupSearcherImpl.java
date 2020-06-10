@@ -20,21 +20,30 @@ import java.util.stream.Collectors;
 @Component
 public class GameGroupSearcherImpl implements GameGroupSearcher {
 
-    private final Logger logger = LogManager.getLogger();
-
     private Service service;
     private RestTemplate restTemplate;
     private Environment environment;
 
     @Autowired
-    public GameGroupSearcherImpl(Service service, RestTemplate restTemplate, Environment environment) {
-        this.service = service;
-        this.restTemplate = restTemplate;
+    public void setEnvironment(Environment environment) {
         this.environment = environment;
     }
 
+    @Autowired
+    public void setRestTemplate(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
+    @Autowired
+    public void setService(Service service) {
+        this.service = service;
+    }
+
+    private final Logger logger = LogManager.getLogger();
+
     private List<GameGroup> filterGameGroupsByCity(List<GameGroup> gameGroups, String city) {
 
+        logger.info("LOG START - filterGameGroupsByCity");
         return gameGroups.stream()
                 .filter(gameGroup ->gameGroup.getCity().equals(city))
                 .collect(Collectors.toList());
@@ -66,6 +75,7 @@ public class GameGroupSearcherImpl implements GameGroupSearcher {
 
     private List<GameGroup> findOpenGroups(int gameId) {
 
+        logger.info("LOG START - findOpenGroups");
         return service.findAllGameGroups()
                 .stream()
                 .filter(gameGroup -> gameGroup.getGameId() == gameId

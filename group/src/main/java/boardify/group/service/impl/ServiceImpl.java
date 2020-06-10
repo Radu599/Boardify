@@ -29,18 +29,18 @@ public class ServiceImpl implements Service {
     private final Logger logger = LogManager.getLogger();
 
     @Autowired
-    public GameGroupDao getGroupDao() {
-        return groupDao;
+    public void setGameGroupSearcher(GameGroupSearcher gameGroupSearcher) {
+        this.gameGroupSearcher = gameGroupSearcher;
     }
 
     @Autowired
-    public GameGroupSearcher getGameGroupSearcher() {
-        return gameGroupSearcher;
+    public void setGroupDao(GameGroupDao groupDao) {
+        this.groupDao = groupDao;
     }
 
     @Autowired
-    public GroupMembersDao getGroupMembersDao() {
-        return groupMembersDao;
+    public void setGroupMembersDao(GroupMembersDao groupMembersDao) {
+        this.groupMembersDao = groupMembersDao;
     }
 
     @Override
