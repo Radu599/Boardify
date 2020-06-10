@@ -12,7 +12,6 @@ import static org.springframework.context.annotation.FilterType.ASSIGNABLE_TYPE;
 @ComponentScan(basePackages = {
         "boardify.commonsecurity.config",
         "boardify.commonsecurity.filters.microserviceFilters",
-        "boardify.commonsecurity.util",
         "boardify.auth"},
         excludeFilters = @ComponentScan.Filter(type = ASSIGNABLE_TYPE,
                 value = {

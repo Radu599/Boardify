@@ -30,45 +30,38 @@ public class Controller {
     @Autowired
     private Service service;
 
-    @ApiOperation(value = "Login a specific user")
+    @ApiOperation(value = "Login user")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "SUCCESS", response = AuthenticationResponse.class),
             @ApiResponse(code = 400, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class),
-            @ApiResponse(code = 404, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class)
     })
 
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public ResponseEntity<AuthenticationResponse> login(@Valid UserDto user, BindingResult result){
 
-        logger.info("+++++++++LOGGING login+++++++++");
-        loggingUserDto(user);
+        logger.info("LOG START - login");
+
         if (result.hasErrors())
             throw new LoginServiceException("Username or password for user: "+ user+" can not be null!", LoginExceptionType.INVALID_CREDENTIALS,HttpStatus.BAD_REQUEST);
+
         AuthenticationResponse response = service.login(user.getUsername(),user.getPassword());
-        logger.info("+++++++++SUCCESSFUL LOGGING login+++++++++");
+        logger.info("LOG FINISH - login");
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @ApiOperation(value = "test")
+    @ApiOperation(value = "handler")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "SUCCESS", response = AuthenticationResponse.class),
             @ApiResponse(code = 400, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class),
-            @ApiResponse(code = 404, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class)
     })
-
-    private void loggingUserDto(UserDto userDto){
-
-        logger.info("Username: {}", userDto.getUsername());
-        logger.info("Password: {}", userDto.getPassword());
-    }
 
     @ExceptionHandler({LoginServiceException.class})
     @ResponseBody
     public ResponseEntity<LoginExceptionType> handleException(LoginServiceException exception) {
 
-        logger.error("+++++++++LOGGING handleException+++++++++");
+        logger.error("LOG START - handleException");
         logger.error(exception.getMessage());
-        logger.error("+++++++++END LOGGING handleException+++++++++");
-        return new ResponseEntity<>(exception.getType(), new HttpHeaders(), exception.getHttpStatus());
+        logger.error("LOG FINISH - handleException");
+        return new ResponseEntity<>(exception.getLoginExceptionType(), new HttpHeaders(), exception.getHttpStatus());
     }
 }

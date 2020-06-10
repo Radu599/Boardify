@@ -32,7 +32,7 @@ public class AuthJwtUtil {
     private String doGenerateToken(Map<String, Object> claims, String subject) {
         return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + config.getExpiration() * 1000))
-                .signWith(SignatureAlgorithm.HS512, config.getSecretSignIn()).compact();
+                .signWith(SignatureAlgorithm.HS512, config.getSecret()).compact();
     }
 
     public String generateToken(UserDetails userDetails) {
@@ -42,7 +42,7 @@ public class AuthJwtUtil {
     }
 
     private Claims getAllClaimsFromToken(String token) {
-        return Jwts.parser().setSigningKey(config.getSecretSignIn()).parseClaimsJws(token).getBody();
+        return Jwts.parser().setSigningKey(config.getSecret()).parseClaimsJws(token).getBody();
     }
 
     public <T> T getClaimFromToken(String token, Function<Claims, T> claimsResolver) {

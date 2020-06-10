@@ -14,28 +14,24 @@ import static boardify.auth.config.ApiConstants.getFindUser;
 @Component
 public class UserDaoJpa implements UserDao {
 
-    @Autowired
-    private Environment environment;
-
     private final Logger logger = LogManager.getLogger(UserDaoJpa.class);
-
-    @Autowired
+    private Environment environment;
     private RestTemplate restTemplate;
 
-    public UserDaoJpa( ) {
-
+    @Autowired
+    public UserDaoJpa(RestTemplate restTemplate, Environment environment) {
+        this.restTemplate = restTemplate;
+        this.environment = environment;
     }
 
     @Override
     public BoardifyUser findUser(String username) {
 
-        logger.info("++++LOGGING findUser Dao");
-        logger.info("Active profiles:" + environment.getActiveProfiles());
+        logger.info("LOG START - findUser");
         logger.info("Request user from " + getFindUser(environment.getActiveProfiles()));
         BoardifyUser boardifyUser = restTemplate.getForObject(getFindUser(environment.getActiveProfiles()) + "/" + username, BoardifyUser.class);
-        logger.info("User is:");
-        logger.info(boardifyUser.toString());
-        logger.info("++++SUCCESSFULLY LOGGING findUser Dao");
+        logger.info("User is:" + boardifyUser.toString());
+        logger.info("LOG FINISH - findUser ");
         return boardifyUser;
     }
 }

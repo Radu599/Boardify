@@ -14,13 +14,13 @@ public class JwtAuthenticationConfig{
     private String header;
 
     @Value("${security.jwt.header.prefix}")
-    private String prefixHeader;
+    private String prefix;
 
     @Value("${security.jwt.expiration}")
-    private long expiration;
+    private int expiration;
 
     @Value("${security.jwt.secret}")
-    private String secretSignIn;
+    private String secret;
 
     @Value("${security.jwt.url}")
     private String loginUrl;

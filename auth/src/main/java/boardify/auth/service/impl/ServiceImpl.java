@@ -33,47 +33,48 @@ import java.util.List;
 public class ServiceImpl implements Service, UserDetailsService {
 
     private final Logger logger = LogManager.getLogger(ServiceImpl.class);
-    @Autowired
-    private UserDao userDao;
-    @Autowired
+    private final UserDao userDao;
     private AuthenticationManager authenticationManager;
+    private final AuthJwtUtil authJwtUtil;
+
+    public ServiceImpl(UserDao userDao, AuthJwtUtil authJwtUtil) {
+        this.userDao = userDao;
+        this.authJwtUtil = authJwtUtil;
+    }
+
     @Autowired
-    private AuthJwtUtil authJwtUtil;
+    public void setAuthenticationManager(AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
+    }
 
     @Override
     public AuthenticationResponse login(String username, String password) {
 
-        logger.info("+++++++++++++LOGGING login++++++++++++++++++++");
-        logCredentials(username, password);
+        logger.info("LOG START - login");
         try {
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(username, password)
             );
             final UserDetails userDetails = (UserDetails) authentication.getPrincipal();
             final String jwt = authJwtUtil.generateToken(userDetails);
-            logger.info("++++++++++++++++++SUCCESSFUL LOGGING login++++++++++");
+            logger.info("LOG FINISH - login");
             return new AuthenticationResponse(jwt);
         } catch (BadCredentialsException e) {
             logger.error("Login failed " + e.getMessage());
-            throw new LoginServiceException("Incorrect username or password", LoginExceptionType.INVALID_CREDENTIALS, HttpStatus.NOT_FOUND);
+            throw new LoginServiceException("Invalid credentials", LoginExceptionType.INVALID_CREDENTIALS, HttpStatus.NOT_FOUND);
         }
-    }
-
-    private void logCredentials(String username, String password) {
-
-        logger.info("username=" + username + " password=" + password);
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        logger.info("++++++++++++LOGGING loadUserByUsername+++++++++++++++++++");
+        logger.info("LOG START - loadUserByUsername");
         BoardifyUser user = userDao.findUser(username);
         if (user == null)
-            throw new UsernameNotFoundException("Doesn't exist an user with username " + username);
-        user.setRole("NORMAL");//TODO: user microservice
+            throw new UsernameNotFoundException("Username not found " + username);
+        user.setRole("NORMAL"); //TODO: user microservice
         List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority(user.getRole()));
-        logger.info("+++++++++++++++++++++++++++++++SUCCESSFUL LOGGING loadUserByUsername+++++++++++++++++++++++++++++++");
+        logger.info("LOG FINISH - loadUserByUsername");
         return new User(user.getUsername(), user.getPassword(), authorities);
     }
 }

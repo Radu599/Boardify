@@ -11,8 +11,8 @@ import javax.validation.constraints.NotNull;
 @ToString
 public class UserDto {
 
-    @NotNull (message = "Username is null!")
+    @NotNull (message = "Username cannot be null!")
     private String username;
-    @NotNull (message = "Password is null!")
+    @NotNull (message = "Password cannot be null!")
     private String password;
 }

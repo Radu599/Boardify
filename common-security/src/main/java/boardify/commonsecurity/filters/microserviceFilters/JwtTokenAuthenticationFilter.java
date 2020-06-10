@@ -38,9 +38,9 @@ public class JwtTokenAuthenticationFilter extends OncePerRequestFilter {
         String token = httpServletRequest.getHeader(jwtAuthenticationConfig.getHeader());
 
         if (token != null) {
-            token = token.replace(jwtAuthenticationConfig.getPrefixHeader() + " ", "");
+            token = token.replace(jwtAuthenticationConfig.getPrefix() + " ", "");
             try {
-                Claims claims = extractAllClaims(token, jwtAuthenticationConfig.getSecretSignIn());
+                Claims claims = extractAllClaims(token, jwtAuthenticationConfig.getSecret());
                 String username = claims.getSubject();
                 List<String> authorities = claims.get("authorities", List.class);
                 if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
