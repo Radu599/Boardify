@@ -2,6 +2,8 @@ package boardify.commonsecurity.filters.authMicroserviceFilters;
 
 import boardify.commonsecurity.filters.authMicroserviceFilters.util.AuthJwtUtil;
 import io.jsonwebtoken.ExpiredJwtException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -27,9 +29,10 @@ public class AuthJwtFilter extends OncePerRequestFilter {
     private AuthJwtUtil jwtUtil;
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException
-    {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
 
+        Logger logger = LogManager.getLogger(AuthJwtFilter.class);
+        logger.info("doFilterInternal start! WORKS");
         final String requestTokenHeader = request.getHeader("Authorization");
         String username = null;
         String jwtToken = null;

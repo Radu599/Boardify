@@ -3,6 +3,8 @@ package boardify.commonsecurity.filters.microserviceFilters;
 import boardify.commonsecurity.config.JwtAuthenticationConfig;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -34,6 +36,9 @@ public class JwtTokenAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain)
             throws ServletException, IOException {
+
+        Logger logger = LogManager.getLogger(JwtTokenAuthenticationFilter.class);
+        logger.info("doFilterInternal start! WORKS");
 
         String token = httpServletRequest.getHeader(jwtAuthenticationConfig.getHeader());
 
