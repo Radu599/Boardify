@@ -1,12 +1,12 @@
 package boardify.auth.service.impl;
 
+import boardify.auth.config.security.filters.authMicroserviceFilters.util.AuthJwtUtil;
 import boardify.auth.dao.UserDao;
 import boardify.auth.dto.AuthenticationResponse;
 import boardify.auth.model.BoardifyUser;
 import boardify.auth.service.Service;
 import boardify.auth.service.exception.LoginExceptionType;
 import boardify.auth.service.exception.LoginServiceException;
-import boardify.commonsecurity.filters.authMicroserviceFilters.util.AuthJwtUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

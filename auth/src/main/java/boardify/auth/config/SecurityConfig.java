@@ -1,8 +1,8 @@
 package boardify.auth.config;
 
+import boardify.auth.config.security.config.JwtAuthenticationConfig;
+import boardify.auth.config.security.filters.authMicroserviceFilters.AuthJwtFilter;
 import boardify.auth.service.impl.ServiceImpl;
-import boardify.commonsecurity.config.JwtAuthenticationConfig;
-import boardify.commonsecurity.filters.authMicroserviceFilters.AuthJwtFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;

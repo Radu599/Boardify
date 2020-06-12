@@ -29,7 +29,7 @@ public class Controller {
 
     private final GameGroupSearcher gameGroupSearcher;
     private final Service service;
-
+    //TODO: autowired missing?
     public Controller(GameGroupSearcher gameGroupSearcher, Service service) {
         this.gameGroupSearcher = gameGroupSearcher;
         this.service = service;

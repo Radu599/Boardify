@@ -1,6 +1,6 @@
 package boardify.auth.config;
 
-import boardify.commonsecurity.config.JwtAuthenticationConfig;
+import boardify.auth.config.security.config.JwtAuthenticationConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,8 +10,8 @@ import static org.springframework.context.annotation.FilterType.ASSIGNABLE_TYPE;
 
 @Configuration
 @ComponentScan(basePackages = {
-        "boardify.commonsecurity.config",
-        "boardify.commonsecurity.filters.microserviceFilters",
+        "boardify.auth.config",
+        "boardify.auth.config.security.filters.microserviceFilters",
         "boardify.auth"},
         excludeFilters = @ComponentScan.Filter(type = ASSIGNABLE_TYPE,
                 value = {

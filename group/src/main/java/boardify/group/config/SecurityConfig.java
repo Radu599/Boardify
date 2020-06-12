@@ -1,6 +1,6 @@
 package boardify.group.config;
 
-import boardify.commonsecurity.filters.microserviceFilters.JwtTokenAuthenticationFilter;
+import boardify.group.config.security.filters.microserviceFilters.JwtTokenAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;

@@ -5,8 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication(scanBasePackages = {
-        "boardify.commonsecurity.config",
-        "boardify.commonsecurity.filters.authMicroserviceFilters",
+        "boardify.group.config",
         "boardify.group"})
 @EnableEurekaClient
 public class GroupApplication {
