@@ -1,6 +1,6 @@
 package boardify.user.config;
 
-import boardify.user.config.security.filters.microserviceFilters.JwtTokenAuthenticationFilter;
+import boardify.user.security.filters.JwtTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private JwtTokenAuthenticationFilter jwtTokenAuthenticationFilter;
+    private JwtTokenFilter jwtTokenFilter;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -44,7 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     (httpServletRequest, httpServletResponse, e) -> httpServletResponse.sendError(HttpServletResponse.SC_UNAUTHORIZED)
                 )
                 .and()
-                .addFilterBefore(jwtTokenAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
     @Bean

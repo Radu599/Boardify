@@ -1,7 +1,7 @@
 package boardify.auth.config;
 
-import boardify.auth.config.security.config.JwtAuthenticationConfig;
-import boardify.auth.config.security.filters.authMicroserviceFilters.AuthJwtFilter;
+import boardify.auth.security.config.JwtConfig;
+import boardify.auth.security.filters.JwtFilter;
 import boardify.auth.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -24,10 +24,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private ServiceImpl service;
 
     @Autowired
-    private AuthJwtFilter authJwtFilter;
+    private JwtFilter jwtFilter;
 
     @Autowired
-    private JwtAuthenticationConfig config;
+    private JwtConfig config;
 
     @Autowired
     private UserDetailsService userDetailsService;
@@ -53,7 +53,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .addFilterBefore(authJwtFilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
     @Bean

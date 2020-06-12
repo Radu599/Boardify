@@ -1,6 +1,6 @@
 package boardify.auth.service.impl;
 
-import boardify.auth.config.security.filters.authMicroserviceFilters.util.AuthJwtUtil;
+import boardify.auth.security.filters.util.JwtUtil;
 import boardify.auth.dao.UserDao;
 import boardify.auth.dto.AuthenticationResponse;
 import boardify.auth.model.BoardifyUser;
@@ -35,11 +35,11 @@ public class ServiceImpl implements Service, UserDetailsService {
     private final Logger logger = LogManager.getLogger(ServiceImpl.class);
     private final UserDao userDao;
     private AuthenticationManager authenticationManager;
-    private final AuthJwtUtil authJwtUtil;
+    private final JwtUtil jwtUtil;
 
-    public ServiceImpl(UserDao userDao, AuthJwtUtil authJwtUtil) {
+    public ServiceImpl(UserDao userDao, JwtUtil jwtUtil) {
         this.userDao = userDao;
-        this.authJwtUtil = authJwtUtil;
+        this.jwtUtil = jwtUtil;
     }
     @Autowired
     public void setAuthenticationManager(AuthenticationManager authenticationManager) {
@@ -55,7 +55,7 @@ public class ServiceImpl implements Service, UserDetailsService {
                     new UsernamePasswordAuthenticationToken(username, password)
             );
             final UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-            final String jwt = authJwtUtil.generateToken(userDetails);
+            final String jwt = jwtUtil.generateToken(userDetails);
             logger.info("LOG FINISH - login");
             return new AuthenticationResponse(jwt);
         } catch (BadCredentialsException e) {

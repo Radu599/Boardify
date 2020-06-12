@@ -1,6 +1,6 @@
 package boardify.group.config;
 
-import boardify.group.config.security.config.JwtAuthenticationConfig;
+import boardify.group.security.config.JwtConfig;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,7 +20,7 @@ import static org.springframework.context.annotation.FilterType.ASSIGNABLE_TYPE;
         "boardify.group"},
         excludeFilters = @ComponentScan.Filter(type = ASSIGNABLE_TYPE,
                 value = {
-                        JwtAuthenticationConfig.class
+                        JwtConfig.class
                 })
 )
 public class GroupConfiguration {

@@ -9,7 +9,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootApplication(scanBasePackages = {
         "boardify.commonsecurity.config",
-        "boardify.commonsecurity.filters.authMicroserviceFilters",
+        "boardify.commonsecurity.filters.filters",
         "boardify.auth"})
 @EnableEurekaClient
 public class AuthApplication {
