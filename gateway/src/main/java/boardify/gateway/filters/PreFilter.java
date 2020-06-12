@@ -1,12 +1,12 @@
 package boardify.gateway.filters;
 
-import boardify.commonsecurity.config.JwtAuthenticationConfig;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import boardify.gateway.security.config.JwtConfig;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
@@ -16,7 +16,7 @@ public class PreFilter extends ZuulFilter {
     private static final String APPLICATION_URL_ENCODED_TYPE = "application/x-www-form-urlencoded";
     private final Logger logger = LogManager.getLogger(PreFilter.class);
     @Autowired
-    private JwtAuthenticationConfig config;
+    private JwtConfig config;
 
     @Override
     public String filterType() {

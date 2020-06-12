@@ -6,11 +6,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 
-@SpringBootApplication(scanBasePackages = {
-        "boardify.commonsecurity.config",
-        "boardify.commonsecurity.filters.microserviceFilters",
-        "boardify.commonsecurity.util",
-        "boardify.gateway"})
+@SpringBootApplication
 @EnableEurekaClient
 @EnableZuulProxy
 public class GatewayApplication {

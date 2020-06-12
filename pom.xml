@@ -4,7 +4,6 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>common-security</module>
         <module>auth</module>
         <module>game</module>
         <module>service-discovery</module>
