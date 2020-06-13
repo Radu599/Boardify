@@ -5,9 +5,6 @@ import boardify.auth.dto.UserDto;
 import boardify.auth.service.Service;
 import boardify.auth.service.exception.LoginExceptionType;
 import boardify.auth.service.exception.LoginServiceException;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +27,6 @@ public class Controller {
     @Autowired
     private Service service;
 
-    @ApiOperation(value = "Login user")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "SUCCESS", response = AuthenticationResponse.class),
-            @ApiResponse(code = 400, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class),
-    })
-
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public ResponseEntity<AuthenticationResponse> login(@Valid UserDto user, BindingResult result){
 
@@ -48,12 +39,6 @@ public class Controller {
         logger.info("LOG FINISH - login");
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
-    @ApiOperation(value = "handler")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "SUCCESS", response = AuthenticationResponse.class),
-            @ApiResponse(code = 400, message = "INVALID_CREDENTIALS", response = LoginExceptionType.class),
-    })
 
     @ExceptionHandler({LoginServiceException.class})
     @ResponseBody

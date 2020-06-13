@@ -4,8 +4,8 @@ import org.springframework.stereotype.Component;
 
 /*TODO:
     Request Context, Request Filter and RestTemplateInterceptor are used in order to pass jwt token from current microservice
-    to an other microservice. Move them in common-security in a folder that auth is not scanning for components !
-     Also add getPeticionFilter() @Bean in SecurityConfig of all microservices*/
+    to an other microservice.
+     Add getPeticionFilter() @Bean in SecurityConfig of all microservices*/
 @Component
 public class RequestContext {
 

@@ -5,9 +5,6 @@ import boardify.user.dto.UserDto;
 import boardify.user.model.User;
 import boardify.user.service.Service;
 import boardify.user.service.exception.UserExceptionType;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +21,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.security.Principal;
-import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -36,11 +32,6 @@ public class Controller {
     @Autowired
     private Service service;
 
-
-    @ApiOperation(value = "Find locations by email")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "SUCCESS", response = List.class),
-    })
     @RequestMapping(value = "/location/{email}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> findLocationByEmail(@PathVariable("email") String email) {//TODO: email validation
 
@@ -50,11 +41,6 @@ public class Controller {
         return new ResponseEntity<>(location, HttpStatus.OK);
     }
 
-    @ApiOperation(value = "Update given user")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "SUCCESS", response = UserExceptionType.class),
-            @ApiResponse(code = 404, message = "ENTITY_NOT_FOUND", response = UserExceptionType.class)
-    })
     @RequestMapping(value = "/location/{location}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<UserExceptionType> updateLocation(Principal principal, @PathVariable String location) {
 
@@ -101,10 +87,6 @@ public class Controller {
                 .body(resource);
     }
 
-    @ApiOperation(value = "Find user by email")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "SUCCESS", response = List.class),
-    })
     @RequestMapping(value = "/{email}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<User> findUser(@PathVariable("email") String email) {//TODO: email validation
 
@@ -114,12 +96,6 @@ public class Controller {
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
 
-    @ApiOperation(value = "Create an account")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "SUCCESS", response = RegisterResponse.class)
-            //@ApiResponse(code = 400, message = "", response = RegisterExceptionType.class),
-            //@ApiResponse(code = 404, message = "", response = RegisterExceptionType.class)
-    })
     @RequestMapping(value = "/register", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public ResponseEntity<RegisterResponse> register(@Valid UserDto user){
 

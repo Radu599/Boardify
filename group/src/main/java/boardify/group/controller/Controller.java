@@ -6,9 +6,6 @@ import boardify.group.model.GameGroup;
 import boardify.group.model.GroupMember;
 import boardify.group.service.GameGroupSearcher;
 import boardify.group.service.Service;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
@@ -35,10 +32,6 @@ public class Controller {
         this.service = service;
     }
 
-    @ApiOperation(value = "Find group for user")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "SUCCESS", response = List.class),
-    })
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<UserDto>> findGroupForUser(Principal principal) {
 
@@ -49,10 +42,6 @@ public class Controller {
         return new ResponseEntity<>(userDtos, HttpStatus.OK);
     }
 
-    @ApiOperation(value = "Find group for user")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "SUCCESS", response = List.class),
-    })
     @RequestMapping(value = "/joinGame/{gameId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<GameGroup>> joinGame(Principal principal, @PathVariable("gameId") String gameId) {
 
